@@ -68,6 +68,11 @@ public class RoomController : MonoBehaviour
 
         isLoadingRoom = false;
 
+        if(loadedRooms.Count == 0)
+        {
+            CameraController.instance.currRoom = room;
+        }
+
         loadedRooms.Add(room);
 
     }
@@ -110,5 +115,11 @@ public class RoomController : MonoBehaviour
 
         UpdateRoomQueue();
         
+    }
+
+    public void OnPlayerEnterRoom(Room room)
+    {
+        CameraController.instance.currRoom = room;
+        currRoom = room;
     }
 }
