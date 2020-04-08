@@ -53,27 +53,38 @@ public class RoomController : MonoBehaviour
         }
     }
 
-    public void RegisterRoom ( Room room)
+    public void RegisterRoom(Room room)
     {
-        room.transform.position = new Vector3(
-            currentLoadRoomData.X * room.Width,
-            currentLoadRoomData.Y * room.Height,
-            0
-        );
+        if (!DoesRoomExist(currentLoadRoomData.X, currentLoadRoomData.Y))
+        {
+
+        
+            room.transform.position = new Vector3(
+                currentLoadRoomData.X * room.Width,
+                currentLoadRoomData.Y * room.Height,
+                0
+            );
 
         room.X = currentLoadRoomData.X;
         room.Y = currentLoadRoomData.Y;
-        room.name = currentWorldName + "-" + currentLoadRoomData.name + " " +room.X + "," + room.Y;
+        room.name = currentWorldName + "-" + currentLoadRoomData.name + " " + room.X + "," + room.Y;
         room.transform.parent = transform;
 
         isLoadingRoom = false;
 
-        if(loadedRooms.Count == 0)
-        {
+            if (loadedRooms.Count == 0)
+            {
             CameraController.instance.currRoom = room;
-        }
+            }
 
         loadedRooms.Add(room);
+        room.RemoveUnconnectedDoors();
+      }   
+        else
+        {
+            Destroy(room.gameObject);
+            isLoadingRoom = false;
+        }
 
     }
     public bool DoesRoomExist(int x, int y)
@@ -81,6 +92,12 @@ public class RoomController : MonoBehaviour
 
         return loadedRooms.Find(item => item.X == x && item.Y == y) != null;
     }
+    public Room FindRoom(int x, int y)
+    {
+
+        return loadedRooms.Find(item => item.X == x && item.Y == y);
+    }
+
 
     void UpdateRoomQueue()
     {

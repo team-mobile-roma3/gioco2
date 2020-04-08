@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 [CreateAssetMenu(fileName = "DungeonGenerationData.asset", menuName = "DungeonGenerationData/Dungeon Data")]
-public class DungeonGenerationDATA : ScriptableObject
+public class DungeonGenerationData : ScriptableObject
 {
     public int numberOfCrawlers;
 
