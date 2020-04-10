@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 public class RoomInfo 
 {
     public string name;
@@ -22,6 +23,8 @@ public class RoomController : MonoBehaviour
     public List<Room> loadedRooms = new List<Room>();
 
     bool isLoadingRoom = false;
+    bool spawnedBossRoom = false;
+    bool updatedRooms = false;
 
     private void Awake()   // inizializza singleton (?)
     {
@@ -78,7 +81,7 @@ public class RoomController : MonoBehaviour
             }
 
         loadedRooms.Add(room);
-        room.RemoveUnconnectedDoors();
+      
       }   
         else
         {
@@ -99,22 +102,21 @@ public class RoomController : MonoBehaviour
     }
 
 
-    void UpdateRoomQueue()
+   
+
+    IEnumerator SpawnBossRoom()
     {
-        if (isLoadingRoom)
+        spawnedBossRoom = true;
+        yield return new WaitForSeconds(0.5f);
+        if (loadRoomQueue.Count == 0)
         {
-            return;
+            Room bossRoom = loadedRooms[loadedRooms.Count - 1];
+            Room tempRoom = new Room(bossRoom.X, bossRoom.Y);
+            Destroy(bossRoom.gameObject);
+            var roomToRemove = loadedRooms.Single(r => r.X == tempRoom.X && r.Y == tempRoom.Y);
+            loadedRooms.Remove(roomToRemove);
+            LoadRoom("End", tempRoom.X, tempRoom.Y);
         }
-
-        if(loadRoomQueue.Count == 0)
-        {
-            return;
-        }
-
-        currentLoadRoomData = loadRoomQueue.Dequeue();
-        isLoadingRoom = true;
-
-        StartCoroutine(LoadRoomRoutine(currentLoadRoomData));
     }
     void Start()
     {
@@ -126,14 +128,42 @@ public class RoomController : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-
         UpdateRoomQueue();
-        
     }
 
+    void UpdateRoomQueue()
+    {
+        if (isLoadingRoom)
+        {
+            return;
+        }
+
+        if (loadRoomQueue.Count == 0)
+        {
+            if (!spawnedBossRoom)
+            {
+                StartCoroutine(SpawnBossRoom());
+            }
+            else if (spawnedBossRoom && !updatedRooms)
+            {
+                foreach (Room room in loadedRooms)
+                {
+                    room.RemoveUnconnectedDoors();
+                }
+     
+                updatedRooms = true;
+            }
+            return;
+        }
+
+        currentLoadRoomData = loadRoomQueue.Dequeue();
+        isLoadingRoom = true;
+
+        StartCoroutine(LoadRoomRoutine(currentLoadRoomData));
+    }
     public void OnPlayerEnterRoom(Room room)
     {
         CameraController.instance.currRoom = room;
