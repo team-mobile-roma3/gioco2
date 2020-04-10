@@ -564,6 +564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1265327121}
   - component: {fileID: 1265327122}
+  - component: {fileID: 1265327123}
   m_Layer: 0
   m_Name: Room
   m_TagString: Untagged
@@ -609,6 +610,32 @@ MonoBehaviour:
   topDoor: {fileID: 0}
   bottomDoor: {fileID: 0}
   doors: []
+--- !u!61 &1265327123
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1265327120}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.024785995, y: 0.020118713}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 18.589462, y: 9.56879}
+  m_EdgeRadius: 0
 --- !u!1 &1388300258
 GameObject:
   m_ObjectHideFlags: 0
