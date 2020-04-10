@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/.Rider2019.3/system/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/.Rider2019.3/system/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_New Unity Project.-72715440.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="Scripts" t="Include">
+          <e p="BulletController.cs" t="Include" />
+          <e p="CameraController.cs" t="Include" />
+          <e p="CollectionController.cs" t="Include" />
+          <e p="DungeonGeneration" t="Include">
+            <e p="Door.cs" t="Include" />
+            <e p="DungeonCrawler.cs" t="Include" />
+            <e p="DungeonCrawlerController.cs" t="Include" />
+            <e p="DungeonGenerationData.cs" t="Include" />
+            <e p="DungeonGenerator.cs" t="Include" />
+            <e p="Room.cs" t="Include" />
+            <e p="RoomController.cs" t="Include" />
+          </e>
+          <e p="EnemyController.cs" t="Include" />
+          <e p="GameController.cs" t="Include" />
+          <e p="HealthUIController.cs" t="Include" />
+          <e p="ItemSpawner.cs" t="Include" />
+          <e p="PlayerController.cs" t="Include" />
+        </e>
+      </e>
+      <e p="New Unity Project.sln" t="IncludeFlat" />
+      <e p="Temp/bin" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>

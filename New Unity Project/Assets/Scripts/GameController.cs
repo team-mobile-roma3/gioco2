@@ -12,6 +12,32 @@ public class GameController : MonoBehaviour
     private static float moveSpeed = 5f;
     private static float fireRate = 0.5f;
     private static float bulletSize = 0.5f;
+    private bool bootCollected = false;
+    private bool screwCollected = false;
+    public List<string> collectedNames = new List<string>();
+
+    public void UpdateCollectedItems(CollectionController item)
+    {
+        collectedNames.Add(item.item.name);
+
+        foreach (string i in collectedNames)
+        {
+            switch (i)
+            {
+                case "Boot":
+                    bootCollected = true;
+                    break;
+                case "Screw":
+                    screwCollected = true;
+                    break;
+            }
+        }
+
+        if (bootCollected && screwCollected)
+        {
+            FireRateChange(0.25f);
+        }
+    }
 
     public static float Health {
         get  => health;
