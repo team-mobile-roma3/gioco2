@@ -1,12 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
 {
     [System.Serializable]
-    
     public struct Spawnable
     {
         public GameObject gameObject;
@@ -21,9 +19,11 @@ public class ItemSpawner : MonoBehaviour
         totalWeight = 0;
         foreach (var spawnable in items)
         {
-            totalWeight += spawnable.weight; 
+            totalWeight += spawnable.weight;
         }
     }
+
+    // Start is called before the first frame update
     void Start()
     {
         float pick = Random.value * totalWeight;
@@ -43,6 +43,6 @@ public class ItemSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

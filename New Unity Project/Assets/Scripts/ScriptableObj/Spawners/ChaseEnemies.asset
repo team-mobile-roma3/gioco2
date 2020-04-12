@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1328e43acbc2d4e82f5da2919d4e03, type: 3}
+  m_Name: ChaseEnemies
+  m_EditorClassIdentifier: 
+  itemToSpawn: {fileID: 1866530917510769861, guid: 54c24f6048f5f6f4d99497c396dc2d52,
+    type: 3}
+  minSpawn: 1
+  maxSpawn: 6
