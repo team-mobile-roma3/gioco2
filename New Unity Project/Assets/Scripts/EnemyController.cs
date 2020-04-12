@@ -14,7 +14,8 @@ public enum EnemyState
 public enum EnemyType
 {
     Melee,
-    Ranged
+    Ranged,
+    Boss1
 };
 
 public class EnemyController : MonoBehaviour
@@ -132,7 +133,11 @@ public class EnemyController : MonoBehaviour
                     GameController.DamagePlayer(1);
                     StartCoroutine(CoolDown());
                 break;
-                case(EnemyType.Ranged):
+                case (EnemyType.Boss1):
+                    GameController.DamagePlayer(2);
+                    StartCoroutine(CoolDown());
+                    break;
+                case (EnemyType.Ranged):
                     GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
                     bullet.GetComponent<BulletController>().GetPlayer(player.transform);
                     bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
