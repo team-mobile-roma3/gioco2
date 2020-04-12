@@ -1,5 +1,4 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,13 +22,13 @@ public class Familiar : MonoBehaviour
 
         float shootHor = Input.GetAxis("ShootHorizontal");
         float shootVert = Input.GetAxis("ShootVertical");
-        if ((shootHor != 0 || shootVert != 0) && Time.time > lastFire + familiar.fireDelay)
+        if((shootHor != 0 || shootVert != 0) && Time.time > lastFire + familiar.fireDelay)
         {
             Shoot(shootHor, shootVert);
             lastFire = Time.time;
         }
 
-        if (horizontal != 0 || vertical != 0)
+        if(horizontal != 0 || vertical != 0)
         {
             float offsetX = (horizontal < 0) ? Mathf.Floor(horizontal) : Mathf.Ceil(horizontal);
             float offsetY = (vertical < 0) ? Mathf.Floor(vertical) : Mathf.Ceil(vertical);
@@ -39,7 +38,7 @@ public class Familiar : MonoBehaviour
         }
         else
         {
-            if (!(transform.position.x < lastOffsetX + 0.5f) || !(transform.position.y < lastOffsetY + 0.5f))
+            if(!(transform.position.x < lastOffsetX + 0.5f) || !(transform.position.y < lastOffsetY + 0.5f))
             {
                 transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.transform.position.x - lastOffsetX, player.transform.position.y - lastOffsetY), familiar.speed * Time.deltaTime);
             }

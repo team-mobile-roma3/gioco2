@@ -63,7 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\RoomObjectSpawner.cs" />
+    <Compile Include="Assets\ObjectRoomSpawner.cs" />
     <Compile Include="Assets\Scripts\BulletController.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\CollectionController.cs" />
@@ -77,12 +77,12 @@
     <Compile Include="Assets\Scripts\DungeonGeneration\RoomController.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
     <Compile Include="Assets\Scripts\Familiar.cs" />
-    <Compile Include="Assets\Scripts\FamiliarData.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\HealthUIController.cs" />
     <Compile Include="Assets\Scripts\ItemSpawner.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\ScriptableObj\Spawners\SpawnerData.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\FamiliarData.cs" />
+    <Compile Include="Assets\Scripts\ScriptableObjects\Spawners\SpawnerData.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/pollooo/Documents/GitHub/gioco2/New Unity Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

@@ -30,19 +30,19 @@ public class GridController : MonoBehaviour
         grid.verticalOffset += room.transform.localPosition.y;
         grid.horizontalOffset += room.transform.localPosition.x;
 
-        for (int y = 0; y < grid.rows; y++)
+        for(int y = 0; y < grid.rows; y++)
         {
-            for (int x = 0; x < grid.columns; x++)
+            for(int x = 0; x < grid.columns; x++)
             {
                 GameObject go = Instantiate(gridTile, transform);
                 go.GetComponent<Transform>().position = new Vector2(x - (grid.columns - grid.horizontalOffset), y - (grid.rows - grid.verticalOffset));
                 go.name = "X: " + x + ", Y: " + y;
                 availablePoints.Add(go.transform.position);
-               // go.SetActive(false);
+                go.SetActive(false);
             }
         }
 
-        GetComponentInParent<RoomObjectSpawner>().InitialiseObjectSpawning();
+        GetComponentInParent<ObjectRoomSpawner>().InitialiseObjectSpawning();
     }
 
 }

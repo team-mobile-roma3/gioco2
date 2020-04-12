@@ -4,48 +4,41 @@ using UnityEngine;
 
 public enum EnemyState
 {
-
+    Idle,
     Wander,
-
     Follow,
-
     Die,
-    
     Attack
 };
 
 public enum EnemyType
 {
-
     Melee,
-
     Ranged
 };
+
 public class EnemyController : MonoBehaviour
 {
-  
+    Rigidbody2D rigidbody;
     GameObject player;
-
-    public EnemyState currState = EnemyState.Wander;
+    public EnemyState currState = EnemyState.Idle;
     public EnemyType enemyType;
-
-    public float range;  // fino a dove vede
-
+    public float range;
     public float speed;
-    public float attackRange = 0.5f;
+    public float attackRange;
+    public float bulletSpeed;
+    public float coolDown;
     private bool chooseDir = false;
-
     private bool dead = false;
-    private bool cdAttack = false;
-    public float cd;
-    
-    private Vector3  randomDir;
-
+    private bool coolDownAttack = false;
+    public bool notInRoom = false;
+    private Vector3 randomDir;
     public GameObject bulletPrefab;
 
     // Start is called before the first frame update
     void Start()
     {
+        rigidbody = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -54,6 +47,9 @@ public class EnemyController : MonoBehaviour
     {
         switch(currState)
         {
+            //case(EnemyState.Idle):
+            //    Idle();
+            //break;
             case(EnemyState.Wander):
                 Wander();
             break;
@@ -62,26 +58,35 @@ public class EnemyController : MonoBehaviour
             break;
             case(EnemyState.Die):
             break;
-            case (EnemyState.Attack):
+            case(EnemyState.Attack):
                 Attack();
             break;
         }
-        if(IsPlayerInRange(range) && currState != EnemyState.Die)
+
+        if(!notInRoom)
         {
-            currState = EnemyState.Follow;
+            if(IsPlayerInRange(range) && currState != EnemyState.Die)
+            {
+                currState = EnemyState.Follow;
+            }
+            else if(!IsPlayerInRange(range) && currState != EnemyState.Die)
+            {
+                currState = EnemyState.Wander;
+            }
+            if(Vector3.Distance(transform.position, player.transform.position) <= attackRange)
+            {
+                currState = EnemyState.Attack;
+            }
         }
-        else if(!IsPlayerInRange(range) && currState != EnemyState.Die)
+        else
         {
-            currState = EnemyState.Wander; 
+            currState = EnemyState.Idle;
         }
 
-        if(Vector3.Distance(transform.position, player.transform.position) < attackRange)
-        {
-            currState = EnemyState.Attack;
-        }
+       
+        rigidbody.gravityScale = 0;
+        rigidbody.mass = 1000;
     }
-
-
 
     private bool IsPlayerInRange(float range)
     {
@@ -104,6 +109,7 @@ public class EnemyController : MonoBehaviour
         {
             StartCoroutine(ChooseDirection());
         }
+
         transform.position += -transform.right * speed * Time.deltaTime;
         if(IsPlayerInRange(range))
         {
@@ -115,42 +121,38 @@ public class EnemyController : MonoBehaviour
     {
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
-     
+
     void Attack()
     {
-        if (!cdAttack)
+        if(!coolDownAttack)
         {
-            switch (enemyType) 
+            switch(enemyType)
             {
-                case (EnemyType.Melee):
-                     GameController.DamagePlayer(1);
-                     StartCoroutine(CoolDown());
+                case(EnemyType.Melee):
+                    GameController.DamagePlayer(1);
+                    StartCoroutine(CoolDown());
                 break;
-                case (EnemyType.Ranged):
+                case(EnemyType.Ranged):
                     GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
                     bullet.GetComponent<BulletController>().GetPlayer(player.transform);
                     bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
                     bullet.GetComponent<BulletController>().isEnemyBullet = true;
                     StartCoroutine(CoolDown());
-                    break;
-
+                break;
             }
-
         }
-        
     }
 
     private IEnumerator CoolDown()
     {
-
-        cdAttack = true;
-        yield return new WaitForSeconds(cd);
-        cdAttack = false;
-
+        coolDownAttack = true;
+        yield return new WaitForSeconds(coolDown);
+        coolDownAttack = false;
     }
 
     public void Death()
     {
+        RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
         Destroy(gameObject);
     }
 }

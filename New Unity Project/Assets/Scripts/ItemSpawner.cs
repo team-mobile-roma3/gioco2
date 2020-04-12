@@ -17,7 +17,7 @@ public class ItemSpawner : MonoBehaviour
     void Awake()
     {
         totalWeight = 0;
-        foreach (var spawnable in items)
+        foreach(var spawnable in items)
         {
             totalWeight += spawnable.weight;
         }
@@ -30,7 +30,7 @@ public class ItemSpawner : MonoBehaviour
         int chosenIndex = 0;
         float cumulativeWeight = items[0].weight;
 
-        while (pick > cumulativeWeight && chosenIndex < items.Count - 1)
+        while(pick > cumulativeWeight && chosenIndex < items.Count - 1)
         {
             chosenIndex++;
             cumulativeWeight += items[chosenIndex].weight;
@@ -43,6 +43,6 @@ public class ItemSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 }
