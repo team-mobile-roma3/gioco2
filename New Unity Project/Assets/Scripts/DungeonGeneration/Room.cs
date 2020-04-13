@@ -75,21 +75,36 @@ public class Room : MonoBehaviour
             switch(door.doorType)
             {
                 case Door.DoorType.right:
-                    if(GetRight() == null)
-                        door.gameObject.SetActive(false);
+                    if (GetRight() == null)
+                    {   if (door.GetComponent<BoxCollider2D>() != null)
+                        door.GetComponent<BoxCollider2D>().enabled = true;
+                        door.GetComponentInChildren<SpriteRenderer>().enabled = false;
+                    }
                 break;
                 case Door.DoorType.left:
                     if(GetLeft() == null)
-                        door.gameObject.SetActive(false);
-                break;
+                    {
+                        if (door.GetComponent<BoxCollider2D>() != null)
+                            door.GetComponent<BoxCollider2D>().enabled = true;
+                        door.GetComponentInChildren<SpriteRenderer>().enabled = false;
+                    }
+                    break;
                 case Door.DoorType.top:
                     if(GetTop() == null)
-                        door.gameObject.SetActive(false);
-                break;
+                    {
+                        if (door.GetComponent<BoxCollider2D>() != null)
+                            door.GetComponent<BoxCollider2D>().enabled = true;
+                        door.GetComponentInChildren<SpriteRenderer>().enabled = false;
+                    }
+                    break;
                 case Door.DoorType.bottom:
                 if(GetBottom() == null)
-                        door.gameObject.SetActive(false);
-                break;
+                    {
+                        if (door.GetComponent<BoxCollider2D>() != null)
+                            door.GetComponent<BoxCollider2D>().enabled = true;
+                        door.GetComponentInChildren<SpriteRenderer>().enabled = false;
+                    }
+                    break;
             }
         }
     }

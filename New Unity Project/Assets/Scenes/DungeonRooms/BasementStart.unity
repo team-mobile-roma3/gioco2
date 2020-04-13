@@ -381,6 +381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 130628531}
   - component: {fileID: 130628532}
+  - component: {fileID: 130628533}
   m_Layer: 0
   m_Name: TopDoor
   m_TagString: Untagged
@@ -417,6 +418,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorType: 2
   doorCollider: {fileID: 2095398053}
+--- !u!61 &130628533
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130628530}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.058929443, y: 6.403555}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.5535688, y: 1.3142872}
+  m_EdgeRadius: 0
 --- !u!1 &270520837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,6 +1156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1412174174}
   - component: {fileID: 1412174175}
+  - component: {fileID: 1412174176}
   m_Layer: 0
   m_Name: LeftDoor
   m_TagString: Untagged
@@ -1165,6 +1193,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorType: 0
   doorCollider: {fileID: 929357161}
+--- !u!61 &1412174176
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412174173}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -9.591815, y: 0.6026087}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.33, y: 10.8}
+    newSize: {x: 1.33, y: 10.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.3020039, y: 3.527915}
+  m_EdgeRadius: 0
 --- !u!1 &1417224850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1615,6 +1669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2090617531}
   - component: {fileID: 2090617532}
+  - component: {fileID: 2090617533}
   m_Layer: 0
   m_Name: BottomDoor
   m_TagString: Untagged
@@ -1651,6 +1706,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorType: 3
   doorCollider: {fileID: 1753934294}
+--- !u!61 &2090617533
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090617530}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.058929324, y: -4.3410606}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.5535686, y: 1.2749977}
+  m_EdgeRadius: 0
 --- !u!1 &2095398053
 GameObject:
   m_ObjectHideFlags: 0
@@ -1769,6 +1850,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2108767527}
   - component: {fileID: 2108767528}
+  - component: {fileID: 2108767529}
   m_Layer: 0
   m_Name: RightDoor
   m_TagString: Untagged
@@ -1805,3 +1887,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorType: 1
   doorCollider: {fileID: 699990445}
+--- !u!61 &2108767529
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108767526}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 9.677776, y: 0.8204827}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.33, y: 10.8}
+    newSize: {x: 1.33, y: 10.8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.2626991, y: 3.5635948}
+  m_EdgeRadius: 0

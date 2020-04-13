@@ -44,7 +44,7 @@ public class EnemyController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         switch(currState)
         {
@@ -85,8 +85,7 @@ public class EnemyController : MonoBehaviour
         }
 
        
-        rigidbody.gravityScale = 0;
-        rigidbody.mass = 1000;
+        
     }
 
     private bool IsPlayerInRange(float range)
@@ -120,7 +119,8 @@ public class EnemyController : MonoBehaviour
 
     void Follow()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        rigidbody.MovePosition(Vector2.MoveTowards(rigidbody.position, player.transform.position, speed * Time.deltaTime));
+ //       transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
 
     void Attack()

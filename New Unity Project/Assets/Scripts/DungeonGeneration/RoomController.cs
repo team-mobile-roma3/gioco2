@@ -205,6 +205,9 @@ public class RoomController : MonoBehaviour
 
                     foreach(Door door in room.GetComponentsInChildren<Door>())
                     {
+
+                    
+                  
                         door.doorCollider.SetActive(false);
                     }
                 }
@@ -212,7 +215,8 @@ public class RoomController : MonoBehaviour
                 {
                     foreach(Door door in room.GetComponentsInChildren<Door>())
                     {
-                        door.doorCollider.SetActive(false);
+                        
+                            door.doorCollider.SetActive(false);
                     }
                 }
             }

@@ -28,16 +28,20 @@ public class Door : MonoBehaviour
             switch(doorType)
             {
                 case DoorType.bottom:
-                    player.transform.position = new Vector2(transform.position.x, transform.position.y - widthOffset);
+                    if (this.GetComponent<SpriteRenderer>() != null)
+                        player.transform.position = new Vector2(transform.position.x, transform.position.y - widthOffset);
                     break;
                 case DoorType.left:
-                    player.transform.position = new Vector2(transform.position.x - widthOffset, transform.position.y);
+                    if (this.GetComponent<SpriteRenderer>() != null)
+                        player.transform.position = new Vector2(transform.position.x - widthOffset, transform.position.y);
                     break;
                 case DoorType.right:
-                    player.transform.position = new Vector2(transform.position.x + widthOffset, transform.position.y);
+                    if (this.GetComponent<SpriteRenderer>() != null)
+                        player.transform.position = new Vector2(transform.position.x + widthOffset, transform.position.y);
                     break;
                 case DoorType.top:
-                    player.transform.position = new Vector2(transform.position.x, transform.position.y + widthOffset);
+                    if (this.GetComponent<SpriteRenderer>() != null)
+                        player.transform.position = new Vector2(transform.position.x, transform.position.y + widthOffset);
                     break;
             }
         }
