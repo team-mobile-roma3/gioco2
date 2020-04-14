@@ -5,25 +5,24 @@ using UnityEngine;
 public class BulletController : MonoBehaviour
 {
     public float lifeTime;
-
     public bool isEnemyBullet = false;
 
     private Vector2 lastPos;
     private Vector2 curPos;
     private Vector2 playerPos;
     // Start is called before the first frame update
-    void Start()
+    void Start() 
     {
         StartCoroutine(DeathDelay());
-        if (!isEnemyBullet)
-        {
+        if(!isEnemyBullet)
+        { 
             transform.localScale = new Vector2(GameController.BulletSize, GameController.BulletSize);
         }
     }
-    // Update is called once per frame
+
     void Update()
     {
-        if (isEnemyBullet)
+        if(isEnemyBullet)
         {
             curPos = transform.position;
             transform.position = Vector2.MoveTowards(transform.position, playerPos, 5f * Time.deltaTime);
@@ -33,12 +32,10 @@ public class BulletController : MonoBehaviour
             }
             lastPos = curPos;
         }
-        
     }
 
     public void GetPlayer(Transform player)
     {
-
         playerPos = player.position;
     }
 
@@ -56,7 +53,7 @@ public class BulletController : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (col.tag == "Player" && isEnemyBullet)
+        if(col.tag == "Player" && isEnemyBullet)
         {
             GameController.DamagePlayer(1);
             Destroy(gameObject);

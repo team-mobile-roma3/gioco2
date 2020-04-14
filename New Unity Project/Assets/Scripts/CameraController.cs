@@ -4,27 +4,20 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    // Start is called before the first frame update
 
     public static CameraController instance;
-    
     public Room currRoom;
-    
     public float moveSpeedWhenRoomChange;
 
     void Awake()
     {
         instance = this;
     }
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        UpdatePosition();    
+        UpdatePosition();
     }
 
     void UpdatePosition()
@@ -52,7 +45,7 @@ public class CameraController : MonoBehaviour
         return targetPos;
     }
 
-    public bool IsSWitchingScene()
+    public bool IsSwitchingScene()
     {
         return transform.position.Equals( GetCameraTargetPosition()) == false;
     }
