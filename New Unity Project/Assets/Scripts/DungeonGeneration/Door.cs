@@ -4,11 +4,46 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    // Start is called before the first frame update
-public enum DoorType
+    public enum DoorType
     {
         left, right, top, bottom
     }
 
     public DoorType doorType;
+    
+    public GameObject doorCollider;
+
+    private GameObject player;
+    private float widthOffset = 4f;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Player")
+        {
+            switch(doorType)
+            {
+                case DoorType.bottom:
+                    if (this.GetComponent<SpriteRenderer>() != null)
+                        player.transform.position = new Vector2(transform.position.x, transform.position.y - widthOffset);
+                    break;
+                case DoorType.left:
+                    if (this.GetComponent<SpriteRenderer>() != null)
+                        player.transform.position = new Vector2(transform.position.x - widthOffset, transform.position.y);
+                    break;
+                case DoorType.right:
+                    if (this.GetComponent<SpriteRenderer>() != null)
+                        player.transform.position = new Vector2(transform.position.x + widthOffset, transform.position.y);
+                    break;
+                case DoorType.top:
+                    if (this.GetComponent<SpriteRenderer>() != null)
+                        player.transform.position = new Vector2(transform.position.x, transform.position.y + widthOffset);
+                    break;
+            }
+        }
+    }
 }
