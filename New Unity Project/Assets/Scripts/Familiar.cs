@@ -9,7 +9,10 @@ public class Familiar : MonoBehaviour
     public FamiliarData familiar;
     private float lastOffsetX;
     private float lastOffsetY;
-    public FloatingJoystick floatingJoystick;
+    
+    public bool joyMove;
+    public FloatingJoystick move;
+    public FloatingJoystick act;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -17,11 +20,30 @@ public class Familiar : MonoBehaviour
 
     void Update()
     {
-        float horizontal = Input.GetAxis("Horizontal");//floatingJoystick.Horizontal;
-        float vertical = Input.GetAxis("Vertical");//floatingJoystick.Vertical;
-
-        float shootHor = Input.GetAxis("ShootHorizontal");
-        float shootVert = Input.GetAxis("ShootVertical");
+        float horizontal, vertical;
+        if (joyMove)
+        {
+            horizontal = move.Horizontal;
+            vertical = move.Vertical;    
+        }
+        else
+        {
+            horizontal = Input.GetAxis("Horizontal");
+            vertical =Input.GetAxis("Vertical");
+        }
+        
+        float shootHor, shootVert;
+        
+        if (joyMove)
+        {
+            shootHor = act.Horizontal;
+            shootVert = act.Vertical;    
+        }
+        else
+        {
+            shootHor = Input.GetAxis("ShootHorizontal");
+            shootVert =Input.GetAxis("ShootVertical");
+        }
         if((shootHor != 0 || shootVert != 0) && Time.time > lastFire + familiar.fireDelay)
         {
             Shoot(shootHor, shootVert);

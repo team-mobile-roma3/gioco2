@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
@@ -14,6 +15,12 @@ public class PlayerController : MonoBehaviour
     private float lastFire;
     public float fireDelay;
 
+    public bool joyMove;
+
+    public FloatingJoystick move;
+
+    public FloatingJoystick act;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -25,11 +32,32 @@ public class PlayerController : MonoBehaviour
     {
         fireDelay = GameController.FireRate;
         speed = GameController.MoveSpeed;
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-
-        float shootHor = Input.GetAxis("ShootHorizontal");
-        float shootVert = Input.GetAxis("ShootVertical");
+      
+        float horizontal, vertical;
+        if (joyMove)
+        {
+            horizontal = move.Horizontal;
+            vertical = move.Vertical;    
+        }
+        else
+        {
+            horizontal = Input.GetAxis("Horizontal");
+            vertical =Input.GetAxis("Vertical");
+        }
+        
+        float shootHor, shootVert;
+        
+        if (joyMove)
+        {
+            shootHor = act.Horizontal;
+            shootVert = act.Vertical;    
+        }
+        else
+        {
+            shootHor = Input.GetAxis("ShootHorizontal");
+            shootVert =Input.GetAxis("ShootVertical");
+        }
+        
         if((shootHor != 0 || shootVert != 0) && Time.time > lastFire + fireDelay)
         {
             Shoot(shootHor, shootVert);
@@ -44,10 +72,9 @@ public class PlayerController : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation) as GameObject;
         bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
-        bullet.GetComponent<Rigidbody2D>().velocity = new Vector3(
+        bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(
             (x < 0) ? Mathf.Floor(x) * bulletSpeed : Mathf.Ceil(x) * bulletSpeed,
-            (y < 0) ? Mathf.Floor(y) * bulletSpeed : Mathf.Ceil(y) * bulletSpeed,
-            0
+            (y < 0) ? Mathf.Floor(y) * bulletSpeed : Mathf.Ceil(y) * bulletSpeed
         );
     }
 }
