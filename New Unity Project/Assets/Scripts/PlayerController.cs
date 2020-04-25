@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
 
     public float speed;
+    public float rotateSpeed = 0;
     Rigidbody2D rigidbody;
     public Text collectedText;
     public static int collectedAmount = 0;
@@ -37,12 +38,36 @@ public class PlayerController : MonoBehaviour
         if (joyMove)
         {
             horizontal = move.Horizontal;
-            vertical = move.Vertical;    
+            vertical = move.Vertical;
+
+            if (horizontal > 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else if (horizontal < 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            }
+
+          
+
+
         }
         else
         {
             horizontal = Input.GetAxis("Horizontal");
             vertical =Input.GetAxis("Vertical");
+            if(horizontal > 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else if (horizontal < 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            }
+
+        
+
         }
         
         float shootHor, shootVert;
@@ -60,6 +85,16 @@ public class PlayerController : MonoBehaviour
         
         if((shootHor != 0 || shootVert != 0) && Time.time > lastFire + fireDelay)
         {
+            if (shootHor > 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else if (shootHor < 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            }
+
+       
             Shoot(shootHor, shootVert);
             lastFire = Time.time;
         }
