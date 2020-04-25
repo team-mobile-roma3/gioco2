@@ -40,31 +40,12 @@ public class PlayerController : MonoBehaviour
             horizontal = move.Horizontal;
             vertical = move.Vertical;
 
-            if (horizontal > 0)
-            {
-                gameObject.GetComponent<SpriteRenderer>().flipX = false;
-            }
-            else if (horizontal < 0)
-            {
-                gameObject.GetComponent<SpriteRenderer>().flipX = true;
-            }
-
-          
-
-
         }
         else
         {
             horizontal = Input.GetAxis("Horizontal");
             vertical =Input.GetAxis("Vertical");
-            if(horizontal > 0)
-            {
-                gameObject.GetComponent<SpriteRenderer>().flipX = false;
-            }
-            else if (horizontal < 0)
-            {
-                gameObject.GetComponent<SpriteRenderer>().flipX = true;
-            }
+       
 
         
 
