@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private float lastFire;
     public float fireDelay;
 
+    private float lastFlipShoot;
+
     public bool joyMove;
 
     public FloatingJoystick move;
@@ -40,14 +42,31 @@ public class PlayerController : MonoBehaviour
             horizontal = move.Horizontal;
             vertical = move.Vertical;
 
+            if (horizontal > 0 && (   Time.time > lastFlipShoot + 1.0f || lastFlipShoot == 0))
+            {
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else if (horizontal < 0 && (Time.time > lastFlipShoot + 1.0f || lastFlipShoot == 0))
+            {
+                gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            }
+
         }
         else
         {
             horizontal = Input.GetAxis("Horizontal");
             vertical =Input.GetAxis("Vertical");
-       
 
-        
+
+            if (horizontal > 0 && (Time.time > lastFlipShoot + 1.0f || lastFlipShoot == 0))
+            {
+                gameObject.GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else if (horizontal < 0 && (Time.time > lastFlipShoot + 1.0f || lastFlipShoot == 0))
+            {
+                gameObject.GetComponent<SpriteRenderer>().flipX = true;
+            }
+
 
         }
         
@@ -78,6 +97,7 @@ public class PlayerController : MonoBehaviour
        
             Shoot(shootHor, shootVert);
             lastFire = Time.time;
+            lastFlipShoot = Time.time;
         }
 
         rigidbody.velocity = new Vector3(horizontal * speed, vertical * speed, 0);
