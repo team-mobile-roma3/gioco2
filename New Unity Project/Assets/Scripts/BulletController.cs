@@ -45,15 +45,24 @@ public class BulletController : MonoBehaviour
         Destroy(gameObject);
     }
 
+    
+
     void OnTriggerEnter2D(Collider2D col)
     {
-        if(col.tag == "Enemy" && !isEnemyBullet)
+        if (col.CompareTag("Wall") && !isEnemyBullet && GameController.IPB){
+            Debug.Log("hit wall");
+            Rigidbody2D ri = gameObject.GetComponent<Rigidbody2D>();
+            ri.velocity = -ri.velocity;
+        }
+
+
+        if(col.CompareTag("Enemy") && !isEnemyBullet)
         {
             col.gameObject.GetComponent<EnemyController>().Death();
             Destroy(gameObject);
         }
 
-        if(col.tag == "Player" && isEnemyBullet)
+        if(col.CompareTag("Player") && isEnemyBullet)
         {
             GameController.DamagePlayer(1);
             Destroy(gameObject);

@@ -16,12 +16,14 @@ public class CollectionController : MonoBehaviour
     public float moveSpeedChange;
     public float attackSpeedChange;
     public float bulletSizeChange;
+    public bool isProjectileBouncy;
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<SpriteRenderer>().sprite = item.itemImage;
         Destroy(GetComponent<PolygonCollider2D>());
         gameObject.AddComponent<PolygonCollider2D>();
+        gameObject.GetComponent<PolygonCollider2D>().isTrigger = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -33,6 +35,7 @@ public class CollectionController : MonoBehaviour
             GameController.MoveSpeedChange(moveSpeedChange);
             GameController.FireRateChange(attackSpeedChange);
             GameController.BulletSizeChange(bulletSizeChange);
+            GameController.IPBChange(isProjectileBouncy);
             GameController.instance.UpdateCollectedItems(this);
             Destroy(gameObject);
         }

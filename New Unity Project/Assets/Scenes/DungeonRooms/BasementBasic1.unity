@@ -248,9 +248,10 @@ GameObject:
   - component: {fileID: 111966821}
   - component: {fileID: 111966823}
   - component: {fileID: 111966822}
+  - component: {fileID: 111966824}
   m_Layer: 0
   m_Name: LeftWall (3)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -371,6 +372,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.33, y: 4.1978283}
   m_EdgeRadius: 0
+--- !u!50 &111966824
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111966819}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &270520837
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,9 +405,10 @@ GameObject:
   - component: {fileID: 270520839}
   - component: {fileID: 270520841}
   - component: {fileID: 270520840}
+  - component: {fileID: 270520842}
   m_Layer: 0
   m_Name: LeftWall (2)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -506,6 +529,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.33, y: 4.2926774}
   m_EdgeRadius: 0
+--- !u!50 &270520842
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270520837}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &370975811
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,9 +562,10 @@ GameObject:
   - component: {fileID: 370975813}
   - component: {fileID: 370975815}
   - component: {fileID: 370975814}
+  - component: {fileID: 370975816}
   m_Layer: 0
   m_Name: LeftWall (1)
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -641,6 +686,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.33, y: 3.650251}
   m_EdgeRadius: 0
+--- !u!50 &370975816
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370975811}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &804239459
 GameObject:
   m_ObjectHideFlags: 0
@@ -726,9 +792,10 @@ GameObject:
   - component: {fileID: 812750214}
   - component: {fileID: 812750216}
   - component: {fileID: 812750215}
+  - component: {fileID: 812750217}
   m_Layer: 0
   m_Name: LeftWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -849,6 +916,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.33, y: 4.0098376}
   m_EdgeRadius: 0
+--- !u!50 &812750217
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 812750212}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &840358118
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,7 +1031,7 @@ GameObject:
   - component: {fileID: 894285528}
   m_Layer: 0
   m_Name: RightWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1051,7 +1139,7 @@ GameObject:
   - component: {fileID: 1072561591}
   m_Layer: 0
   m_Name: BottomWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1232,7 +1320,7 @@ GameObject:
   - component: {fileID: 1099544606}
   m_Layer: 0
   m_Name: LeftWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1502,7 +1590,7 @@ GameObject:
   - component: {fileID: 1534875861}
   m_Layer: 0
   m_Name: TopWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
