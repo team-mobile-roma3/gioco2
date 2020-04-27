@@ -129,6 +129,7 @@ MonoBehaviour:
   attackRange: 5
   bulletSpeed: 5
   coolDown: 2
+  health: 1
   notInRoom: 0
   bulletPrefab: {fileID: 8912613753944397765, guid: b02d5786e5afaac479b933a6426437e5,
     type: 3}

@@ -718,6 +718,11 @@ PrefabInstance:
       propertyPath: coolDown
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
+        type: 3}
+      propertyPath: health
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5051726810918457015, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
       propertyPath: m_Sprite

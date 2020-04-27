@@ -58,7 +58,7 @@ public class BulletController : MonoBehaviour
 
         if(col.CompareTag("Enemy") && !isEnemyBullet)
         {
-            col.gameObject.GetComponent<EnemyController>().Death();
+            col.gameObject.GetComponent<EnemyController>().DamageEnemy(GameController.AttackDamage) ;
             Destroy(gameObject);
         }
 

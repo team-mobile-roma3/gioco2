@@ -200,7 +200,7 @@ public class RoomController : MonoBehaviour
                     foreach(EnemyController enemy in enemies)
                     {
                         enemy.notInRoom = true;
-                        Debug.Log("Not in room");
+        //                Debug.Log("Not in room");
                     }
 
                     foreach(Door door in room.GetComponentsInChildren<Door>())
@@ -226,7 +226,7 @@ public class RoomController : MonoBehaviour
                     foreach(EnemyController enemy in enemies)
                     {
                         enemy.notInRoom = false;
-                        Debug.Log("In room");
+   //                     Debug.Log("In room");
                     }
                     
                     foreach(Door door in room.GetComponentsInChildren<Door>())

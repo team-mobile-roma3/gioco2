@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float bulletSpeed;
     private float lastFire;
     public float fireDelay;
+    
 
     private float lastFlipShoot;
 

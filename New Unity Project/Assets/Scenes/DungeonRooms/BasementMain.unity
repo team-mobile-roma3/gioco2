@@ -1684,7 +1684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   familiar: {fileID: 11400000, guid: 20ee24a9abb165142a7cf465198427a0, type: 2}
-  joyMove: 1
+  joyMove: 0
   move: {fileID: 1763561872}
   act: {fileID: 1726212767}
 --- !u!212 &1802513107
@@ -1975,6 +1975,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
+        type: 3}
+      propertyPath: health
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5051726810918457016, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
       propertyPath: m_IsTrigger
@@ -2188,6 +2193,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RangedEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879314993130097391, guid: 2c38e53e6150d6e45b750de04f3e84f5,
+        type: 3}
+      propertyPath: health
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c38e53e6150d6e45b750de04f3e84f5, type: 3}
