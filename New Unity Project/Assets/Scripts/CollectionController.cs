@@ -28,6 +28,8 @@ public class CollectionController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
+        // devo aggiungere che se ho già l'item, non lo prendo OPPURE lo prendo e non fa effetto (distruggendolo)
         if(collision.tag == "Player")
         {
             PlayerController.collectedAmount++;

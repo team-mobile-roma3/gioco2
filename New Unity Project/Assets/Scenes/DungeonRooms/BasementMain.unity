@@ -1684,7 +1684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   familiar: {fileID: 11400000, guid: 20ee24a9abb165142a7cf465198427a0, type: 2}
-  joyMove: 0
+  joyMove: 1
   move: {fileID: 1763561872}
   act: {fileID: 1726212767}
 --- !u!212 &1802513107
@@ -2053,6 +2053,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Screw
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044479761511570028, guid: e979bbaf5efaccb4fa8147f876e42d38,
+        type: 3}
+      propertyPath: bulletSizeChange
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044479761511570028, guid: e979bbaf5efaccb4fa8147f876e42d38,
+        type: 3}
+      propertyPath: isProjectileBouncy
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6044479761511570028, guid: e979bbaf5efaccb4fa8147f876e42d38,
+        type: 3}
+      propertyPath: attackSpeedChange
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 6044479761511570030, guid: e979bbaf5efaccb4fa8147f876e42d38,
         type: 3}
