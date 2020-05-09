@@ -131,7 +131,8 @@ public class EnemyController : MonoBehaviour
 
     void Follow()
     {
-        rigidbody.MovePosition(Vector2.MoveTowards(rigidbody.position, player.transform.position, speed * Time.deltaTime));
+           rigidbody.MovePosition(Vector2.MoveTowards(rigidbody.position, player.transform.position, speed * Time.deltaTime));
+
  //       transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
 
@@ -175,12 +176,19 @@ public class EnemyController : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.tag== "Player" && enemyType != EnemyType.Ranged)
-        {
-            currState= EnemyState.Attack;
-            
-        }
+        if (collision.gameObject.tag == "Player")
+            rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+
+        if (collision.gameObject.tag == "Player" && enemyType != EnemyType.Ranged)
+            currState = EnemyState.Attack;
+    
   
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        rigidbody.constraints = RigidbodyConstraints2D.None;
     }
 
 }
