@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class GameController : MonoBehaviour
 {
@@ -30,7 +30,7 @@ public class GameController : MonoBehaviour
     public static float BulletSize { get => bulletSize; set => bulletSize = value; }
     public static bool IPB { get => isProjectileBouncy; set => isProjectileBouncy = value; }
 
-    public Text healthText;
+
 
     // Start is called before the first frame update
     private void Awake()
@@ -42,10 +42,7 @@ public class GameController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        healthText.text = "Health: " + health;
-    }
+   
 
     public static void DamagePlayer(int damage)
     {

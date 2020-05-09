@@ -37,7 +37,11 @@ public class PlayerController : MonoBehaviour
     {
         fireDelay = GameController.FireRate;
         speed = GameController.MoveSpeed;
-      
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            Inventory.PotionUse();
+        }
         float horizontal, vertical;
         if (joyMove)
         {

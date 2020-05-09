@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+
+using UnityEngine;
+
 
 [System.Serializable]
 public class Item
@@ -17,6 +20,8 @@ public class CollectionController : MonoBehaviour
     public float attackSpeedChange;
     public float bulletSizeChange;
     public bool isProjectileBouncy;
+    private bool coolDownPick = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,18 +33,38 @@ public class CollectionController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        // devo aggiungere che se ho già l'item, non lo prendo OPPURE lo prendo e non fa effetto (distruggendolo)
-        if(collision.tag == "Player")
+        if (!coolDownPick)
         {
-            PlayerController.collectedAmount++;
-            GameController.HealPlayer(healthChange);
-            GameController.MoveSpeedChange(moveSpeedChange);
-            GameController.FireRateChange(attackSpeedChange);
-            GameController.BulletSizeChange(bulletSizeChange);
-            GameController.IPBChange(isProjectileBouncy);
-            GameController.instance.UpdateCollectedItems(this);
-            Destroy(gameObject);
+            if (collision.tag == "Player" && gameObject.tag == "Potion")
+            {
+                Inventory.PotionsChange();
+                Destroy(gameObject);
+                StartCoroutine(CoolDownPick());
+
+                return;
+
+            }
+            // devo aggiungere che se ho già l'item, non lo prendo OPPURE lo prendo e non fa effetto (distruggendolo)
+            if (collision.tag == "Player")
+            {
+
+//                GameController.HealPlayer(healthChange);
+                GameController.MoveSpeedChange(moveSpeedChange);
+                GameController.FireRateChange(attackSpeedChange);
+                GameController.BulletSizeChange(bulletSizeChange);
+                GameController.IPBChange(isProjectileBouncy);
+                GameController.instance.UpdateCollectedItems(this);
+                Destroy(gameObject);
+                StartCoroutine(CoolDownPick());
+            }
         }
+    }
+
+    private IEnumerator CoolDownPick()
+    {
+        coolDownPick = true;
+        yield return new WaitForSeconds(1f);
+        coolDownPick = false;
+
     }
 }
