@@ -29,6 +29,7 @@ public class EnemyController : MonoBehaviour
     public float attackRange;
     public float bulletSpeed;
     public float coolDown;
+    public   float health;
     private bool chooseDir = false;
     private bool dead = false;
     private bool coolDownAttack = false;
@@ -36,17 +37,30 @@ public class EnemyController : MonoBehaviour
     private Vector3 randomDir;
     public GameObject bulletPrefab;
 
+
+    public void DamageEnemy(float value)
+    {
+        Debug.Log("preso! vita: " + health);
+        health -= value;
+    }
     // Start is called before the first frame update
     void Start()
     {
+      
         rigidbody = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
+
     // Update is called once per frame
     void FixedUpdate()
     {
-        switch(currState)
+        if (health <= 0)
+        {
+            
+            this.Death();
+        }
+        switch (currState)
         {
             //case(EnemyState.Idle):
             //    Idle();
@@ -140,7 +154,7 @@ public class EnemyController : MonoBehaviour
                 case (EnemyType.Ranged):
                     GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
                     bullet.GetComponent<BulletController>().GetPlayer(player.transform);
-                    bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
+                   
                     bullet.GetComponent<BulletController>().isEnemyBullet = true;
                     StartCoroutine(CoolDown());
                 break;

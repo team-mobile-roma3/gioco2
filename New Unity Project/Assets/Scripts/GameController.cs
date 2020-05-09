@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour
     private static float moveSpeed = 5f;
     private static float fireRate = 0.5f;
     private static float bulletSize = 0.5f;
+    private static bool isProjectileBouncy = false;
+    private static float attackDamage = 1;
 
     private bool bootCollected = false;
     private bool screwCollected = false;
@@ -20,11 +22,14 @@ public class GameController : MonoBehaviour
     public List<string> collectedNames = new List<string>();
 
     public static float Health { get => health; set => health = value; }
+
+    public static float AttackDamage { get => attackDamage; set => health = attackDamage; }
     public static int MaxHealth { get => maxHealth; set => maxHealth = value; }
     public static float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
     public static float FireRate { get => fireRate; set => fireRate = value; }
     public static float BulletSize { get => bulletSize; set => bulletSize = value; }
-    
+    public static bool IPB { get => isProjectileBouncy; set => isProjectileBouncy = value; }
+
     public Text healthText;
 
     // Start is called before the first frame update
@@ -57,6 +62,10 @@ public class GameController : MonoBehaviour
         health = Mathf.Min(maxHealth, health + healAmount);
     }
 
+    public static void AttackDamageChange(float value)
+    {
+        attackDamage = value;
+    }
     public static void MoveSpeedChange(float speed)
     {
         moveSpeed += speed;
@@ -69,6 +78,11 @@ public class GameController : MonoBehaviour
     public static void BulletSizeChange(float size)
     {
         bulletSize += size;
+    }
+    public static void IPBChange(bool cond)
+
+    {
+        isProjectileBouncy = cond;
     }
 
     public void UpdateCollectedItems(CollectionController item)
