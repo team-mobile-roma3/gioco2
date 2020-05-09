@@ -33,13 +33,13 @@ public class CollectionController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!coolDownPick)
-        {
+        Debug.Log(collision.tag);
+        
             if (collision.tag == "Player" && gameObject.tag == "Potion")
             {
                 Inventory.PotionsChange();
                 Destroy(gameObject);
-                StartCoroutine(CoolDownPick());
+ //               StartCoroutine(CoolDownPick());
 
                 return;
 
@@ -55,9 +55,9 @@ public class CollectionController : MonoBehaviour
                 GameController.IPBChange(isProjectileBouncy);
                 GameController.instance.UpdateCollectedItems(this);
                 Destroy(gameObject);
-                StartCoroutine(CoolDownPick());
+   //             StartCoroutine(CoolDownPick());
             }
-        }
+       
     }
 
     private IEnumerator CoolDownPick()

@@ -88,18 +88,16 @@ public class EnemyController : MonoBehaviour
             {
                 currState = EnemyState.Wander;
             }
-            if(Vector3.Distance(transform.position, player.transform.position) <= attackRange)
-            {
-                currState = EnemyState.Attack;
-            }
+        
+                    if ( enemyType == EnemyType.Ranged && Vector3.Distance(transform.position, player.transform.position) <= attackRange)
+                    {
+                        currState = EnemyState.Attack;
+                    }
         }
         else
         {
             currState = EnemyState.Idle;
-        }
-
-       
-        
+        }      
     }
 
     private bool IsPlayerInRange(float range)
@@ -174,4 +172,15 @@ public class EnemyController : MonoBehaviour
         RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
         Destroy(gameObject);
     }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag== "Player" && enemyType != EnemyType.Ranged)
+        {
+            currState= EnemyState.Attack;
+            
+        }
+  
+    }
+
 }

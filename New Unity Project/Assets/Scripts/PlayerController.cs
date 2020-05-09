@@ -24,17 +24,19 @@ public class PlayerController : MonoBehaviour
     public FloatingJoystick move;
 
     public FloatingJoystick act;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+
         rigidbody.freezeRotation = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+       
         fireDelay = GameController.FireRate;
         speed = GameController.MoveSpeed;
 
@@ -107,6 +109,7 @@ public class PlayerController : MonoBehaviour
         }
 
         rigidbody.velocity = new Vector3(horizontal * speed, vertical * speed, 0);
+
         collectedText.text = "Items Collected: " + collectedAmount;
     }
 
