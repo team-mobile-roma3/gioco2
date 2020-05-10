@@ -76,32 +76,33 @@ public class Room : MonoBehaviour
             {
                 case Door.DoorType.right:
                     if (GetRight() == null)
-                    {   if (door.GetComponent<BoxCollider2D>() != null)
-                        door.GetComponent<BoxCollider2D>().enabled = true;
+                    {
+                        door.doorCollider.SetActive(true);
+                        door.setNotConnected(true);
                         door.GetComponentInChildren<SpriteRenderer>().enabled = false;
                     }
                 break;
                 case Door.DoorType.left:
                     if(GetLeft() == null)
                     {
-                        if (door.GetComponent<BoxCollider2D>() != null)
-                            door.GetComponent<BoxCollider2D>().enabled = true;
+                        door.doorCollider.SetActive(true);
+                        door.setNotConnected(true);
                         door.GetComponentInChildren<SpriteRenderer>().enabled = false;
                     }
                     break;
                 case Door.DoorType.top:
                     if(GetTop() == null)
                     {
-                        if (door.GetComponent<BoxCollider2D>() != null)
-                            door.GetComponent<BoxCollider2D>().enabled = true;
+                        door.doorCollider.SetActive(true);
+                        door.setNotConnected(true);
                         door.GetComponentInChildren<SpriteRenderer>().enabled = false;
                     }
                     break;
                 case Door.DoorType.bottom:
                 if(GetBottom() == null)
                     {
-                        if (door.GetComponent<BoxCollider2D>() != null)
-                            door.GetComponent<BoxCollider2D>().enabled = true;
+                        door.doorCollider.SetActive(true);
+                        door.setNotConnected(true);
                         door.GetComponentInChildren<SpriteRenderer>().enabled = false;
                     }
                     break;

@@ -205,16 +205,16 @@ public class RoomController : MonoBehaviour
 
                     foreach(Door door in room.GetComponentsInChildren<Door>())
                     {
-                       
-                        door.doorCollider.SetActive(false);
+                        if (!door.getNotConnected())
+                            door.doorCollider.SetActive(false);
                     }
                 }
                 else
                 {
                     foreach(Door door in room.GetComponentsInChildren<Door>())
                     {
-                       
-                        door.doorCollider.SetActive(false);
+                        if (!door.getNotConnected())
+                            door.doorCollider.SetActive(false);
                     }
                 }
             }
@@ -237,8 +237,8 @@ public class RoomController : MonoBehaviour
                 else
                 {
                     foreach(Door door in room.GetComponentsInChildren<Door>())
-                    {
-                        door.doorCollider.SetActive(false);
+                    {   if(!door.getNotConnected())
+                         door.doorCollider.SetActive(false);
                     }
                 }  
             }

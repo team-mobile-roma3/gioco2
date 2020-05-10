@@ -19,7 +19,10 @@ public class PlayerController : MonoBehaviour
     private float lastSwing;
     public float swingDelay;
 
-    private bool stance = false;  // false = ranged, true = melee
+    private bool stance = true;  // false = ranged, true = melee
+
+
+    private static float ableTeleportDoor;
     
     
 
@@ -31,12 +34,14 @@ public class PlayerController : MonoBehaviour
 
     public FloatingJoystick act;
 
+    public  static float AbleTeleportDoor { get => ableTeleportDoor; set => ableTeleportDoor = value; }
     // Start is called before the first frame update
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
 
         rigidbody.freezeRotation = true;
+        ableTeleportDoor = Time.time-2f;
     }
 
     // Update is called once per frame
