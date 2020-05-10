@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
     private static float bulletSize = 0.5f;
     private static bool isProjectileBouncy = false;
     private static float attackDamage = 1;
+    private static float mAttackDamage = 2;
 
     private bool bootCollected = false;
     private bool screwCollected = false;
@@ -23,7 +24,8 @@ public class GameController : MonoBehaviour
 
     public static float Health { get => health; set => health = value; }
 
-    public static float AttackDamage { get => attackDamage; set => health = attackDamage; }
+    public static float AttackDamage { get => attackDamage; set => attackDamage = value; }
+    public static float MAttackDamage { get => mAttackDamage; set => mAttackDamage = value; }
     public static int MaxHealth { get => maxHealth; set => maxHealth = value; }
     public static float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
     public static float FireRate { get => fireRate; set => fireRate = value; }
@@ -63,18 +65,22 @@ public class GameController : MonoBehaviour
     {
         attackDamage = value;
     }
+    public static void MAttackDamageChange(float value)
+    {
+        mAttackDamage = value;
+    }
     public static void MoveSpeedChange(float speed)
     {
-        moveSpeed += speed;
+        moveSpeed = speed;
     }
 
     public static void FireRateChange(float rate)
     {
-        fireRate -= rate;
+        fireRate = rate;
     }
     public static void BulletSizeChange(float size)
     {
-        bulletSize += size;
+        bulletSize = size;
     }
     public static void IPBChange(bool cond)
 

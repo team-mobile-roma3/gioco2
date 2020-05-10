@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.Mathematics;
+using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
@@ -8,13 +9,18 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float rotateSpeed = 0;
     Rigidbody2D rigidbody;
-    public Text collectedText;
-    public static int collectedAmount = 0;
+  
 
     public GameObject bulletPrefab;
     public float bulletSpeed;
     private float lastFire;
     public float fireDelay;
+
+    private float lastSwing;
+    public float swingDelay;
+
+    private bool stance = false;  // false = ranged, true = melee
+    
     
 
     private float lastFlipShoot;
@@ -44,6 +50,13 @@ public class PlayerController : MonoBehaviour
         {
             Inventory.PotionUse();
         }
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            stance = !stance;
+        }
+
+
         float horizontal, vertical;
         if (joyMove)
         {
@@ -90,27 +103,47 @@ public class PlayerController : MonoBehaviour
             shootHor = Input.GetAxis("ShootHorizontal");
             shootVert =Input.GetAxis("ShootVertical");
         }
-        
-        if((shootHor != 0 || shootVert != 0) && Time.time > lastFire + fireDelay)
+        if (!stance)  // cioe' se sono ranged
         {
-            if (shootHor > 0)
+            if ((shootHor != 0 || shootVert != 0) && Time.time > lastFire + fireDelay)
             {
-                gameObject.GetComponent<SpriteRenderer>().flipX = false;
-            }
-            else if (shootHor < 0)
-            {
-                gameObject.GetComponent<SpriteRenderer>().flipX = true;
-            }
+                if (shootHor > 0)
+                {
+                    gameObject.GetComponent<SpriteRenderer>().flipX = false;
+                }
+                else if (shootHor < 0)
+                {
+                    gameObject.GetComponent<SpriteRenderer>().flipX = true;
+                }
 
-       
-            Shoot(shootHor, shootVert);
-            lastFire = Time.time;
-            lastFlipShoot = Time.time;
+
+                Shoot(shootHor, shootVert);
+                lastFire = Time.time;
+                lastFlipShoot = Time.time;
+            }
+        }
+        else
+        {
+            if ((shootHor != 0 || shootVert != 0) && Time.time > lastSwing + swingDelay)
+            {
+                if (shootHor > 0)
+                {
+                    gameObject.GetComponent<SpriteRenderer>().flipX = false;
+                }
+                else if (shootHor < 0)
+                {
+                    gameObject.GetComponent<SpriteRenderer>().flipX = true;
+                }
+
+
+                Melee(shootHor, shootVert);
+                lastSwing = Time.time;
+                lastFlipShoot = Time.time;
+            }
         }
 
         rigidbody.velocity = new Vector3(horizontal * speed, vertical * speed, 0);
 
-        collectedText.text = "Items Collected: " + collectedAmount;
     }
 
     void Shoot(float x, float y)
@@ -121,5 +154,35 @@ public class PlayerController : MonoBehaviour
             (x < 0) ? Mathf.Floor(x) * bulletSpeed : Mathf.Ceil(x) * bulletSpeed,
             (y < 0) ? Mathf.Floor(y) * bulletSpeed : Mathf.Ceil(y) * bulletSpeed
         );
+        Debug.Log("ho sparato con " + Inventory.Ranged_Weapon);
+    }
+
+    void Melee(float x, float y)
+    {
+        
+        if(y < 0)
+        {
+            if(math.abs(x) < math.abs(y))
+            transform.GetChild(0).gameObject.SetActive(true);   
+        }
+
+        if (y > 0)
+        {
+            if (math.abs(x) < math.abs(y))
+                transform.GetChild(1).gameObject.SetActive(true);
+        }
+
+        if (x > 0)
+        {
+            if (math.abs(y) < math.abs(x))
+                transform.GetChild(3).gameObject.SetActive(true);
+        }
+        if (x < 0)
+        {
+            if (math.abs(y) < math.abs(x))
+                transform.GetChild(2).gameObject.SetActive(true);
+        }
+
+
     }
 }

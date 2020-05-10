@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6044479761511570028}
   m_Layer: 0
   m_Name: Screw
-  m_TagString: Untagged
+  m_TagString: wRanged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46,6 +46,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -57,6 +58,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -98,5 +100,6 @@ MonoBehaviour:
     itemImage: {fileID: 21300000, guid: c56feec71635e9a479e5a8ec8bc14b51, type: 3}
   healthChange: 0
   moveSpeedChange: 0
-  attackSpeedChange: 0.25
-  bulletSizeChange: 0.25
+  attackSpeedChange: 0.75
+  bulletSizeChange: 0.5
+  isProjectileBouncy: 0

@@ -8,6 +8,10 @@ TagManager:
   - room
   - Wall
   - Potion
+  - wRanged
+  - wMelee
+  - Coin
+  - Boots
   layers:
   - Default
   - TransparentFX

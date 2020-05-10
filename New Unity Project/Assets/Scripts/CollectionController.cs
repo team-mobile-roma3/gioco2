@@ -19,6 +19,7 @@ public class CollectionController : MonoBehaviour
     public float moveSpeedChange;
     public float attackSpeedChange;
     public float bulletSizeChange;
+    public float mDamageChange;
     public bool isProjectileBouncy;
     private bool coolDownPick = false;
 
@@ -33,38 +34,53 @@ public class CollectionController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.tag);
-        
-            if (collision.tag == "Player" && gameObject.tag == "Potion")
+        if (collision.tag == "Player" && gameObject.tag == "Potion")
+        {
+            Inventory.PotionsChange();
+            Destroy(gameObject);
+            return;
+        }
+        if (collision.tag == "Player" && gameObject.CompareTag("wRanged"))
+        {
+            if (gameObject.name != Inventory.Ranged_Weapon)
             {
-                Inventory.PotionsChange();
-                Destroy(gameObject);
- //               StartCoroutine(CoolDownPick());
-
-                return;
-
-            }
-            // devo aggiungere che se ho già l'item, non lo prendo OPPURE lo prendo e non fa effetto (distruggendolo)
-            if (collision.tag == "Player")
-            {
-
-//                GameController.HealPlayer(healthChange);
-                GameController.MoveSpeedChange(moveSpeedChange);
+                Inventory.wRangedChange(gameObject.name);
                 GameController.FireRateChange(attackSpeedChange);
                 GameController.BulletSizeChange(bulletSizeChange);
                 GameController.IPBChange(isProjectileBouncy);
                 GameController.instance.UpdateCollectedItems(this);
                 Destroy(gameObject);
-   //             StartCoroutine(CoolDownPick());
             }
-       
+            return;
+        }
+        if (collision.tag == "Player" && gameObject.CompareTag("wMelee"))
+        {
+            if (gameObject.name != Inventory.Melee_Weapon)
+            {
+                Inventory.wMeleeChange(gameObject.name);
+                GameController.FireRateChange(attackSpeedChange);
+                GameController.BulletSizeChange(bulletSizeChange);
+                GameController.IPBChange(isProjectileBouncy);
+                GameController.MAttackDamageChange(mDamageChange);
+                GameController.instance.UpdateCollectedItems(this);
+                Destroy(gameObject);
+            }
+            return;
+        }
+        if (collision.tag == "Player" && gameObject.CompareTag("Coin"))
+        {
+            Inventory.CoinsChange();
+            Destroy(gameObject);
+           
+        }
+        if (collision.tag == "Player" && gameObject.CompareTag("Boots"))
+        {
+            GameController.MoveSpeedChange(moveSpeedChange);
+            Destroy(gameObject);
+        }
+
+
     }
 
-    private IEnumerator CoolDownPick()
-    {
-        coolDownPick = true;
-        yield return new WaitForSeconds(1f);
-        coolDownPick = false;
 
-    }
 }

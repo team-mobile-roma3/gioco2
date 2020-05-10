@@ -92,6 +92,7 @@
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\FamiliarData.cs" />
     <Compile Include="Assets\Scripts\ScriptableObjects\Spawners\SpawnerData.cs" />
+    <Compile Include="Assets\Scripts\SteamController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
