@@ -8,7 +8,7 @@ public class Leg : MonoBehaviour
     private GameObject player;    
     public float lastOffsetX;
     public float lastOffsetY;
-    
+    public float legSpec;
     public bool joyMove;
     public FloatingJoystick move;
     private void Start()
@@ -32,15 +32,17 @@ public class Leg : MonoBehaviour
         
 
 
-        /*if(horizontal != 0 || vertical != 0)
+        if(horizontal != 0 || vertical != 0)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position , player.GetComponent<PlayerController>().speed * Time.deltaTime* 0.9f);
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.transform.position.x - legSpec,
+                                                                                     player.transform.position.y) ,
+                                                                                     player.GetComponent<PlayerController>().speed * Time.deltaTime*1.3f);
         }
-        else*/
+        else
         {
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.transform.position.x - lastOffsetX,
                                                                                      player.transform.position.y - lastOffsetY),
-                                                                                     player.GetComponent<PlayerController>().speed * Time.deltaTime*0.9f);
+                                                                                     player.GetComponent<PlayerController>().speed * Time.deltaTime);
             
         }
     }
