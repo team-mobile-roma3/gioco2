@@ -20,15 +20,15 @@ public class GridController : MonoBehaviour
     void Awake()
     {
         room = GetComponentInParent<Room>();
-        grid.columns = room.Width - 3;
-        grid.rows = room.Height - 2;
+        grid.columns = room.Width - 5;
+        grid.rows = room.Height - 4;
         GenerateGrid();
     }
 
     public void GenerateGrid()
     {
-        grid.verticalOffset += room.transform.localPosition.y;
-        grid.horizontalOffset += room.transform.localPosition.x- (0.32f);
+        grid.verticalOffset += room.transform.localPosition.y-1f;
+        grid.horizontalOffset += room.transform.localPosition.x -1.5f;
 
         for(int y = 0; y < grid.rows; y++)
         {
@@ -38,7 +38,7 @@ public class GridController : MonoBehaviour
                 go.GetComponent<Transform>().position = new Vector2(x - (grid.columns - grid.horizontalOffset), y - (grid.rows - grid.verticalOffset));
                 go.name = "X: " + x + ", Y: " + y;
                 availablePoints.Add(go.transform.position);
-                go.SetActive(false);
+     //           go.SetActive(false);
             }
         }
 

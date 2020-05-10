@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+
 
 public class GameController : MonoBehaviour
 {
@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
     private static float bulletSize = 0.5f;
     private static bool isProjectileBouncy = false;
     private static float attackDamage = 1;
+    private static float mAttackDamage = 2;
 
     private bool bootCollected = false;
     private bool screwCollected = false;
@@ -23,14 +24,15 @@ public class GameController : MonoBehaviour
 
     public static float Health { get => health; set => health = value; }
 
-    public static float AttackDamage { get => attackDamage; set => health = attackDamage; }
+    public static float AttackDamage { get => attackDamage; set => attackDamage = value; }
+    public static float MAttackDamage { get => mAttackDamage; set => mAttackDamage = value; }
     public static int MaxHealth { get => maxHealth; set => maxHealth = value; }
     public static float MoveSpeed { get => moveSpeed; set => moveSpeed = value; }
     public static float FireRate { get => fireRate; set => fireRate = value; }
     public static float BulletSize { get => bulletSize; set => bulletSize = value; }
     public static bool IPB { get => isProjectileBouncy; set => isProjectileBouncy = value; }
 
-    public Text healthText;
+
 
     // Start is called before the first frame update
     private void Awake()
@@ -42,10 +44,7 @@ public class GameController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        healthText.text = "Health: " + health;
-    }
+   
 
     public static void DamagePlayer(int damage)
     {
@@ -66,18 +65,22 @@ public class GameController : MonoBehaviour
     {
         attackDamage = value;
     }
+    public static void MAttackDamageChange(float value)
+    {
+        mAttackDamage = value;
+    }
     public static void MoveSpeedChange(float speed)
     {
-        moveSpeed += speed;
+        moveSpeed = speed;
     }
 
     public static void FireRateChange(float rate)
     {
-        fireRate -= rate;
+        fireRate = rate;
     }
     public static void BulletSizeChange(float size)
     {
-        bulletSize += size;
+        bulletSize = size;
     }
     public static void IPBChange(bool cond)
 

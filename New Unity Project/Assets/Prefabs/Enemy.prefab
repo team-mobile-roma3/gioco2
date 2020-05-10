@@ -126,7 +126,7 @@ MonoBehaviour:
   enemyType: 0
   range: 10
   speed: 1
-  attackRange: 1
+  attackRange: 1.2
   bulletSpeed: 0
   coolDown: 2
   health: 2
@@ -152,4 +152,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4

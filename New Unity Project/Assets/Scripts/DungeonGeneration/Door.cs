@@ -14,7 +14,17 @@ public class Door : MonoBehaviour
     public GameObject doorCollider;
 
     private GameObject player;
-    private float widthOffset = 4f;
+    private float widthOffset = 3.0f;
+    private bool notConnected = false;
+
+    public bool getNotConnected()
+    {
+        return notConnected;
+    }
+    public void setNotConnected(bool val)
+    {
+        notConnected = val;
+    }
 
     private void Start()
     {
@@ -23,25 +33,45 @@ public class Door : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player" && Time.time > PlayerController.AbleTeleportDoor + 0.2f)
         {
-            switch(doorType)
+            switch (doorType)
             {
                 case DoorType.bottom:
-                    if (this.GetComponent<SpriteRenderer>() != null)
-                        player.transform.position = new Vector2(transform.position.x, transform.position.y - widthOffset);
+                    if (this.GetComponentInChildren<SpriteRenderer>().enabled)
+                    {
+                        player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y - widthOffset);
+                        PlayerController.AbleTeleportDoor = Time.time;
+                        Debug.Log("passato sotto");
+                    }
+
                     break;
                 case DoorType.left:
-                    if (this.GetComponent<SpriteRenderer>() != null)
-                        player.transform.position = new Vector2(transform.position.x - widthOffset, transform.position.y);
+                    if (this.GetComponentInChildren<SpriteRenderer>().enabled)
+                    {  
+                        player.transform.position = new Vector2(player.transform.position.x - widthOffset, player.transform.position.y);
+                        PlayerController.AbleTeleportDoor = Time.time;
+                        Debug.Log("passato sinistra");
+                    }
+
                     break;
                 case DoorType.right:
-                    if (this.GetComponent<SpriteRenderer>() != null)
-                        player.transform.position = new Vector2(transform.position.x + widthOffset, transform.position.y);
+                    if (this.GetComponentInChildren<SpriteRenderer>().enabled)
+                    {
+                        player.transform.position = new Vector2(player.transform.position.x + widthOffset, player.transform.position.y);
+                        PlayerController.AbleTeleportDoor = Time.time;
+                        Debug.Log("passato destra");
+                    }
+
                     break;
                 case DoorType.top:
-                    if (this.GetComponent<SpriteRenderer>() != null)
-                        player.transform.position = new Vector2(transform.position.x, transform.position.y + widthOffset);
+                    if (this.GetComponentInChildren<SpriteRenderer>().enabled )
+                    {
+                        player.transform.position = new Vector2(player.transform.position.x, player.transform.position.y + widthOffset);
+                        PlayerController.AbleTeleportDoor = Time.time;
+                        Debug.Log("passato sopra");
+                    }
+
                     break;
             }
         }

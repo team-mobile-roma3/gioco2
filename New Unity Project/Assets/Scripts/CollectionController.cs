@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+
+using UnityEngine;
+
 
 [System.Serializable]
 public class Item
@@ -16,7 +19,10 @@ public class CollectionController : MonoBehaviour
     public float moveSpeedChange;
     public float attackSpeedChange;
     public float bulletSizeChange;
+    public float mDamageChange;
     public bool isProjectileBouncy;
+    private bool coolDownPick = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,18 +34,53 @@ public class CollectionController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        // devo aggiungere che se ho già l'item, non lo prendo OPPURE lo prendo e non fa effetto (distruggendolo)
-        if(collision.tag == "Player")
+        if (collision.tag == "Player" && gameObject.tag == "Potion")
         {
-            PlayerController.collectedAmount++;
-            GameController.HealPlayer(healthChange);
+            Inventory.PotionsChange();
+            Destroy(gameObject);
+            return;
+        }
+        if (collision.tag == "Player" && gameObject.CompareTag("wRanged"))
+        {
+            if (gameObject.name != Inventory.Ranged_Weapon)
+            {
+                Inventory.wRangedChange(gameObject.name);
+                GameController.FireRateChange(attackSpeedChange);
+                GameController.BulletSizeChange(bulletSizeChange);
+                GameController.IPBChange(isProjectileBouncy);
+                GameController.instance.UpdateCollectedItems(this);
+                Destroy(gameObject);
+            }
+            return;
+        }
+        if (collision.tag == "Player" && gameObject.CompareTag("wMelee"))
+        {
+            if (gameObject.name != Inventory.Melee_Weapon)
+            {
+                Inventory.wMeleeChange(gameObject.name);
+                GameController.FireRateChange(attackSpeedChange);
+                GameController.BulletSizeChange(bulletSizeChange);
+                GameController.IPBChange(isProjectileBouncy);
+                GameController.MAttackDamageChange(mDamageChange);
+                GameController.instance.UpdateCollectedItems(this);
+                Destroy(gameObject);
+            }
+            return;
+        }
+        if (collision.tag == "Player" && gameObject.CompareTag("Coin"))
+        {
+            Inventory.CoinsChange();
+            Destroy(gameObject);
+           
+        }
+        if (collision.tag == "Player" && gameObject.CompareTag("Boots"))
+        {
             GameController.MoveSpeedChange(moveSpeedChange);
-            GameController.FireRateChange(attackSpeedChange);
-            GameController.BulletSizeChange(bulletSizeChange);
-            GameController.IPBChange(isProjectileBouncy);
-            GameController.instance.UpdateCollectedItems(this);
             Destroy(gameObject);
         }
+
+
     }
+
+
 }

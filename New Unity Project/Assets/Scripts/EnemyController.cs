@@ -88,18 +88,16 @@ public class EnemyController : MonoBehaviour
             {
                 currState = EnemyState.Wander;
             }
-            if(Vector3.Distance(transform.position, player.transform.position) <= attackRange)
-            {
-                currState = EnemyState.Attack;
-            }
+        
+                    if ( enemyType == EnemyType.Ranged && Vector3.Distance(transform.position, player.transform.position) <= attackRange)
+                    {
+                        currState = EnemyState.Attack;
+                    }
         }
         else
         {
             currState = EnemyState.Idle;
-        }
-
-       
-        
+        }      
     }
 
     private bool IsPlayerInRange(float range)
@@ -133,7 +131,8 @@ public class EnemyController : MonoBehaviour
 
     void Follow()
     {
-        rigidbody.MovePosition(Vector2.MoveTowards(rigidbody.position, player.transform.position, speed * Time.deltaTime));
+           rigidbody.MovePosition(Vector2.MoveTowards(rigidbody.position, player.transform.position, speed * Time.deltaTime));
+
  //       transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
 
@@ -174,4 +173,22 @@ public class EnemyController : MonoBehaviour
         RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
         Destroy(gameObject);
     }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+            rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+
+        if (collision.gameObject.tag == "Player" && enemyType != EnemyType.Ranged)
+            currState = EnemyState.Attack;
+    
+  
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        rigidbody.constraints = RigidbodyConstraints2D.None;
+    }
+
 }

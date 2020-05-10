@@ -14,10 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
+<<<<<<< HEAD
+    x: 34
+    y: 51
+    width: 1878
+    height: 981
+=======
     x: 0
     y: 43
     width: 1920
     height: 997
+>>>>>>> luca
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
@@ -44,8 +51,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
+    width: 1878
+    height: 981
+=======
     width: 1920
     height: 997
+>>>>>>> luca
   m_MinSize: {x: 875, y: 492}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
@@ -65,7 +77,11 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
+    width: 1878
+=======
     width: 1920
+>>>>>>> luca
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -91,10 +107,17 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 30
+<<<<<<< HEAD
+    width: 1878
+    height: 931
+  m_MinSize: {x: 911, y: 342}
+  m_MaxSize: {x: 22006, y: 10021}
+=======
     width: 1920
     height: 947
   m_MinSize: {x: 908, y: 342}
   m_MaxSize: {x: 22003, y: 10021}
+>>>>>>> luca
   vertical: 0
   controlID: 34
 --- !u!114 &5
@@ -113,8 +136,13 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
+    y: 961
+    width: 1878
+=======
     y: 977
     width: 1920
+>>>>>>> luca
     height: 20
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
@@ -137,8 +165,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
+    width: 923
+    height: 931
+=======
     width: 944
     height: 947
+>>>>>>> luca
   m_MinSize: {x: 201, y: 342}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
@@ -158,12 +191,21 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
+    x: 923
+    y: 0
+    width: 291
+    height: 931
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
+=======
     x: 944
     y: 0
     width: 297
     height: 947
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> luca
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -184,10 +226,17 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
+    x: 1214
+    y: 0
+    width: 318
+    height: 931
+=======
     x: 1241
     y: 0
     width: 325
     height: 947
+>>>>>>> luca
   m_MinSize: {x: 232, y: 271}
   m_MaxSize: {x: 10002, y: 10021}
   m_ActualView: {fileID: 16}
@@ -210,12 +259,21 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
+<<<<<<< HEAD
+    x: 1532
+    y: 0
+    width: 346
+    height: 931
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+=======
     x: 1566
     y: 0
     width: 354
     height: 947
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
+>>>>>>> luca
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -238,8 +296,13 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
+    width: 923
+    height: 467
+=======
     width: 944
     height: 486
+>>>>>>> luca
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
@@ -264,9 +327,15 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
+<<<<<<< HEAD
+    y: 467
+    width: 923
+    height: 464
+=======
     y: 486
     width: 944
     height: 461
+>>>>>>> luca
   m_MinSize: {x: 101, y: 121}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
@@ -322,10 +391,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
+    x: 34
+    y: 548
+    width: 922
+    height: 443
+=======
     x: 0
     y: 559
     width: 943
     height: 440
+>>>>>>> luca
   m_ViewDataDictionary: {fileID: 0}
 --- !u!114 &14
 MonoBehaviour:
@@ -348,14 +424,30 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
+    x: 957
+    y: 81
+    width: 289
+    height: 910
+=======
     x: 944
     y: 73
     width: 295
     height: 926
+>>>>>>> luca
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
+      m_SelectedIDs: d27a0400
+      m_LastClickedID: 0
+      m_ExpandedIDs: 2008f0ff8c1cf0ff2284f0ffca85f0ffae8af4ff268bf4ffa28bf4ffe68df4ff048ef4ff601df5ff9822f5ffba22f5ffe65af9ff125df9ff205df9ff3e5df9ffba5df9ff6eb1f9ffc0b1f9ff5ab2f9ff6cb2f9ff7ab2f9ff94b2f9ff10b3f9ff540bfbff700bfbffe60bfbff040dfbff660dfbffe20dfbff0c61fbff0c62fbff8862fbff3217fdff5c17fdff8617fdffd217fdfff2aefdff7aaffdff44b1fdff98f9ffffdaf9ffff6afbfffff8390000d2be0000e8be0000f6c1000036c900005ac9000018e10000e4e200001ee40000bc420100d0420100fe5601005a5801006a580100725801002c5901009459010020a9010036a901007aaa0100d2ab0100c6ad0100ecad0100d4bf0100eabf0100fabf010092c10100dec1010010d4010020d4010076d401009cd40100e0d401002ed5010046d501002ad901003ad90100360e02009c0e0200b20e0200be6e0200246f02004a6f0200b0970200169802003c9802007aa7020034a802004ca8020066c90200cacb020058cd0200aacd0200becd020000ce020028ce020076ce020086ce0200b6cf0200cccf0200e8a70300aca80300eeab0300f8ab0300d6c7030026ce0300d2cf03000ad0030032d0030024d103009ad10300a4d10300aad10300467a0400a67a04009a7b0400fa7b0400
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: TopWall
+        m_OriginalName: TopWall
+=======
       m_SelectedIDs: a08cffff
       m_LastClickedID: -29536
       m_ExpandedIDs: 5ca4ffff6ea4ffff82a4ffff44f6ffff6e4e0000
@@ -363,13 +455,18 @@ MonoBehaviour:
         m_UserAcceptedRename: 0
         m_Name: leftLeg
         m_OriginalName: leftLeg
+>>>>>>> luca
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
+<<<<<<< HEAD
+        m_UserData: 293586
+=======
         m_UserData: -23548
+>>>>>>> luca
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -404,9 +501,15 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 1566
+<<<<<<< HEAD
+    y: 81
+    width: 345
+    height: 910
+=======
     y: 73
     width: 353
     height: 926
+>>>>>>> luca
   m_ViewDataDictionary: {fileID: 0}
   m_OpenAddComponentMenu: 0
   m_ObjectsLockedBeforeSerialization: []
@@ -441,10 +544,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
+    x: 1248
+    y: 81
+    width: 316
+    height: 910
+=======
     x: 1241
     y: 73
     width: 323
     height: 926
+>>>>>>> luca
   m_ViewDataDictionary: {fileID: 0}
   m_SearchFilter:
     m_NameFilter: 
@@ -459,34 +569,48 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
+<<<<<<< HEAD
+    - Assets/Scripts/DungeonGeneration
+  m_ViewMode: 1
+  m_StartGridSize: 64
+  m_LastFolders:
+  - Assets/Scripts/DungeonGeneration
+=======
     - Assets/Scenes
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
   - Assets/Scenes
+>>>>>>> luca
   m_LastFoldersGridSize: -1
   m_LastProjectPath: S:\UnityHub\Projects\gioco2\New Unity Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
+    m_SelectedIDs: 963b0000
+    m_LastClickedID: 15254
+    m_ExpandedIDs: 00000000663b0000683b00006a3b00006c3b00006e3b0000703b0000723b0000743b000000ca9a3b
+=======
     m_SelectedIDs: a03c0000
     m_LastClickedID: 15520
     m_ExpandedIDs: 00000000983c00009a3c00009c3c00009e3c0000a03c0000a23c0000a43c0000a63c000000ca9a3b
+>>>>>>> luca
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Prefabs
+      m_OriginalName: Prefabs
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 15250
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -500,7 +624,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
+    m_ExpandedIDs: 00000000663b0000683b00006a3b00006c3b00006e3b0000703b0000723b0000743b0000
+=======
     m_ExpandedIDs: 00000000983c00009a3c00009c3c00009e3c0000a03c0000a23c0000a43c0000a63c0000
+>>>>>>> luca
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -528,21 +656,21 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 6c3900004ecf0000b6380000a83f0000423d0000923e0000c83a000000000000
+    m_ExpandedInstanceIDs: 6c3900004ecf0000b6380000a83f0000423d0000923e0000c83a000000000000f06b0100
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: BasementEnd
+      m_OriginalName: BasementEnd
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 16048
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 8}
     m_CreateAssetUtility:
@@ -555,7 +683,7 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 200
+  m_DirectoriesAreaWidth: 196
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -577,10 +705,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
+    x: 34
+    y: 548
+    width: 922
+    height: 443
+=======
     x: 0
     y: 559
     width: 943
     height: 440
+>>>>>>> luca
   m_ViewDataDictionary: {fileID: 0}
   m_SerializedViewsNames: []
   m_SerializedViewsValues: []
@@ -588,7 +723,11 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
+<<<<<<< HEAD
+  m_TargetSize: {x: 750, y: 422}
+=======
   m_TargetSize: {x: 745, y: 419}
+>>>>>>> luca
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -602,10 +741,17 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
+<<<<<<< HEAD
+    m_HBaseRangeMin: -375
+    m_HBaseRangeMax: 375
+    m_VBaseRangeMin: -211
+    m_VBaseRangeMax: 211
+=======
     m_HBaseRangeMin: -372.5
     m_HBaseRangeMax: 372.5
     m_VBaseRangeMin: -209.5
     m_VBaseRangeMax: 209.5
+>>>>>>> luca
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -623,16 +769,32 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
+<<<<<<< HEAD
+      width: 922
+      height: 422
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 461, y: 211}
+=======
       width: 943
       height: 419
     m_Scale: {x: 1, y: 1}
     m_Translation: {x: 471.5, y: 209.5}
+>>>>>>> luca
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
+      x: -461
+      y: -211
+      width: 922
+      height: 422
+    m_MinimalGUI: 1
+  m_defaultScale: 1
+  m_LastWindowPixelSize: {x: 922, y: 443}
+=======
       x: -471.5
       y: -209.5
       width: 943
@@ -640,6 +802,7 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 943, y: 440}
+>>>>>>> luca
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -666,10 +829,17 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
+<<<<<<< HEAD
+    x: 34
+    y: 81
+    width: 922
+    height: 446
+=======
     x: 0
     y: 73
     width: 943
     height: 465
+>>>>>>> luca
   m_ViewDataDictionary: {fileID: 0}
   m_ShowContextualTools: 0
   m_WindowGUID: 8bfd5d182094d84419fb09aa48df24fd
@@ -681,9 +851,15 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< HEAD
+    m_Target: {x: -4.0665903, y: -0.6683993, z: 0}
+    speed: 2
+    m_Value: {x: -4.0665903, y: -0.6683993, z: 0}
+=======
     m_Target: {x: 0.007911269, y: 0.052085653, z: -0.18432853}
     speed: 2
     m_Value: {x: 0.007911269, y: 0.052085653, z: -0.18432853}
+>>>>>>> luca
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -733,9 +909,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< HEAD
+    m_Target: 22
+    speed: 2
+    m_Value: 22
+=======
     m_Target: 3.0557864
     speed: 2
     m_Value: 3.0557864
+>>>>>>> luca
   m_Ortho:
     m_Target: 1
     speed: 2
