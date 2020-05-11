@@ -32,17 +32,17 @@ public class Leg : MonoBehaviour
         
 
 
-        if(horizontal != 0 || vertical != 0)
+        /*if(horizontal != 0 || vertical != 0)
         {
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.transform.position.x - legSpec,
                                                                                      player.transform.position.y - 0.4f) ,
                                                                                      player.GetComponent<PlayerController>().speed * Time.deltaTime*1.3f);
         }
-        else
+        else*/
         {
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.transform.position.x - lastOffsetX,
                                                                                      player.transform.position.y - lastOffsetY),
-                                                                                     player.GetComponent<PlayerController>().speed * Time.deltaTime);
+                                                                                     player.GetComponent<PlayerController>().speed * Time.deltaTime*0.975f);
             
         }
     }
