@@ -16,8 +16,10 @@ public class RoomController : MonoBehaviour
 
     public static RoomController instance;
 
+
     string currentWorldName = "Basement";
 
+    public List<int> nBoss;
     RoomInfo currentLoadRoomData;
 
     Room currRoom;
@@ -30,14 +32,17 @@ public class RoomController : MonoBehaviour
     bool spawnedBossRoom = false;
     bool updatedRooms = false;
 
+ 
+
     void Awake()
     {
-        instance = this;
+    
+            instance = this;
+      
     }
-
-    void Start()
+        void Start()
     {
-        //LoadRoom("Start", 0, 0);
+   //     LoadRoom("Start2", 10, 0);
         //LoadRoom("Empty", 1, 0);
         //LoadRoom("Empty", -1, 0);
         //LoadRoom("Empty", 0, 1);
@@ -56,10 +61,12 @@ public class RoomController : MonoBehaviour
             return;
         }
 
-        if(loadRoomQueue.Count == 0)
-        {
+    if(loadRoomQueue.Count == 0 )
+
+        { 
             if(!spawnedBossRoom)
             {
+               
                 StartCoroutine(SpawnBossRoom());
             } 
             else if(spawnedBossRoom && !updatedRooms)
@@ -86,7 +93,8 @@ public class RoomController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if(loadRoomQueue.Count == 0)
         {
-            Room bossRoom = loadedRooms[loadedRooms.Count - 1];
+            
+            Room bossRoom = loadedRooms[nBoss[0]-1] ;
             Room tempRoom = new Room(bossRoom.X, bossRoom.Y);
             Destroy(bossRoom.gameObject);
             var roomToRemove = loadedRooms.Single(r => r.X == tempRoom.X && r.Y == tempRoom.Y);
@@ -95,11 +103,11 @@ public class RoomController : MonoBehaviour
         }
     }
 
-    public void LoadRoom( string name, int x, int y)
+    public int LoadRoom( string name, int x, int y)
     {
         if(DoesRoomExist(x, y) == true)
         {
-            return;
+            return 0;
         }
 
         RoomInfo newRoomData = new RoomInfo();
@@ -108,6 +116,7 @@ public class RoomController : MonoBehaviour
         newRoomData.Y = y;
 
         loadRoomQueue.Enqueue(newRoomData);
+        return 1;
     }
 
     IEnumerator LoadRoomRoutine(RoomInfo info)
@@ -124,7 +133,7 @@ public class RoomController : MonoBehaviour
 
     public void RegisterRoom( Room room)
     {
-        if(!DoesRoomExist(currentLoadRoomData.X, currentLoadRoomData.Y))
+        if (!DoesRoomExist(currentLoadRoomData.X, currentLoadRoomData.Y))
         {
             room.transform.position = new Vector3(
                 currentLoadRoomData.X * room.Width,
@@ -139,12 +148,14 @@ public class RoomController : MonoBehaviour
 
             isLoadingRoom = false;
 
-            if(loadedRooms.Count == 0)
+            if (loadedRooms.Count == 0)
             {
                 CameraController.instance.currRoom = room;
             }
-
-            loadedRooms.Add(room);
+            if (currentLoadRoomData.name =="Start2" ) { 
+                nBoss.Add(loadedRooms.Count);
+            Debug.Log("nboss " + nBoss[0]); }
+                loadedRooms.Add(room);
         }
         else
         {
@@ -187,7 +198,13 @@ public class RoomController : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         UpdateRooms();
     }
+    IEnumerator Wait()
+    {
 
+        yield return new WaitForSeconds(10f);
+
+
+    }
     public void UpdateRooms()
     {
         foreach(Room room in loadedRooms)

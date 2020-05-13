@@ -56,8 +56,8 @@ public class EnemyController : MonoBehaviour
     void FixedUpdate()
     {
         if (health <= 0)
-        {
-            
+        {   if (this.enemyType == EnemyType.Boss1)
+                GameObject.Find("Trigger").transform.GetChild(0).gameObject.SetActive(true);
             this.Death();
         }
         switch (currState)

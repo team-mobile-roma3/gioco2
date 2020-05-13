@@ -56,6 +56,8 @@ public class Room : MonoBehaviour
         }
 
         RoomController.instance.RegisterRoom(this);
+        Debug.Log("sto registrando: " + name);
+       
     }
 
     void Update()
