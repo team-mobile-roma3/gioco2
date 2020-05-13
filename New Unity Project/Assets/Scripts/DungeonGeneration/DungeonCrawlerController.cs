@@ -12,7 +12,7 @@ public enum Direction
 
 public class DungeonCrawlerController : MonoBehaviour
 {
-    public static List<Vector2Int> positionsVisited = new List<Vector2Int>();
+    private  List<Vector2Int> positionsVisited;
     private static readonly Dictionary<Direction, Vector2Int> directionMovementMap = new Dictionary<Direction, Vector2Int>
     {
         {Direction.up, Vector2Int.up},
@@ -21,8 +21,9 @@ public class DungeonCrawlerController : MonoBehaviour
         {Direction.right, Vector2Int.right}
     };
 
-    public static List<Vector2Int> GenerateDungeon(DungeonGenerationData dungeonData, Vector2Int startpos)
+    public  List<Vector2Int> GenerateDungeon(DungeonGenerationData dungeonData, Vector2Int startpos)
     {
+        positionsVisited = new List<Vector2Int>();
         List<DungeonCrawler> dungeonCrawlers = new List<DungeonCrawler>();
 
         for(int i = 0; i < dungeonData.numberOfCrawlers; i++)
@@ -38,10 +39,14 @@ public class DungeonCrawlerController : MonoBehaviour
             {
                 Vector2Int newPos = dungeonCrawler.Move(directionMovementMap);
                 Debug.Log(" ho visitato " + newPos);
+                if(newPos ==  startpos)
+                    Debug.Log(" ho visitato " + newPos+ "ma non la aggiungo");
+                else 
                 positionsVisited.Add(newPos);
             }
         }
-
+        Debug.Log("fine visita ");
         return positionsVisited;
+     
     }
 }

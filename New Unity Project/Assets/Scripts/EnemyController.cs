@@ -33,7 +33,7 @@ public class EnemyController : MonoBehaviour
     private bool chooseDir = false;
     private bool dead = false;
     private bool coolDownAttack = false;
-    public bool notInRoom = false;
+    public bool notInRoom;
     private Vector3 randomDir;
     public GameObject bulletPrefab;
 
@@ -46,7 +46,7 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+   //     Debug.Log("sono spwnato e sono " + notInRoom);
         rigidbody = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -87,6 +87,7 @@ public class EnemyController : MonoBehaviour
             else if(!IsPlayerInRange(range) && currState != EnemyState.Die)
             {
                 currState = EnemyState.Wander;
+     //         Debug.Log("mi sto muovendo e sono " + name + notInRoom);
             }
         
                     if ( enemyType == EnemyType.Ranged && Vector3.Distance(transform.position, player.transform.position) <= attackRange)

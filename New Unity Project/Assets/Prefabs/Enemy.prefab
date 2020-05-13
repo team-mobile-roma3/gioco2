@@ -130,7 +130,7 @@ MonoBehaviour:
   bulletSpeed: 0
   coolDown: 2
   health: 2
-  notInRoom: 0
+  notInRoom: 1
   bulletPrefab: {fileID: 0}
 --- !u!50 &-8403694596383543919
 Rigidbody2D:

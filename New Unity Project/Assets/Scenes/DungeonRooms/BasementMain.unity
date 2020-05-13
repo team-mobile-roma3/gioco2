@@ -2854,6 +2854,11 @@ PrefabInstance:
       propertyPath: attackRange
       value: 1.7
       objectReference: {fileID: 0}
+    - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
+        type: 3}
+      propertyPath: notInRoom
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5051726810918457016, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
       propertyPath: m_IsTrigger
@@ -3112,6 +3117,11 @@ PrefabInstance:
         type: 3}
       propertyPath: health
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6879314993130097391, guid: 2c38e53e6150d6e45b750de04f3e84f5,
+        type: 3}
+      propertyPath: notInRoom
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c38e53e6150d6e45b750de04f3e84f5, type: 3}

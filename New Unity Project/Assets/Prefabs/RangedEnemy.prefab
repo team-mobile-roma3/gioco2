@@ -130,7 +130,7 @@ MonoBehaviour:
   bulletSpeed: 5
   coolDown: 2
   health: 1
-  notInRoom: 0
+  notInRoom: 1
   bulletPrefab: {fileID: 8912613753944397765, guid: b02d5786e5afaac479b933a6426437e5,
     type: 3}
 --- !u!50 &6879314993130097387

@@ -11,6 +11,8 @@ public class TeleportTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             collision.transform.position = new Vector2(200, 0);
+            GameObject.Find("leftLeg").transform.position = new Vector2(200, 0);
+            GameObject.Find("rightLeg").transform.position = new Vector2(200, 0);
             GameObject.Find("Canvas").transform.GetChild(0).gameObject.SetActive(true);
             GameObject.Find("Canvas").transform.GetChild(1).gameObject.SetActive(false);
             GameObject.Find("Canvas").transform.GetChild(2).gameObject.SetActive(false);
@@ -21,7 +23,7 @@ public class TeleportTrigger : MonoBehaviour
     IEnumerator Wait()
     {
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
 
         GameObject.Find("Canvas").transform.GetChild(0).gameObject.SetActive(false);
         GameObject.Find("Canvas").transform.GetChild(1).gameObject.SetActive(true);

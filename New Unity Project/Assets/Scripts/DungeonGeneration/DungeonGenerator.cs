@@ -5,49 +5,61 @@ using UnityEngine;
 public class DungeonGenerator : MonoBehaviour
 {
     public DungeonGenerationData dungeonGenerationData;
-    private List<Vector2Int> dungeonRooms;
-    private List<Vector2Int> dungeonRooms2;
+    private List<List<Vector2Int>> dungeonRooms = new List<List<Vector2Int>>();
+    private DungeonCrawlerController generator;
+
     private int temp;
-  
+    private int nRoomLoaded;
+
 
     private void Start()
     {
-        dungeonRooms = DungeonCrawlerController.GenerateDungeon(dungeonGenerationData, dungeonGenerationData.pos);
-        SpawnRooms(dungeonRooms);
-       StartCoroutine(Wait());
-        dungeonRooms2 = DungeonCrawlerController.GenerateDungeon(dungeonGenerationData, new Vector2Int(10,0));
-       
-        SpawnRooms2(dungeonRooms2);
+        generator = new DungeonCrawlerController();
+
+        temp = 0;
+        for (int i = 0; i < dungeonGenerationData.livelli; i++)
+        {
+            dungeonRooms.Add(generator.GenerateDungeon(dungeonGenerationData, new Vector2Int(temp, 0)));
+            temp += 10;  
+        }
+
+        /*    for (int i = 0; i < dungeonRooms.Count; i++)
+            {
+                temp = 0;
+                   SpawnRooms(dungeonRooms[i], temp, i+1);
+                temp += 10;
+            }
+
+        */
+        StartCoroutine(Wait(dungeonRooms));
     }
 
-    private void SpawnRooms(IEnumerable<Vector2Int> rooms)
+    private void SpawnRooms(IEnumerable<Vector2Int> levels, int temp, int k)
+    {
+       
+        RoomController.instance.LoadRoom("Start"+(k), temp, 0);
+        foreach (Vector2Int roomLocation in levels)
+        {
+
+            nRoomLoaded += RoomController.instance.LoadRoom(RoomController.instance.GetRandomRoomName(), roomLocation.x, roomLocation.y);
+        }
+
+
+    }
+    IEnumerator Wait(List<List<Vector2Int>> levels)
     {
         temp = 0;
-        RoomController.instance.LoadRoom("Start", dungeonGenerationData.pos.x, dungeonGenerationData.pos.y);
-        foreach(Vector2Int roomLocation in rooms)
+
+        for (int i = 0; i < levels.Count; i++)
         {
-            temp += RoomController.instance.LoadRoom(RoomController.instance.GetRandomRoomName(), roomLocation.x, roomLocation.y);
+            
+            SpawnRooms(dungeonRooms[i], temp, i + 1);
+            temp += 10;
+            yield return null;
         }
-
-    }
-
-    private void SpawnRooms2(IEnumerable<Vector2Int> rooms)
-    {
-       RoomController.instance.LoadRoom("Start2", 10, 0);
+    
+        Debug.Log("scemo");
        
-
-       foreach (Vector2Int roomLocation in rooms)
-        {
-            RoomController.instance.LoadRoom(RoomController.instance.GetRandomRoomName(), roomLocation.x, roomLocation.y);
-        }
-   
-    }
-
-    IEnumerator Wait()
-    {
-       
-        yield return new WaitForSeconds(0.2f);
-
-        
+      
     }
 }
