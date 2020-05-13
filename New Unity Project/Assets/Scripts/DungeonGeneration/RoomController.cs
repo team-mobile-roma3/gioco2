@@ -198,13 +198,7 @@ public class RoomController : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         UpdateRooms();
     }
-    IEnumerator Wait()
-    {
 
-        yield return new WaitForSeconds(10f);
-
-
-    }
     public void UpdateRooms()
     {
         foreach(Room room in loadedRooms)
