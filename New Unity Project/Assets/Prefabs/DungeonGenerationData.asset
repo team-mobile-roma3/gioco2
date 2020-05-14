@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   livelli: 5
   pos: {x: 0, y: 0}
-  numberOfCrawlers: 2
+  numberOfCrawlers: 3
   iterationMin: 7
   iterationMax: 7

@@ -18,8 +18,10 @@ public enum EnemyType
     Boss1
 };
 
+
+
 public class EnemyController : MonoBehaviour
-{
+{   public EnemyOnDeathSpawner dropList = null;
     Rigidbody2D rigidbody;
     GameObject player;
     public EnemyState currState = EnemyState.Idle;
@@ -176,6 +178,12 @@ public class EnemyController : MonoBehaviour
     public void Death()
     {
         RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
+        if (dropList != null)
+        {
+
+            Debug.Log("ho drop");
+            dropList.Drop(transform.position);
+        }
         Destroy(gameObject);
     }
 

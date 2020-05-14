@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System;
 
 public class RoomInfo
 {
@@ -16,6 +17,7 @@ public class RoomController : MonoBehaviour
 {
     public DungeonGenerationData dungeonGenerationData;
     public static RoomController instance;
+   
 
 
     string currentWorldName = "Basement";
@@ -32,6 +34,7 @@ public class RoomController : MonoBehaviour
     bool isLoadingRoom = false;
     bool spawnedBossRoom = false;
     bool updatedRooms = false;
+    public Boolean dungeonLoaded = false;
 
     void Awake()
     {
@@ -112,6 +115,7 @@ public class RoomController : MonoBehaviour
             LoadRoom("End" + dungeonGenerationData.livelli, lastbossRoom.X, lastbossRoom.Y);
         }
         LoadRoom("Win", 50, 0);
+        dungeonLoaded = true;
     }
 
     public int  LoadRoom( string name, int x, int y)
@@ -198,7 +202,7 @@ public class RoomController : MonoBehaviour
             "Basic1"
         };
 
-        return possibleRooms[Random.Range(0, possibleRooms.Length)];
+        return possibleRooms[UnityEngine.Random.Range(0, possibleRooms.Length)];
     }
 
     public void OnPlayerEnterRoom(Room room)

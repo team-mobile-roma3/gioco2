@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\DungeonGeneration\Room.cs" />
     <Compile Include="Assets\Scripts\DungeonGeneration\RoomController.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
+    <Compile Include="Assets\Scripts\EnemyOnDeathSpawner.cs" />
     <Compile Include="Assets\Scripts\Familiar.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\HealthUIController.cs" />

@@ -1960,6 +1960,7 @@ MonoBehaviour:
     type: 2}
   nBoss: 
   loadedRooms: []
+  dungeonLoaded: 0
 --- !u!4 &1733480236
 Transform:
   m_ObjectHideFlags: 0
@@ -2848,6 +2849,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
+      propertyPath: items.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
+        type: 3}
       propertyPath: health
       value: 2
       objectReference: {fileID: 0}
@@ -2860,6 +2866,35 @@ PrefabInstance:
         type: 3}
       propertyPath: notInRoom
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
+        type: 3}
+      propertyPath: items.Array.data[0]
+      value: 
+      objectReference: {fileID: 7416558464892257257, guid: d0d6887bedb610e47b5e4f0c7a2d66dc,
+        type: 3}
+    - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
+        type: 3}
+      propertyPath: items.Array.data[1]
+      value: 
+      objectReference: {fileID: 4802124998439061761, guid: 25c37cdde31df7441b5a76c6a251e37a,
+        type: 3}
+    - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
+        type: 3}
+      propertyPath: items.Array.data[2]
+      value: 
+      objectReference: {fileID: 7963531136613723234, guid: 486d6b57d3eaf134ba6c3ebad890cb2b,
+        type: 3}
+    - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
+        type: 3}
+      propertyPath: dropList
+      value: 
+      objectReference: {fileID: 4068104993806347478, guid: 714b181ff6b7ecc46a614088f8b23984,
+        type: 3}
+    - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
+        type: 3}
+      propertyPath: range
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 5051726810918457016, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
@@ -2921,7 +2956,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: 05235872f7cdabd428251a6387b50d25, type: 3}
 --- !u!1001 &6044479760512953610
 PrefabInstance:
