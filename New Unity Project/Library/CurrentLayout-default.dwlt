@@ -340,34 +340,34 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes/DungeonRooms
+    - Assets/Scenes/DungeonRooms/Shared
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes/DungeonRooms
+  - Assets/Scenes/DungeonRooms/Shared
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\pollooo\Documents\GitHub\gioco2\New Unity Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c03b0000
-    m_LastClickedID: 15296
-    m_ExpandedIDs: 000000008a3b00008c3b00008e3b0000903b0000923b0000943b0000963b0000983b00009a3b00009c3b000000ca9a3b
+    m_SelectedIDs: 423f0000
+    m_LastClickedID: 16194
+    m_ExpandedIDs: 000000008a3b00008c3b00008e3b0000903b0000923b0000943b0000963b0000983b00009a3b00009c3b0000c03b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Shared
+      m_OriginalName: Shared
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 16194
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 3}
     m_SearchString: 
@@ -506,18 +506,18 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 563b0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 880a7eff960a7effa80a7effba0a7effd60a7eff9890b5ff2e0db9ff400db9ff5c0db9ffe29cf4fff09cf4fff89cf4fffa9cf4ff0a9df4ffd2a0f4ff60f9ffff70f9ffffaaf9ffff6afbffff1a3f0000b040000090a500001a4a0100244a0100ca4d0300c0f806001403130068031300c6bb1600dcbb1600
+      m_ExpandedIDs: f820efffe023efff5625efffac25efffb025efffc2d7fdffd8d7fdff50d8fdff54d8fdff66d8fdff78d8fdffc8d8fdffccd8fdff18d9fdff1cd9fdff74d9fdff78d9fdff1a8cfeff368cfeff488cfeff928cfeff968cfeff9cebffff20eeffff00f0ffff1cf1ffffb0f1ffff48f2ffff44f4ffff52f4ffff6ef4ffff96f4ffffcef4ffff00f5ffff6afbffff364400005a440000b2460000d6460000164800003a4800004a4900007a4900009e490000ee4a0000584c0000884d0000dc4d0000e08c0000e696000042a0000048aa000034b20000e8b200000cb30000c0b50000e4b50000feee000022ef000062f0000086f00000c4f10000e8f100009af40000bef4000096f60000eaf600008e4a0100945401002e57050082580500
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Basement-Start1 0, 0
-        m_OriginalName: Basement-Start1 0, 0
+        m_Name: Player
+        m_OriginalName: Player
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 1470124
+        m_UserData: 63182
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -566,9 +566,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 503.94998, y: -17.56075, z: -478.37482}
+    m_Target: {x: 0.0149998665, y: 0.87000036, z: 0}
     speed: 2
-    m_Value: {x: 499.4215, y: -17.577772, z: -477.19394}
+    m_Value: {x: 0.0149998665, y: 0.87000036, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -618,9 +618,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 313.8133
+    m_Target: 40.61075
     speed: 2
-    m_Value: 328.6003
+    m_Value: 40.61075
   m_Ortho:
     m_Target: 1
     speed: 2

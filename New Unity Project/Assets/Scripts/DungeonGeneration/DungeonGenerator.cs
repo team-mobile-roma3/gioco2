@@ -55,10 +55,10 @@ public class DungeonGenerator : MonoBehaviour
             
             SpawnRooms(dungeonRooms[i], temp, i + 1);
             temp += 10;
-            yield return null;
+            yield return new  WaitForSeconds(0.2f);
         }
     
-        Debug.Log("scemo");
+   
        
       
     }

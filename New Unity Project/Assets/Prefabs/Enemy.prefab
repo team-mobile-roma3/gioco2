@@ -125,7 +125,7 @@ MonoBehaviour:
   currState: 0
   enemyType: 0
   range: 10
-  speed: 1
+  speed: 2
   attackRange: 1.2
   bulletSpeed: 0
   coolDown: 2

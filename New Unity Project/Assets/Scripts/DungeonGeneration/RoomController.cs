@@ -14,7 +14,7 @@ public class RoomInfo
 
 public class RoomController : MonoBehaviour
 {
-
+    public DungeonGenerationData dungeonGenerationData;
     public static RoomController instance;
 
 
@@ -39,14 +39,15 @@ public class RoomController : MonoBehaviour
             instance = this;
       
     }
-        void Start()
+    void Start()
     {
+
     //   LoadRoom("Start2", 10, 0);
-        //LoadRoom("Empty", 1, 0);
-        //LoadRoom("Empty", -1, 0);
-        //LoadRoom("Empty", 0, 1);
-        //LoadRoom("Empty", 0, -1);
-    }
+    //LoadRoom("Empty", 1, 0);
+    //LoadRoom("Empty", -1, 0);
+    //LoadRoom("Empty", 0, 1);
+    //LoadRoom("Empty", 0, -1);
+}
 
     void Update()
     {
@@ -92,21 +93,30 @@ public class RoomController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         if(loadRoomQueue.Count == 0)
         {
-            Debug.Log(nBoss[2] + " "  + nBoss[1]);
-            for (int i = 1; i <= 4;  i ++) {
-                Room bossRoom = loadedRooms[nBoss[i] - i];
+ //           Debug.Log(nBoss[0] + " "  + nBoss[1] + nBoss[2] + " " + nBoss[3]+ " " + nBoss[4]);
+            for (int i = 1; i <= dungeonGenerationData.livelli-1;  i ++) {  // for per i livelli-1 per spwnare i boss
+                Room bossRoom = loadedRooms[nBoss[i] -i];
                 Room tempRoom = new Room(bossRoom.X, bossRoom.Y);
                 Destroy(bossRoom.gameObject);
                 var roomToRemove = loadedRooms.Single(r => r.X == tempRoom.X && r.Y == tempRoom.Y);
                 loadedRooms.Remove(roomToRemove);
-                LoadRoom("End", tempRoom.X, tempRoom.Y);
+                LoadRoom("End"+i, tempRoom.X, tempRoom.Y);
             }
+
+            // ora spawno ultimo boss, non posso farlo prima perche non ho l'ultimo start
+            Room lastbossRoom = loadedRooms[loadedRooms.Count - 1];
+            Room lasttempRoom = new Room(lastbossRoom.X, lastbossRoom.Y);
+            Destroy(lastbossRoom.gameObject);
+            var lastroomToRemove = loadedRooms.Single(r => r.X == lastbossRoom.X && r.Y == lastbossRoom.Y);
+            loadedRooms.Remove(lastroomToRemove);
+            LoadRoom("End" + dungeonGenerationData.livelli, lastbossRoom.X, lastbossRoom.Y);
         }
+        LoadRoom("Win", 50, 0);
     }
 
     public int  LoadRoom( string name, int x, int y)
     {   if ( name == "Start2")
-        Debug.Log("sto istanziando " + name);
+ //       Debug.Log("sto istanziando " + name);
         if(DoesRoomExist(x, y) )
         {   
                 
@@ -158,11 +168,13 @@ public class RoomController : MonoBehaviour
             if (currentLoadRoomData.name.Contains("Start"))
                 nBoss.Add(loadedRooms.Count);
                 loadedRooms.Add(room);
-                
-        }
+     
+    //            Debug.Log("caricato stanza coordinate " + room.X +","+ room.Y);
+
+            }
         else
         {
-            Debug.Log("esisteva " + currentLoadRoomData.name);
+ //           Debug.Log("esisteva " + currentLoadRoomData.name);
             Destroy(room.gameObject);
             isLoadingRoom = false;
         }
