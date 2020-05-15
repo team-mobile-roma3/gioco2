@@ -115,6 +115,7 @@ public class RoomController : MonoBehaviour
             LoadRoom("End" + dungeonGenerationData.livelli, lastbossRoom.X, lastbossRoom.Y);
         }
         LoadRoom("Win", 50, 0);
+        LoadRoom("Blacksmith", 0, 20);
         dungeonLoaded = true;
     }
 
