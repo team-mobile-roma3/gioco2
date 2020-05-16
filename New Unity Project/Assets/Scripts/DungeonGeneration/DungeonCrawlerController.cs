@@ -10,8 +10,10 @@ public enum Direction
     right = 3
 };
 
+
 public class DungeonCrawlerController : MonoBehaviour
 {
+    
     private  List<Vector2Int> positionsVisited;
     private static readonly Dictionary<Direction, Vector2Int> directionMovementMap = new Dictionary<Direction, Vector2Int>
     {
