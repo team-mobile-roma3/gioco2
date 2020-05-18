@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public float swingDelay;
 
     private bool stance;
+     float horizontal, vertical;
 
 
     private static float ableTeleportDoor;
@@ -62,7 +63,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        float horizontal, vertical;
+       
         if (joyMove)
         {
             horizontal = move.Horizontal;
@@ -147,8 +148,13 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        rigidbody.velocity = new Vector3(horizontal * speed, vertical * speed, 0);
+        
 
+    }
+
+    private void FixedUpdate()
+    {
+        rigidbody.velocity = new Vector3(horizontal * speed, vertical * speed, 0);
     }
 
     void Shoot(float x, float y)

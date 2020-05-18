@@ -37,6 +37,7 @@ public class TeleportTrigger : MonoBehaviour
                 GameObject.Find("Canvas").transform.GetChild(1).gameObject.SetActive(false);
                 GameObject.Find("Canvas").transform.GetChild(2).gameObject.SetActive(false);
                 GameObject.Find("Canvas").transform.GetChild(3).gameObject.SetActive(false);
+                GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(false);
                 StartCoroutine(Wait());
 
             }
@@ -53,14 +54,15 @@ public class TeleportTrigger : MonoBehaviour
     IEnumerator Wait()
     {
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
 
         GameObject.Find("Canvas").transform.GetChild(0).gameObject.SetActive(false);
         GameObject.Find("Canvas").transform.GetChild(1).gameObject.SetActive(true);
         GameObject.Find("Canvas").transform.GetChild(2).gameObject.SetActive(true);
         GameObject.Find("Canvas").transform.GetChild(3).gameObject.SetActive(true);
+        GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(true);
 
-      if (toBS)
+        if (toBS)
             Destroy(gameObject); 
 
     }

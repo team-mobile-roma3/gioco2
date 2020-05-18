@@ -7,9 +7,13 @@ public class BsItem : MonoBehaviour
 {
     public int price;
     public GameObject item;
-    
-    // Start is called before the first frame update
+    public TextMesh textPrice;
 
+    // Start is called before the first frame update
+    private void Start()
+    {
+        textPrice.text = "Price: " + price;
+            }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (Inventory.CoinsCollected >= price)

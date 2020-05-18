@@ -55,7 +55,7 @@ public class EnemyController : MonoBehaviour
 
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (health <= 0)
         {   if (this.enemyType == EnemyType.Boss1)
@@ -85,8 +85,9 @@ public class EnemyController : MonoBehaviour
         }
 
         if(!notInRoom)
-        {
-            if(IsPlayerInRange(range) && currState != EnemyState.Die)
+        {   if(rigidbody.simulated == false)
+            rigidbody.simulated = true;
+            if (IsPlayerInRange(range) && currState != EnemyState.Die)
             {
                 currState = EnemyState.Follow;
             }
@@ -103,6 +104,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
+            rigidbody.simulated = false;
             currState = EnemyState.Idle;
         }      
     }
