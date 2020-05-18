@@ -17,34 +17,32 @@ public class EnemyOnDeathSpawner : MonoBehaviour
 
     private GameObject i;
 
-    void Awake()
-    {
-        totalWeight = 0;
-        foreach (var spawnable in items)
-        {
-            totalWeight += spawnable.weight;
-        }
-    }
 
     // Start is called before the first frame update
     public void Drop(Vector2 pos)
     {
+        totalWeight = 0;
+        Debug.Log("total w " + totalWeight);
+        foreach (var spawnable in items)
+        {
+            Debug.Log("2total w " + totalWeight);
+            totalWeight += spawnable.weight;
+        }
 
         float pick = UnityEngine.Random.value * totalWeight;
         int chosenIndex = 0;
         float cumulativeWeight = items[0].weight;
-
+        Debug.Log("pick " + pick + "index " + chosenIndex);
         while (pick > cumulativeWeight && chosenIndex < items.Count - 1)
         {
+            Debug.Log("2pick " + pick + "index " + chosenIndex);
             chosenIndex++;
             cumulativeWeight += items[chosenIndex].weight;
         }
         
-        if (chosenIndex != items.Count)
-        {
-  
+         if(chosenIndex != (items.Count -1))
             i = Instantiate(items[chosenIndex].gameObject, pos, Quaternion.identity) as GameObject;
-        }
+     
 
     }
 

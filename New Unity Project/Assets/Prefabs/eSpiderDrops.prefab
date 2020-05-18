@@ -46,6 +46,12 @@ MonoBehaviour:
   items:
   - gameObject: {fileID: 5728842678665830584, guid: d553ec6502a4e034d8eaf8f7fee57ab8,
       type: 3}
-    weight: 0.9
-  - gameObject: {fileID: 0}
+    weight: 0.05
+  - gameObject: {fileID: 4802124998439061761, guid: 25c37cdde31df7441b5a76c6a251e37a,
+      type: 3}
     weight: 0.1
+  - gameObject: {fileID: 7416558464892257257, guid: d0d6887bedb610e47b5e4f0c7a2d66dc,
+      type: 3}
+    weight: 0.25
+  - gameObject: {fileID: 0}
+    weight: 0.6

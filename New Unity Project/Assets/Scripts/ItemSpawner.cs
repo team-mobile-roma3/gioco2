@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
 {
-    [System.Serializable]
+    [Serializable]
     public struct Spawnable
     {
         public GameObject gameObject;

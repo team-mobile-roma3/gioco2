@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
     private static bool isProjectileBouncy = false;
     private static float attackDamage = 1;
     private static float mAttackDamage = 2;
+    private static bool stance = false;
 
     private bool bootCollected = false;
     private bool screwCollected = false;
@@ -31,6 +32,7 @@ public class GameController : MonoBehaviour
     public static float FireRate { get => fireRate; set => fireRate = value; }
     public static float BulletSize { get => bulletSize; set => bulletSize = value; }
     public static bool IPB { get => isProjectileBouncy; set => isProjectileBouncy = value; }
+    public static bool Stance { get => stance; set => stance = value; }
 
 
 
@@ -113,6 +115,6 @@ public class GameController : MonoBehaviour
 
     private static void KillPlayer()
     {
-
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
     }
 }

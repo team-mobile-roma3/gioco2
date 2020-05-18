@@ -44,13 +44,19 @@ public class RoomController : MonoBehaviour
     }
     void Start()
     {
+        GameObject.Find("Canvas").transform.GetChild(0).gameObject.SetActive(true);
+        GameObject.Find("Canvas").transform.GetChild(1).gameObject.SetActive(false);
+        GameObject.Find("Canvas").transform.GetChild(2).gameObject.SetActive(false);
+        GameObject.Find("Canvas").transform.GetChild(3).gameObject.SetActive(false);
+        GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(false);
 
-    //   LoadRoom("Start2", 10, 0);
-    //LoadRoom("Empty", 1, 0);
-    //LoadRoom("Empty", -1, 0);
-    //LoadRoom("Empty", 0, 1);
-    //LoadRoom("Empty", 0, -1);
-}
+        StartCoroutine(Wait());
+        //   LoadRoom("Start2", 10, 0);
+        //LoadRoom("Empty", 1, 0);
+        //LoadRoom("Empty", -1, 0);
+        //LoadRoom("Empty", 0, 1);
+        //LoadRoom("Empty", 0, -1);
+    }
 
     void Update()
     {
@@ -232,7 +238,7 @@ public class RoomController : MonoBehaviour
                     foreach(EnemyController enemy in enemies)
                     {
                         enemy.notInRoom = true;
-                        Debug.Log("Not in room");
+    //                    Debug.Log("Not in room");
                     }
 
                     foreach(Door door in room.GetComponentsInChildren<Door>())
@@ -258,7 +264,7 @@ public class RoomController : MonoBehaviour
                     foreach(EnemyController enemy in enemies)
                     {                       
                         enemy.notInRoom = false;
-                        Debug.Log("In room");
+ //                       Debug.Log("In room");
                     }
                     
                     foreach(Door door in room.GetComponentsInChildren<Door>())
@@ -275,5 +281,20 @@ public class RoomController : MonoBehaviour
                 }  
             }
         }
+    }
+
+    IEnumerator Wait()
+    {
+
+        yield return new WaitForSeconds(7f);
+
+        GameObject.Find("Canvas").transform.GetChild(0).gameObject.SetActive(false);
+        GameObject.Find("Canvas").transform.GetChild(1).gameObject.SetActive(true);
+        GameObject.Find("Canvas").transform.GetChild(2).gameObject.SetActive(true);
+        GameObject.Find("Canvas").transform.GetChild(3).gameObject.SetActive(true);
+        GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(true);
+ 
+
+
     }
 }

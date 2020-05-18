@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private float lastSwing;
     public float swingDelay;
 
-    private bool stance = true;  // false = ranged, true = melee
+    private bool stance;
 
 
     private static float ableTeleportDoor;
@@ -47,7 +47,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        stance = GameController.Stance;
         fireDelay = GameController.FireRate;
         speed = GameController.MoveSpeed;
 
