@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public float swingDelay;
 
     private bool stance;
-     float horizontal, vertical;
+    float horizontal, vertical;
 
 
     private static float ableTeleportDoor;
@@ -161,13 +161,14 @@ public class PlayerController : MonoBehaviour
     {
         GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation) as GameObject;
    
-        bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(
-            (x < 0) ? Mathf.Floor(x) * bulletSpeed : Mathf.Ceil(x) * bulletSpeed,
-            (y < 0) ? Mathf.Floor(y) * bulletSpeed : Mathf.Ceil(y) * bulletSpeed
+        bullet.GetComponent<Rigidbody2D>().velocity = new Vector3(
+            /*(x < 0) ? Mathf.Floor(x) * bulletSpeed : Mathf.Ceil(x) **/ x * bulletSpeed,
+            /*(y < 0) ? Mathf.Floor(y) * bulletSpeed : Mathf.Ceil(y) **/ y * bulletSpeed,
+            0
         );
         Debug.Log("ho sparato con " + Inventory.Ranged_Weapon);
     }
-
+    
     void Melee(float x, float y)
     {
         
