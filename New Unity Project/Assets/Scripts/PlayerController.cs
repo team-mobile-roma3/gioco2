@@ -13,30 +13,22 @@ public class PlayerController : MonoBehaviour
 
     public GameObject bulletPrefab;
     public float bulletSpeed;
-    private float lastFire;
-    public float fireDelay;
-
-    private float lastSwing;
-    public float swingDelay;
-
+    private float lastFire,lastSwing, lastMove;
+    public float fireDelay,swingDelay;//, actionDelay;
     private bool stance;
-    float horizontal, vertical;
-
-
     private static float ableTeleportDoor;
-    
-    
-
+    private float horizontal,vertical,shootHor,shootVert;
     private float lastFlipShoot;
 
-    public bool joyMove;
-
+    /******implementa i joypad*********/
     public FloatingJoystick move;
 
     public FloatingJoystick act;
 
+    /**********************************/
+
     public  static float AbleTeleportDoor { get => ableTeleportDoor; set => ableTeleportDoor = value; }
-    // Start is called before the first frame update
+    
     void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -44,14 +36,16 @@ public class PlayerController : MonoBehaviour
         rigidbody.freezeRotation = true;
         ableTeleportDoor = Time.time-2f;
     }
-
-    // Update is called once per frame
     void Update()
     {
-        stance = GameController.Stance;
         fireDelay = GameController.FireRate;
         speed = GameController.MoveSpeed;
 
+        horizontal = Input.GetAxis("Horizontal") + move.Horizontal;
+        vertical =Input.GetAxis("Vertical") + move.Vertical;
+        shootHor = Input.GetAxis("ShootHorizontal") + act.Horizontal;
+        shootVert =Input.GetAxis("ShootVertical") + act.Vertical;
+        
         if (Input.GetKeyDown(KeyCode.Z))
         {
             Inventory.PotionUse();
@@ -62,144 +56,95 @@ public class PlayerController : MonoBehaviour
             stance = !stance;
         }
 
-
+   /*     if (horizontal > 0 && (Time.time > lastFlipShoot + 1.0f || lastFlipShoot == 0))
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else if (horizontal < 0 && (Time.time > lastFlipShoot + 1.0f || lastFlipShoot == 0))
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }*/
+        //if (horizontal != 0 && vertical != 0)
+        Move(horizontal, vertical);
        
-        if (joyMove)
+        if ((shootHor != 0 || shootVert != 0) && (((Time.time > lastFire + fireDelay) && !stance) || ((Time.time > lastSwing + swingDelay) && stance)))
         {
-            horizontal = move.Horizontal;
-            vertical = move.Vertical;
-
-            if (horizontal > 0 && (   Time.time > lastFlipShoot + 1.0f || lastFlipShoot == 0))
+            /*****GIRA IL PG*********
+            if (shootHor > 0)
             {
                 gameObject.GetComponent<SpriteRenderer>().flipX = false;
             }
-            else if (horizontal < 0 && (Time.time > lastFlipShoot + 1.0f || lastFlipShoot == 0))
+            else if (shootHor < 0)
             {
                 gameObject.GetComponent<SpriteRenderer>().flipX = true;
             }
+            /************************/
 
-        }
-        else
-        {
-            horizontal = Input.GetAxis("Horizontal");
-            vertical =Input.GetAxis("Vertical");
-
-
-            if (horizontal > 0 && (Time.time > lastFlipShoot + 1.0f || lastFlipShoot == 0))
+            if (!stance)        //ranged
             {
-                gameObject.GetComponent<SpriteRenderer>().flipX = false;
-            }
-            else if (horizontal < 0 && (Time.time > lastFlipShoot + 1.0f || lastFlipShoot == 0))
-            {
-                gameObject.GetComponent<SpriteRenderer>().flipX = true;
-            }
-
-
-        }
-        
-        float shootHor, shootVert;
-        
-        if (joyMove)
-        {
-            shootHor = act.Horizontal;
-            shootVert = act.Vertical;    
-        }
-        else
-        {
-            shootHor = Input.GetAxis("ShootHorizontal");
-            shootVert =Input.GetAxis("ShootVertical");
-        }
-        if (!stance)  // cioe' se sono ranged
-        {
-            if ((shootHor != 0 || shootVert != 0) && Time.time > lastFire + fireDelay)
-            {
-                if (shootHor > 0)
-                {
-                    gameObject.GetComponent<SpriteRenderer>().flipX = false;
-                }
-                else if (shootHor < 0)
-                {
-                    gameObject.GetComponent<SpriteRenderer>().flipX = true;
-                }
-
-
                 Shoot(shootHor, shootVert);
                 lastFire = Time.time;
                 lastFlipShoot = Time.time;
             }
-        }
-        else
-        {
-            if ((shootHor != 0 || shootVert != 0) && Time.time > lastSwing + swingDelay)
+
+            else if (stance)        //melee
             {
-                if (shootHor > 0)
-                {
-                    gameObject.GetComponent<SpriteRenderer>().flipX = false;
-                }
-                else if (shootHor < 0)
-                {
-                    gameObject.GetComponent<SpriteRenderer>().flipX = true;
-                }
-
-
                 Melee(shootHor, shootVert);
                 lastSwing = Time.time;
                 lastFlipShoot = Time.time;
             }
         }
-
-        
-
     }
-
-    private void FixedUpdate()
+    void Move(float x, float y)
     {
-        rigidbody.velocity = new Vector3(horizontal * speed, vertical * speed, 0);
+        if (x==0 && y==0) {rigidbody.velocity = new Vector2(0,0);}
+        else
+        {
+            rigidbody.velocity = new Vector2(x * speed, y * speed);
+        }
+        
     }
 
     void Shoot(float x, float y)
     {
-        if (x == 0 || y == 0)
-            return;
-        //     Debug.Log(x + " " + y);
+        if (x == 0 && y == 0) {return;}
         else
         {
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation) as GameObject;
             Vector2 whereToShoot = new Vector2(x, y);
             Vector2 dir = Vector2.MoveTowards(bullet.transform.position, whereToShoot, 100f);
             dir.Normalize();
-
             bullet.GetComponent<Rigidbody2D>().velocity = dir * bulletSpeed;
-            //       Debug.Log("ho sparato con " + Inventory.Ranged_Weapon + "direzione " + dir.x + "|" + dir.y);
         }
     }
     
     void Melee(float x, float y)
     {
-        
-        if(y < 0)
+        if (x == 0 && y == 0) {return;}
+        else
         {
-            if(math.abs(x) < math.abs(y))
-            transform.GetChild(0).gameObject.SetActive(true);   
-        }
+            if(y < 0)
+            {
+                if(math.abs(x) < math.abs(y))
+                    transform.GetChild(0).gameObject.SetActive(true);   
+            }
 
-        if (y > 0)
-        {
-            if (math.abs(x) < math.abs(y))
-                transform.GetChild(1).gameObject.SetActive(true);
-        }
+            if (y > 0)
+            {
+                if (math.abs(x) < math.abs(y))
+                    transform.GetChild(1).gameObject.SetActive(true);
+            }
 
-        if (x > 0)
-        {
-            if (math.abs(y) < math.abs(x))
-                transform.GetChild(3).gameObject.SetActive(true);
+            if (x > 0)
+            {
+                if (math.abs(y) < math.abs(x))
+                    transform.GetChild(3).gameObject.SetActive(true);
+            }
+            if (x < 0)
+            {
+                if (math.abs(y) < math.abs(x))
+                    transform.GetChild(2).gameObject.SetActive(true);
+            }
         }
-        if (x < 0)
-        {
-            if (math.abs(y) < math.abs(x))
-                transform.GetChild(2).gameObject.SetActive(true);
-        }
-
-
     }
 }
