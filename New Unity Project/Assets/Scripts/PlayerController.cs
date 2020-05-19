@@ -159,14 +159,19 @@ public class PlayerController : MonoBehaviour
 
     void Shoot(float x, float y)
     {
-        GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation) as GameObject;
-   
-        bullet.GetComponent<Rigidbody2D>().velocity = new Vector3(
-            /*(x < 0) ? Mathf.Floor(x) * bulletSpeed : Mathf.Ceil(x) **/ x * bulletSpeed,
-            /*(y < 0) ? Mathf.Floor(y) * bulletSpeed : Mathf.Ceil(y) **/ y * bulletSpeed,
-            0
-        );
-        Debug.Log("ho sparato con " + Inventory.Ranged_Weapon);
+        if (x == 0 || y == 0)
+            return;
+        //     Debug.Log(x + " " + y);
+        else
+        {
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation) as GameObject;
+            Vector2 whereToShoot = new Vector2(x, y);
+            Vector2 dir = Vector2.MoveTowards(bullet.transform.position, whereToShoot, 100f);
+            dir.Normalize();
+
+            bullet.GetComponent<Rigidbody2D>().velocity = dir * bulletSpeed;
+            //       Debug.Log("ho sparato con " + Inventory.Ranged_Weapon + "direzione " + dir.x + "|" + dir.y);
+        }
     }
     
     void Melee(float x, float y)
