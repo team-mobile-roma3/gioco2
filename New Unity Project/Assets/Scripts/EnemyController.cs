@@ -18,8 +18,10 @@ public enum EnemyType
     Boss1
 };
 
+
+
 public class EnemyController : MonoBehaviour
-{
+{   public EnemyOnDeathSpawner dropList = null;
     Rigidbody2D rigidbody;
     GameObject player;
     public EnemyState currState = EnemyState.Idle;
@@ -33,7 +35,7 @@ public class EnemyController : MonoBehaviour
     private bool chooseDir = false;
     private bool dead = false;
     private bool coolDownAttack = false;
-    public bool notInRoom = false;
+    public bool notInRoom;
     private Vector3 randomDir;
     public GameObject bulletPrefab;
 
@@ -46,18 +48,22 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+   //     Debug.Log("sono spwnato e sono " + notInRoom);
         rigidbody = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (health <= 0)
-        {
-            
+        {   if (this.enemyType == EnemyType.Boss1)
+            {
+                //             GameObject.Find("Trigger").transform.GetChild(0).gameObject.SetActive(true);
+                this.transform.GetChild(0).gameObject.SetActive(true);
+                transform.GetChild(0).parent = null;
+            }
             this.Death();
         }
         switch (currState)
@@ -79,14 +85,16 @@ public class EnemyController : MonoBehaviour
         }
 
         if(!notInRoom)
-        {
-            if(IsPlayerInRange(range) && currState != EnemyState.Die)
+        {   if(rigidbody.simulated == false)
+            rigidbody.simulated = true;
+            if (IsPlayerInRange(range) && currState != EnemyState.Die)
             {
                 currState = EnemyState.Follow;
             }
             else if(!IsPlayerInRange(range) && currState != EnemyState.Die)
             {
                 currState = EnemyState.Wander;
+     //         Debug.Log("mi sto muovendo e sono " + name + notInRoom);
             }
         
                     if ( enemyType == EnemyType.Ranged && Vector3.Distance(transform.position, player.transform.position) <= attackRange)
@@ -96,6 +104,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
+            rigidbody.simulated = false;
             currState = EnemyState.Idle;
         }      
     }
@@ -171,6 +180,12 @@ public class EnemyController : MonoBehaviour
     public void Death()
     {
         RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
+        if (dropList != null)
+        {
+
+            Debug.Log("ho drop");
+            dropList.Drop(transform.position);
+        }
         Destroy(gameObject);
     }
 

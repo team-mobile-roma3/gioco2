@@ -3,6 +3,8 @@
 [CreateAssetMenu(fileName = "DungeonGenerationData.asset", menuName = "DungeonGenerationData/Dungeon Data")]
 public class DungeonGenerationData : ScriptableObject
 {
+    public  int livelli;
+    public Vector2Int pos;
     public int numberOfCrawlers;
     public int iterationMin;
     public int iterationMax;

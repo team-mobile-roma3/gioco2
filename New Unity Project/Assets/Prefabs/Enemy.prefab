@@ -122,15 +122,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c79cc3ca8ec24d4ab85b700673bde1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropList: {fileID: 4068104993806347478, guid: 714b181ff6b7ecc46a614088f8b23984,
+    type: 3}
   currState: 0
   enemyType: 0
   range: 10
-  speed: 1
+  speed: 2
   attackRange: 1.2
   bulletSpeed: 0
   coolDown: 2
   health: 2
-  notInRoom: 0
+  notInRoom: 1
   bulletPrefab: {fileID: 0}
 --- !u!50 &-8403694596383543919
 Rigidbody2D:

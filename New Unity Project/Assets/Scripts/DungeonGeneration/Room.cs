@@ -56,15 +56,18 @@ public class Room : MonoBehaviour
         }
 
         RoomController.instance.RegisterRoom(this);
+
     }
 
     void Update()
     {
-        if(name.Contains("End") && !updatedDoors)
+        if (name.Contains("End") && !updatedDoors)
         {
+   
             RemoveUnconnectedDoors();
             updatedDoors = true;
         }
+        
     }
 
     public void RemoveUnconnectedDoors()
@@ -162,4 +165,6 @@ public class Room : MonoBehaviour
             RoomController.instance.OnPlayerEnterRoom(this);
         }
     }
+
+  
 }

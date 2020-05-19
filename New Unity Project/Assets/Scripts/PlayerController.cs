@@ -19,7 +19,8 @@ public class PlayerController : MonoBehaviour
     private float lastSwing;
     public float swingDelay;
 
-    private bool stance = true;  // false = ranged, true = melee
+    private bool stance;
+    float horizontal, vertical;
 
 
     private static float ableTeleportDoor;
@@ -47,7 +48,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        stance = GameController.Stance;
         fireDelay = GameController.FireRate;
         speed = GameController.MoveSpeed;
 
@@ -62,7 +63,7 @@ public class PlayerController : MonoBehaviour
         }
 
 
-        float horizontal, vertical;
+       
         if (joyMove)
         {
             horizontal = move.Horizontal;
@@ -147,21 +148,27 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        rigidbody.velocity = new Vector3(horizontal * speed, vertical * speed, 0);
+        
 
+    }
+
+    private void FixedUpdate()
+    {
+        rigidbody.velocity = new Vector3(horizontal * speed, vertical * speed, 0);
     }
 
     void Shoot(float x, float y)
     {
         GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation) as GameObject;
    
-        bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(
-            (x < 0) ? Mathf.Floor(x) * bulletSpeed : Mathf.Ceil(x) * bulletSpeed,
-            (y < 0) ? Mathf.Floor(y) * bulletSpeed : Mathf.Ceil(y) * bulletSpeed
+        bullet.GetComponent<Rigidbody2D>().velocity = new Vector3(
+            /*(x < 0) ? Mathf.Floor(x) * bulletSpeed : Mathf.Ceil(x) **/ x * bulletSpeed,
+            /*(y < 0) ? Mathf.Floor(y) * bulletSpeed : Mathf.Ceil(y) **/ y * bulletSpeed,
+            0
         );
         Debug.Log("ho sparato con " + Inventory.Ranged_Weapon);
     }
-
+    
     void Melee(float x, float y)
     {
         
