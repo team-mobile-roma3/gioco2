@@ -188,7 +188,7 @@ public class EnemyController : MonoBehaviour
        
 
         direction.Normalize();
-       rigidbody.velocity = Vector2.MoveTowards(transform.position,(Vector2)transform.position + (direction * speed ), 50f);
+       rigidbody.velocity = Vector2.MoveTowards(transform.position, (direction * speed ), 50f);
     }
     public void Death()
     {
