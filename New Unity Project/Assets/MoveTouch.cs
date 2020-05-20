@@ -53,7 +53,7 @@ public class MoveTouch : MonoBehaviour
             else if (t.phase == TouchPhase.Ended )
             {
        //         Debug.Log(startingPoint + " AO " + touchPos);
-                if (startingPoint == touchPos)
+            /*    if (startingPoint == touchPos)
                 {
 
                     if (t.position.x > Screen.width / 2)
@@ -68,7 +68,7 @@ public class MoveTouch : MonoBehaviour
    //                     Debug.Log(startingPoint.x + " " + Screen.width / 2);
                         Inventory.PotionUse();
                     }
-                }
+                }*/
                 leftTouch = 99;
                 circle.transform.position = new Vector2(outerCircle.transform.position.x, outerCircle.transform.position.y);
             }

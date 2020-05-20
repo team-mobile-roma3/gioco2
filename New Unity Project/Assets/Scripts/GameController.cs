@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -44,9 +44,22 @@ public class GameController : MonoBehaviour
             instance = this;
         }
     }
-
+    private void Start()
+    {
+        health = 6;
+        maxHealth = 6;
+        moveSpeed = 5f;
+        fireRate = 0.5f;
+        bulletSize = 0.5f;
+        isProjectileBouncy = false;
+        attackDamage = 1;
+        mAttackDamage = 2;
+        stance = false;
+        bootCollected = false;
+        screwCollected = false;
+}
     // Update is called once per frame
-   
+
 
     public static void DamagePlayer(int damage)
     {
@@ -115,6 +128,6 @@ public class GameController : MonoBehaviour
 
     private static void KillPlayer()
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0);
     }
 }

@@ -1707,6 +1707,8 @@ MonoBehaviour:
     spawnerData: {fileID: 11400000, guid: bbd2c5c02d1ad0e49a159231deed1bd8, type: 2}
   - name: ChaseEnemyRanged
     spawnerData: {fileID: 11400000, guid: 36ab667f8641b1d4badb8bc9ae9eac2a, type: 2}
+  - name: BouncyEnemyRanged
+    spawnerData: {fileID: 11400000, guid: 8fd4a3db23c2d564ba32199c290ce749, type: 2}
 --- !u!1 &1859206527
 GameObject:
   m_ObjectHideFlags: 0

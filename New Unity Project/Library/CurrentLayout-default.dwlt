@@ -96,7 +96,7 @@ MonoBehaviour:
   m_MinSize: {x: 911, y: 442}
   m_MaxSize: {x: 22006, y: 10021}
   vertical: 0
-  controlID: 154
+  controlID: 34
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -142,7 +142,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 442}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
-  controlID: 134
+  controlID: 35
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -162,8 +162,8 @@ MonoBehaviour:
     y: 0
     width: 254
     height: 947
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -358,21 +358,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 6afbffff
+      m_ExpandedIDs: 0e46f9ff2846f9ff3e47f9fff247f9ff0848f9ff1e48f9ff3448f9ff4a48f9ff5648f9ff6248f9ff6e48f9ff7a48f9ff8648f9ffa048f9ffb048f9ffc048f9ffce48f9ffda48f9ffb8c4f9ff8ae8faffeaebfaff4cecfaff04edfaffe8edfaffc647feff2848feffde48feff2e4afeff404afeff8e4afeffdc4afeff324bfeff444bfeff524bfeffbc4bfeff9665ffff6afbffff483a0000a83a000070680000c6bb000002c10000b8c3000014c500006ec60000bac7000070c800009ecb0000d0cb000030cc0000d8970100b29a0100129b01002cf00100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: BSPotion(Clone)
+        m_OriginalName: BSPotion(Clone)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -370918
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 7}
       m_SearchString: 
@@ -459,34 +459,34 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scenes/DungeonRooms/Shared
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scenes/DungeonRooms/Shared
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\pollooo\Documents\GitHub\gioco2\New Unity Project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 483c0000
-    m_LastClickedID: 15432
-    m_ExpandedIDs: 00000000083c00000a3c00000c3c00000e3c0000103c0000123c0000143c0000163c0000183c00001a3c00001c3c00001e3c0000203c0000223c0000243c000000ca9a3b
+    m_SelectedIDs: 2c3c0000
+    m_LastClickedID: 15404
+    m_ExpandedIDs: 00000000de3b0000e03b0000e23b0000e43b0000e63b0000e83b0000ea3b0000ec3b0000ee3b0000f03b0000f23b0000f43b0000f63b0000f83b0000fa3b0000203c00002e3c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: level5
+      m_OriginalName: level5
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 15402
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
@@ -500,7 +500,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000083c00000a3c00000c3c00000e3c0000103c0000123c0000143c0000163c0000183c00001a3c00001c3c00001e3c0000203c0000223c0000243c0000
+    m_ExpandedIDs: 00000000de3b0000e03b0000e23b0000e43b0000e63b0000e83b0000ea3b0000ec3b0000ee3b0000f03b0000f23b0000f43b0000f63b0000f83b0000fa3b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -527,7 +527,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 6e3b00008293000062430000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -544,7 +544,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 8}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -681,9 +681,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.3476621, y: 2.3967037, z: -12.463827}
+    m_Target: {x: 0.90779316, y: 216.27435, z: -2.3618934}
     speed: 2
-    m_Value: {x: 0.3476621, y: 2.3967037, z: -12.463827}
+    m_Value: {x: 0.90779316, y: 216.27435, z: -2.3618934}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -733,9 +733,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 11.494411
+    m_Target: 23.45988
     speed: 2
-    m_Value: 11.494411
+    m_Value: 23.45988
   m_Ortho:
     m_Target: 1
     speed: 2

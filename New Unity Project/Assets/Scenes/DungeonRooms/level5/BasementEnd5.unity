@@ -824,27 +824,27 @@ PrefabInstance:
     - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
       propertyPath: enemyType
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
-        type: 3}
-      propertyPath: speed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
-        type: 3}
-      propertyPath: attackRange
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
-        type: 3}
-      propertyPath: coolDown
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
+        type: 3}
+      propertyPath: attackRange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
+        type: 3}
+      propertyPath: coolDown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
+        type: 3}
       propertyPath: health
-      value: 10
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}

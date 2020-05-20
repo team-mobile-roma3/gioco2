@@ -85,9 +85,13 @@ public class EnemyController : MonoBehaviour
             break;
         }
 
-        if(!notInRoom)
-        {   if(rigidbody.simulated == false)
-            rigidbody.simulated = true;
+        if (!notInRoom)
+        { if (rigidbody.simulated == false)
+            {
+                StartCoroutine(CoolDown());
+                rigidbody.simulated = true;
+
+            }
             if (IsPlayerInRange(range) && currState != EnemyState.Die  )
             {
                 currState = EnemyState.Follow;
@@ -203,8 +207,8 @@ public class EnemyController : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player")
-            rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+        if (collision.gameObject.tag == "Player" && enemyType == EnemyType.Bouncy)
+            GameController.DamagePlayer(2);
 
 
     }

@@ -1,15 +1,37 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class BSItemSpawner : MonoBehaviour
 {
     public GameObject item;
-    // Start is called before the first frame update
+
+    private Boolean cooldown = false;
     void Start()
     {
-        item = Instantiate(item.gameObject, new Vector2(0, 220), Quaternion.identity) as GameObject;
+        
     }
 
+    private void Update()
+    {
+        if (!cooldown && GameObject.Find("BSPotion(Clone)") == null)
+        {
+
+            item = Instantiate(item.gameObject, new Vector2(0, 220), Quaternion.identity) as GameObject;
+            StartCoroutine(Spawn());
+        }
+
+
+    }
+
+    private  IEnumerator Spawn()
+    {
+         cooldown = true;
+        yield return new WaitForSeconds(10f);
+        cooldown = false;
+      
+    }
 
 }
+
