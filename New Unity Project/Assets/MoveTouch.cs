@@ -10,10 +10,6 @@ public class MoveTouch : MonoBehaviour
 
     public Transform player;
 
-
-    public Transform circle;
-    public Transform outerCircle;
-
     private Vector2 startingPoint;
     private int leftTouch = 99;
 
@@ -45,11 +41,7 @@ public class MoveTouch : MonoBehaviour
           //          player.GetComponent<PlayerController>().Move(direction.x, direction.y);
                   //  moveCharacter(direction);
                 }
-              
-
-                circle.transform.position = new Vector2(outerCircle.transform.position.x + direction.x, outerCircle.transform.position.y + direction.y);
-
-            }
+             }
             else if (t.phase == TouchPhase.Ended )
             {
        //         Debug.Log(startingPoint + " AO " + touchPos);
@@ -70,7 +62,6 @@ public class MoveTouch : MonoBehaviour
                     }
                 }*/
                 leftTouch = 99;
-                circle.transform.position = new Vector2(outerCircle.transform.position.x, outerCircle.transform.position.y);
             }
             ++i;
         }
