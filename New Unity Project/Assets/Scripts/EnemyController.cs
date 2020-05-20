@@ -13,6 +13,7 @@ public enum EnemyState
 
 public enum EnemyType
 {
+    Bouncy,
     Melee,
     Ranged,
     Boss1
@@ -87,17 +88,17 @@ public class EnemyController : MonoBehaviour
         if(!notInRoom)
         {   if(rigidbody.simulated == false)
             rigidbody.simulated = true;
-            if (IsPlayerInRange(range) && currState != EnemyState.Die)
+            if (IsPlayerInRange(range) && currState != EnemyState.Die  )
             {
                 currState = EnemyState.Follow;
             }
-            else if(!IsPlayerInRange(range) && currState != EnemyState.Die)
+            else if(!IsPlayerInRange(range) && currState != EnemyState.Die && enemyType != EnemyType.Bouncy)
             {
                 currState = EnemyState.Wander;
      //         Debug.Log("mi sto muovendo e sono " + name + notInRoom);
             }
         
-                    if ( enemyType == EnemyType.Ranged && Vector3.Distance(transform.position, player.transform.position) <= attackRange)
+                    if (( enemyType == EnemyType.Ranged ||  enemyType == EnemyType.Bouncy) && Vector3.Distance(transform.position, player.transform.position) <= attackRange)
                     {
                         currState = EnemyState.Attack;
                     }
@@ -147,14 +148,19 @@ public class EnemyController : MonoBehaviour
 
     void Attack()
     {
-        if(!coolDownAttack)
+        if (!coolDownAttack)
         {
-            switch(enemyType)
+            switch (enemyType)
             {
-                case(EnemyType.Melee):
+                case (EnemyType.Melee):
                     GameController.DamagePlayer(1);
                     StartCoroutine(CoolDown());
-                break;
+                    break;
+                case (EnemyType.Bouncy):
+                  
+                    Charge();
+                    StartCoroutine(CoolDown());
+                    break;
                 case (EnemyType.Boss1):
                     GameController.DamagePlayer(2);
                     StartCoroutine(CoolDown());
@@ -162,10 +168,10 @@ public class EnemyController : MonoBehaviour
                 case (EnemyType.Ranged):
                     GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
                     bullet.GetComponent<BulletController>().GetPlayer(player.transform);
-                   
+
                     bullet.GetComponent<BulletController>().isEnemyBullet = true;
                     StartCoroutine(CoolDown());
-                break;
+                    break;
             }
         }
     }
@@ -176,7 +182,14 @@ public class EnemyController : MonoBehaviour
         yield return new WaitForSeconds(coolDown);
         coolDownAttack = false;
     }
+    public void Charge()
+    {
+        Vector2 direction = player.transform.position - transform.position;
+       
 
+        direction.Normalize();
+       rigidbody.velocity = Vector2.MoveTowards(transform.position,(Vector2)transform.position + (direction * speed ), 50f);
+    }
     public void Death()
     {
         RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
@@ -188,9 +201,17 @@ public class EnemyController : MonoBehaviour
         }
         Destroy(gameObject);
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+            rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
 
+
+    }
     private void OnCollisionStay2D(Collision2D collision)
     {
+       
+       
         if (collision.gameObject.tag == "Player")
             rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
 
@@ -204,6 +225,7 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+   
     }
 
 }

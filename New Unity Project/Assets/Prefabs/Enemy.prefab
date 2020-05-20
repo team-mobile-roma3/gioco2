@@ -125,7 +125,7 @@ MonoBehaviour:
   dropList: {fileID: 4068104993806347478, guid: 714b181ff6b7ecc46a614088f8b23984,
     type: 3}
   currState: 0
-  enemyType: 0
+  enemyType: 1
   range: 10
   speed: 2
   attackRange: 1.2

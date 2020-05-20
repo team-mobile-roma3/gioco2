@@ -31,7 +31,8 @@ public class PlayerController : MonoBehaviour
     
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+       
+       rigidbody = GetComponent<Rigidbody2D>();
 
         rigidbody.freezeRotation = true;
         ableTeleportDoor = Time.time-2f;
@@ -40,6 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         fireDelay = GameController.FireRate;
         speed = GameController.MoveSpeed;
+        stance = GameController.Stance;
 
         horizontal = Input.GetAxis("Horizontal") + move.Horizontal;
         vertical =Input.GetAxis("Vertical") + move.Vertical;
@@ -67,7 +69,7 @@ public class PlayerController : MonoBehaviour
         //if (horizontal != 0 && vertical != 0)
         Move(horizontal, vertical);
        
-        if ((shootHor != 0 || shootVert != 0) && (((Time.time > lastFire + fireDelay) && !stance) || ((Time.time > lastSwing + swingDelay) && stance)))
+    /*    if ((shootHor != 0 || shootVert != 0) && (((Time.time > lastFire + fireDelay) && !stance) || ((Time.time > lastSwing + swingDelay) && stance)))
         {
             /*****GIRA IL PG*********
             if (shootHor > 0)
@@ -78,7 +80,7 @@ public class PlayerController : MonoBehaviour
             {
                 gameObject.GetComponent<SpriteRenderer>().flipX = true;
             }
-            /************************/
+            
 
             if (!stance)        //ranged
             {
@@ -93,11 +95,33 @@ public class PlayerController : MonoBehaviour
                 lastSwing = Time.time;
                 lastFlipShoot = Time.time;
             }
+    } */
+    }
+
+    public void PlayerAttack(float x, float y)
+    {
+        Debug.Log("sono qui");
+        if ((x != 0 || y != 0) && (((Time.time > lastFire + fireDelay) && !stance) || ((Time.time > lastSwing + swingDelay && stance) )))
+        {
+            if (!stance)        //ranged
+            {
+                Shoot(x, y);
+                lastFire = Time.time;
+                lastFlipShoot = Time.time;
+            }
+
+            else if (stance)        //melee
+            {
+                Melee(x, y);
+                lastSwing = Time.time;
+                lastFlipShoot = Time.time;
+            }
         }
     }
-    void Move(float x, float y)
+    public void Move(float x, float y)
     {
-        if (x==0 && y==0) {rigidbody.velocity = new Vector2(0,0);}
+        if (x==0 && y==0) {
+            rigidbody.velocity = new Vector2(0,0);}
         else
         {
             rigidbody.velocity = new Vector2(x * speed, y * speed);
@@ -105,9 +129,9 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    void Shoot(float x, float y)
+   public  void Shoot(float x, float y)
     {
-        if (x == 0 && y == 0) {return;}
+        if (x == 0 || y == 0) {return;}
         else
         {
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation) as GameObject;
