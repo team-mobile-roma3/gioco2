@@ -32,7 +32,7 @@ public class MoveTouch : MonoBehaviour
                 startingPoint = touchPos;
 
             }
-            else if (t.phase == TouchPhase.Moved )
+            else if (t.phase == TouchPhase.Moved || t.phase == TouchPhase.Stationary  )
             {
                 Vector2 offset = touchPos - startingPoint;
                 Vector2 direction = Vector2.ClampMagnitude(offset, 1.0f);
