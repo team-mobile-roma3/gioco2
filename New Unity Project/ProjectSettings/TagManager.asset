@@ -12,6 +12,7 @@ TagManager:
   - wMelee
   - Coin
   - Boots
+  - Bullet
   layers:
   - Default
   - TransparentFX
