@@ -1,4 +1,5 @@
-﻿using Unity.Mathematics;
+﻿using System;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -136,7 +137,7 @@ public class PlayerController : MonoBehaviour
         {
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation) as GameObject;
             Vector2 whereToShoot = new Vector2(x, y);
-            Vector2 dir = Vector2.MoveTowards(bullet.transform.position, whereToShoot, 100f);
+            Vector2 dir = Vector2.MoveTowards(bullet.transform.position, whereToShoot, 10000f); ;
             dir.Normalize();
             bullet.GetComponent<Rigidbody2D>().velocity = dir * bulletSpeed;
         }

@@ -38,7 +38,8 @@ public class TeleportTrigger : MonoBehaviour
                 GameObject.Find("Canvas").transform.GetChild(2).gameObject.SetActive(false);
                 GameObject.Find("Canvas").transform.GetChild(3).gameObject.SetActive(false);
                 GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(false);
-                StartCoroutine(Wait());
+                collision.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                StartCoroutine(Wait( collision));
 
             }
         }
@@ -51,7 +52,7 @@ public class TeleportTrigger : MonoBehaviour
         
 
     }
-    IEnumerator Wait()
+    IEnumerator Wait(Collider2D collision)
     {
 
         yield return new WaitForSeconds(3f);
@@ -61,7 +62,7 @@ public class TeleportTrigger : MonoBehaviour
         GameObject.Find("Canvas").transform.GetChild(2).gameObject.SetActive(true);
         GameObject.Find("Canvas").transform.GetChild(3).gameObject.SetActive(true);
         GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(true);
-
+        collision.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         if (toBS)
             Destroy(gameObject); 
 
