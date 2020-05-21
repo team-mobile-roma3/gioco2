@@ -69,7 +69,7 @@ public class PlayerController : MonoBehaviour
         //if (horizontal != 0 && vertical != 0)
         Move(horizontal, vertical);
        
-    /*    if ((shootHor != 0 || shootVert != 0) && (((Time.time > lastFire + fireDelay) && !stance) || ((Time.time > lastSwing + swingDelay) && stance)))
+        if ((shootHor != 0 || shootVert != 0) && (((Time.time > lastFire + fireDelay) && !stance) || ((Time.time > lastSwing + swingDelay) && stance)))
         {
             /*****GIRA IL PG*********
             if (shootHor > 0)
@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
             else if (shootHor < 0)
             {
                 gameObject.GetComponent<SpriteRenderer>().flipX = true;
-            }
+            }*/
             
 
             if (!stance)        //ranged
@@ -95,9 +95,9 @@ public class PlayerController : MonoBehaviour
                 lastSwing = Time.time;
                 lastFlipShoot = Time.time;
             }
-    } */
+        } 
     }
-
+/*
     public void PlayerAttack(float x, float y)
     {
         Debug.Log("sono qui");
@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
                 lastFlipShoot = Time.time;
             }
         }
-    }
+    }*/
     public void Move(float x, float y)
     {
         if (x==0 && y==0) {

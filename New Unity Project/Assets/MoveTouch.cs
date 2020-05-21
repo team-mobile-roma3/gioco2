@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class MoveTouch : MonoBehaviour
 {
-
+/*
     public Transform player;
 
     private Vector2 startingPoint;
@@ -60,7 +60,7 @@ public class MoveTouch : MonoBehaviour
    //                     Debug.Log(startingPoint.x + " " + Screen.width / 2);
                         Inventory.PotionUse();
                     }
-                }*/
+                }*
                 leftTouch = 99;
             }
             ++i;
@@ -75,6 +75,6 @@ public class MoveTouch : MonoBehaviour
     void moveCharacter(Vector2 direction)
     {
         player.Translate(direction * GameController.MoveSpeed * Time.fixedDeltaTime);
-    }
+    }*/
    
 }
