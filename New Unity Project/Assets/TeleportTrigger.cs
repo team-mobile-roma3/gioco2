@@ -62,7 +62,7 @@ public class TeleportTrigger : MonoBehaviour
         GameObject.Find("Canvas").transform.GetChild(2).gameObject.SetActive(true);
         GameObject.Find("Canvas").transform.GetChild(3).gameObject.SetActive(true);
         GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(true);
-        collision.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+        collision.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
         if (toBS)
             Destroy(gameObject); 
 

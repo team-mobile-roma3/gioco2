@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\Auto Letterbox\ForceCameraRatio.cs" />
     <Compile Include="Assets\BSItemSpawner.cs" />
+    <Compile Include="Assets\Boss2Ability.cs" />
     <Compile Include="Assets\BsItem.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickPlayerExample.cs" />
     <Compile Include="Assets\Joystick Pack\Examples\JoystickSetterExample.cs" />

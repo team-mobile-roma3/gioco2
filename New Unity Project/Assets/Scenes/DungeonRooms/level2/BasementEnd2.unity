@@ -816,15 +816,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1760805251}
     m_Modifications:
+    - target: {fileID: -8403694596383543919, guid: 05235872f7cdabd428251a6387b50d25,
+        type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5051726810918457013, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
       propertyPath: m_Name
-      value: Boss
+      value: Boss2
       objectReference: {fileID: 0}
     - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
       propertyPath: enemyType
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
@@ -834,7 +839,7 @@ PrefabInstance:
     - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
       propertyPath: attackRange
-      value: 2.5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
@@ -844,13 +849,29 @@ PrefabInstance:
     - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
       propertyPath: health
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
       propertyPath: dropList
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
+        type: 3}
+      propertyPath: range
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
+        type: 3}
+      propertyPath: bulletSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5051726810918457014, guid: 05235872f7cdabd428251a6387b50d25,
+        type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 8912613753944397765, guid: b02d5786e5afaac479b933a6426437e5,
+        type: 3}
     - target: {fileID: 5051726810918457015, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
       propertyPath: m_Sprite
@@ -910,12 +931,12 @@ PrefabInstance:
     - target: {fileID: 5051726810918457017, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.75
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5051726810918457017, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.04
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5051726810918457017, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
@@ -925,17 +946,17 @@ PrefabInstance:
     - target: {fileID: 5051726810918457017, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5051726810918457017, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5051726810918457017, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5051726810918457017, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
@@ -2015,6 +2036,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!1 &1878790272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5051726810918457013, guid: 05235872f7cdabd428251a6387b50d25,
+    type: 3}
+  m_PrefabInstance: {fileID: 703764254}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1878790273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878790272}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 683b9b33492d10648a0835850e23e006, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletPrefab: {fileID: 8912613753944397765, guid: b02d5786e5afaac479b933a6426437e5,
+    type: 3}
 --- !u!1 &1986118599
 GameObject:
   m_ObjectHideFlags: 0

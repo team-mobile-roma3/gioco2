@@ -16,7 +16,8 @@ public enum EnemyType
     Bouncy,
     Melee,
     Ranged,
-    Boss1
+    Boss1,
+    Boss2
 };
 
 
@@ -39,6 +40,7 @@ public class EnemyController : MonoBehaviour
     public bool notInRoom;
     private Vector3 randomDir;
     public GameObject bulletPrefab;
+    private GameObject bullet;
 
 
     public void DamageEnemy(float value)
@@ -59,9 +61,9 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         if (health <= 0)
-        {   if (this.enemyType == EnemyType.Boss1)
+        {   if (this.enemyType == EnemyType.Boss1 
+                && enemyType == EnemyType.Boss2)
             {
-                //             GameObject.Find("Trigger").transform.GetChild(0).gameObject.SetActive(true);
                 this.transform.GetChild(0).gameObject.SetActive(true);
                 transform.GetChild(0).parent = null;
             }
@@ -102,7 +104,10 @@ public class EnemyController : MonoBehaviour
      //         Debug.Log("mi sto muovendo e sono " + name + notInRoom);
             }
         
-                    if (( enemyType == EnemyType.Ranged ||  enemyType == EnemyType.Bouncy) && Vector3.Distance(transform.position, player.transform.position) <= attackRange)
+                    if (( enemyType == EnemyType.Ranged 
+                || enemyType == EnemyType.Boss2  
+                || enemyType == EnemyType.Bouncy) 
+                && Vector3.Distance(transform.position, player.transform.position) <= attackRange)
                     {
                         currState = EnemyState.Attack;
                     }
@@ -170,10 +175,20 @@ public class EnemyController : MonoBehaviour
                     StartCoroutine(CoolDown());
                     break;
                 case (EnemyType.Ranged):
-                    GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
+                     bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
                     bullet.GetComponent<BulletController>().GetPlayer(player.transform);
-
                     bullet.GetComponent<BulletController>().isEnemyBullet = true;
+                    StartCoroutine(CoolDown());
+                    break;
+                case (EnemyType.Boss2):
+                    bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
+                    bullet.GetComponent<BulletController>().GetPlayer(player.transform);
+                    bullet.GetComponent<BulletController>().isEnemyBullet = true;
+                    bullet.transform.localScale = new Vector2(2f, 2f);
+                    bullet.GetComponent<BulletController>().damage = 2;
+
+                    if (this.transform.GetComponent<Boss2Ability>().enabled == false)
+                        this.transform.GetComponent<Boss2Ability>().enabled = true;
                     StartCoroutine(CoolDown());
                     break;
             }

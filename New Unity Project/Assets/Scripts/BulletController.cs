@@ -6,6 +6,7 @@ public class BulletController : MonoBehaviour
 {
     public float lifeTime;
     public bool isEnemyBullet = false;
+    public int damage;
 
     private Vector2 lastPos;
     private Vector2 curPos;
@@ -25,7 +26,7 @@ public class BulletController : MonoBehaviour
         if(isEnemyBullet)
         {
             curPos = transform.position;
-            transform.position = Vector2.MoveTowards(transform.position, playerPos, 5f * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, playerPos, 10000f);
             if(curPos == lastPos)
             {
                 Destroy(gameObject);
@@ -64,7 +65,7 @@ public class BulletController : MonoBehaviour
 
         if(col.CompareTag("Player") && isEnemyBullet)
         {
-            GameController.DamagePlayer(1);
+            GameController.DamagePlayer(damage);
             Destroy(gameObject);
         }
     }
