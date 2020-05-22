@@ -18,7 +18,7 @@ public class SteamController : MonoBehaviour
 
     IEnumerator DeathDelay()
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(2f);
         gameObject.SetActive(false);
     }
 
@@ -27,9 +27,8 @@ public class SteamController : MonoBehaviour
         if (col.CompareTag("Enemy") )
         {
             col.gameObject.GetComponent<EnemyController>().DamageEnemy(GameController.MAttackDamage);
-           
+ 
         }
-
-        
+     
     }
 }

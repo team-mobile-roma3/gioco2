@@ -90,6 +90,8 @@ public class EnemyController : MonoBehaviour
         if (!notInRoom)
         { if (rigidbody.simulated == false)
             {
+                if(enemyType == EnemyType.Boss1)
+                    this.transform.GetChild(1).gameObject.SetActive(true);
                 StartCoroutine(CoolDown());
                 rigidbody.simulated = true;
 
@@ -114,6 +116,8 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
+            if (enemyType == EnemyType.Boss1 && this.transform.GetChild(1).gameObject.activeSelf == true)
+                this.transform.GetChild(1).gameObject.SetActive(false);
             rigidbody.simulated = false;
             currState = EnemyState.Idle;
         }      
