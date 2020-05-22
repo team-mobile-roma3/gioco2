@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
         shootHor = Input.GetAxis("ShootHorizontal") + act.Horizontal;
         shootVert =Input.GetAxis("ShootVertical") + act.Vertical;
         
-        if (Input.GetKeyDown(KeyCode.Z))
+   /*     if (Input.GetKeyDown(KeyCode.Z))
         {
             Inventory.PotionUse();
         }
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour
             stance = !stance;
         }
 
-   /*     if (horizontal > 0 && (Time.time > lastFlipShoot + 1.0f || lastFlipShoot == 0))
+        if (horizontal > 0 && (Time.time > lastFlipShoot + 1.0f || lastFlipShoot == 0))
         {
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
 
    public  void Shoot(float x, float y)
     {
-        if (x == 0 || y == 0) {return;}
+        if (x == 0 && y == 0) {return;}
         else
         {
             GameObject bullet = Instantiate(bulletPrefab, transform.position, transform.rotation) as GameObject;
