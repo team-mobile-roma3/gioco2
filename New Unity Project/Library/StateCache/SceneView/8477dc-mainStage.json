@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":10.008217811584473,"y":17.370098114013673,"z":-43.59193420410156},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":50.506431579589847,"orthographic":true}
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":true,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":30.339033126831056,"y":-2.3972885608673097,"z":-188.1796875},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":53.60841751098633,"orthographic":true}
+>>>>>>> claudio
