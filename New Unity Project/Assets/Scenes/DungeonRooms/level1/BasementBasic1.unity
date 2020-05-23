@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1505,6 +1505,7 @@ GameObject:
   - component: {fileID: 1601602489}
   - component: {fileID: 1601602491}
   - component: {fileID: 1601602492}
+  - component: {fileID: 1601602493}
   m_Layer: 0
   m_Name: Room
   m_TagString: room
@@ -1605,6 +1606,18 @@ MonoBehaviour:
     spawnerData: {fileID: 11400000, guid: 36ab667f8641b1d4badb8bc9ae9eac2a, type: 2}
   - name: BouncyEnemyRanged
     spawnerData: {fileID: 11400000, guid: 8fd4a3db23c2d564ba32199c290ce749, type: 2}
+--- !u!114 &1601602493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601602488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e708c633fcaf374ba6cc68aef4fb9e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1789226428
 GameObject:
   m_ObjectHideFlags: 0

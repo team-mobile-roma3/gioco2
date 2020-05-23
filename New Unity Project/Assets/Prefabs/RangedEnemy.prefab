@@ -100,7 +100,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4ceed0e030dd3ae47aab932e8fe84ac9, type: 3}
-  m_Color: {r: 0.9433962, g: 0.5808801, b: 0.057849795, a: 1}
+  m_Color: {r: 0.94509804, g: 0.8846646, b: 0.058823526, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -124,13 +124,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropList: {fileID: 0}
   currState: 0
-  enemyType: 1
-  range: 10
+  enemyType: 2
+  range: 15
   speed: 1
-  attackRange: 5
+  attackRange: 10
   bulletSpeed: 5
-  coolDown: 2
-  health: 1
+  coolDown: 1
+  health: 2
   notInRoom: 1
   bulletPrefab: {fileID: 8912613753944397765, guid: b02d5786e5afaac479b933a6426437e5,
     type: 3}
@@ -154,4 +154,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4

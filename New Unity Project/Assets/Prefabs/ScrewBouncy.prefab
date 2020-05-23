@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7963531136613723237}
   - component: {fileID: 7963531136613723236}
   - component: {fileID: 7963531136613723238}
+  - component: {fileID: -8974811719444009279}
   m_Layer: 0
   m_Name: ScrewBouncy
   m_TagString: wRanged
@@ -102,4 +103,17 @@ MonoBehaviour:
   moveSpeedChange: 0
   attackSpeedChange: 0.5
   bulletSizeChange: 0.5
+  mDamageChange: 0
   isProjectileBouncy: 1
+--- !u!114 &-8974811719444009279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7963531136613723234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e708c633fcaf374ba6cc68aef4fb9e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

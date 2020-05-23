@@ -17,7 +17,8 @@ public enum EnemyType
     Melee,
     Ranged,
     Boss1,
-    Boss2
+    Boss2,
+    Bomber
 };
 
 
@@ -110,7 +111,8 @@ public class EnemyController : MonoBehaviour
         
                     if (( enemyType == EnemyType.Ranged 
                 || enemyType == EnemyType.Boss2  
-                || enemyType == EnemyType.Bouncy) 
+                || enemyType == EnemyType.Bouncy
+                || enemyType == EnemyType.Bomber ) 
                 && Vector3.Distance(transform.position, player.transform.position) <= attackRange)
                     {
                         currState = EnemyState.Attack;
@@ -181,14 +183,23 @@ public class EnemyController : MonoBehaviour
                     StartCoroutine(CoolDown());
                     break;
                 case (EnemyType.Ranged):
-                     bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
+                    bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
                     bullet.GetComponent<BulletController>().GetPlayer(player.transform);
+                    bullet.GetComponent<BulletController>().speed = bulletSpeed;
                     bullet.GetComponent<BulletController>().isEnemyBullet = true;
+                    StartCoroutine(CoolDown());
+                    break;
+                case (EnemyType.Bomber):
+                    bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
+                    bullet.GetComponent<BombController>().GetPlayer(player.transform);
+                    bullet.GetComponent<BombController>().speed = bulletSpeed;
+                    bullet.GetComponent<BombController>().isEnemyBomb = true;
                     StartCoroutine(CoolDown());
                     break;
                 case (EnemyType.Boss2):
                     bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
                     bullet.GetComponent<BulletController>().GetPlayer(player.transform);
+                    bullet.GetComponent<BulletController>().speed = bulletSpeed;
                     bullet.GetComponent<BulletController>().isEnemyBullet = true;
                     bullet.transform.localScale = new Vector2(2f, 2f);
                     bullet.GetComponent<BulletController>().damage = 2;
@@ -237,7 +248,7 @@ public class EnemyController : MonoBehaviour
     {
        
        
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && enemyType != EnemyType.Bouncy)
             rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
 
         if (collision.gameObject.tag == "Player" && enemyType != EnemyType.Ranged)

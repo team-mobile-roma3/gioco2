@@ -18,15 +18,23 @@ public class SteamController : MonoBehaviour
 
     IEnumerator DeathDelay()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         gameObject.SetActive(false);
     }
-
     void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Enemy"))
+        {
+            col.gameObject.GetComponent<EnemyController>().DamageEnemy(GameController.MAttackDamage);
+
+        }
+
+    }
+    void OnTriggerStay2D(Collider2D col)
     {
         if (col.CompareTag("Enemy") )
         {
-            col.gameObject.GetComponent<EnemyController>().DamageEnemy(GameController.MAttackDamage);
+            col.gameObject.GetComponent<EnemyController>().DamageEnemy(GameController.MAttackDamage/50);
  
         }
      

@@ -131,7 +131,7 @@ MonoBehaviour:
   attackRange: 20
   bulletSpeed: 0
   coolDown: 5
-  health: 3
+  health: 4
   notInRoom: 1
   bulletPrefab: {fileID: 0}
 --- !u!50 &-8403694596383543919

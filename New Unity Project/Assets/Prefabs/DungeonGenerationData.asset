@@ -16,4 +16,4 @@ MonoBehaviour:
   pos: {x: 0, y: 0}
   numberOfCrawlers: 2
   iterationMin: 5
-  iterationMax: 7
+  iterationMax: 12

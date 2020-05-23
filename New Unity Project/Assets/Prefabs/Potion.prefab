@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4802124998439061774}
   - component: {fileID: 4802124998439061775}
   - component: {fileID: 4802124998439061773}
+  - component: {fileID: -5256229964705988403}
   m_Layer: 0
   m_Name: Potion
   m_TagString: Potion
@@ -102,4 +103,17 @@ MonoBehaviour:
   moveSpeedChange: 0
   attackSpeedChange: 0
   bulletSizeChange: 0
+  mDamageChange: 0
   isProjectileBouncy: 0
+--- !u!114 &-5256229964705988403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4802124998439061761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e708c633fcaf374ba6cc68aef4fb9e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

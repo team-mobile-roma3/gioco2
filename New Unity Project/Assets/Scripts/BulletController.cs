@@ -7,9 +7,7 @@ public class BulletController : MonoBehaviour
     public float lifeTime;
     public bool isEnemyBullet = false;
     public int damage;
-
-    private Vector2 lastPos;
-    private Vector2 curPos;
+    public float speed;
     private Vector2 playerPos;
     // Start is called before the first frame update
     void Start() 
@@ -21,23 +19,19 @@ public class BulletController : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if(isEnemyBullet)
         {
-            curPos = transform.position;
-            transform.position = Vector2.MoveTowards(transform.position, playerPos, 10000f);
-            if(curPos == lastPos)
-            {
-                Destroy(gameObject);
-            }
-            lastPos = curPos;
+            Vector2 dir = Vector2.MoveTowards(transform.position, playerPos, 1000f);
+            dir.Normalize();
+            GetComponent<Rigidbody2D>().velocity = dir * speed;
         }
     }
 
     public void GetPlayer(Transform player)
     {
-        playerPos = player.position;
+        playerPos = player.position -transform.position;
     }
 
     IEnumerator DeathDelay()
@@ -50,6 +44,10 @@ public class BulletController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        if (col.CompareTag("Wall")  && !GameController.IPB)
+        {
+            Destroy(gameObject);
+        }
         if (col.CompareTag("Wall") && !isEnemyBullet && GameController.IPB){
             Debug.Log("hit wall");
             Rigidbody2D ri = gameObject.GetComponent<Rigidbody2D>();

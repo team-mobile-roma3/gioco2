@@ -126,13 +126,9 @@ public class RoomController : MonoBehaviour
     }
 
     public int  LoadRoom( string name, int x, int y)
-    {   if ( name == "Start2")
- //       Debug.Log("sto istanziando " + name);
-        if(DoesRoomExist(x, y) )
-        {   
-                
+    { 
+        if(DoesRoomExist(x, y))       
             return 0 ;
-        }
 
         RoomInfo newRoomData = new RoomInfo();
         newRoomData.name = name;
@@ -179,13 +175,9 @@ public class RoomController : MonoBehaviour
             if (currentLoadRoomData.name.Contains("Start"))
                 nBoss.Add(loadedRooms.Count);
                 loadedRooms.Add(room);
-     
-    //            Debug.Log("caricato stanza coordinate " + room.X +","+ room.Y);
-
             }
         else
         {
- //           Debug.Log("esisteva " + currentLoadRoomData.name);
             Destroy(room.gameObject);
             isLoadingRoom = false;
         }
@@ -206,7 +198,8 @@ public class RoomController : MonoBehaviour
     {
         string[] possibleRooms = new string[] {
             "Empty",
-            "Basic1"
+            "Basic1",
+             "Basic2"
         };
 
         return possibleRooms[UnityEngine.Random.Range(0, possibleRooms.Length)];
