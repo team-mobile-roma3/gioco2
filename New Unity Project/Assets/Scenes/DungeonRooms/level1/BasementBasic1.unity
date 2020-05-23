@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -332,7 +332,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1601602490}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &409668835
 SpriteRenderer:
@@ -522,7 +522,7 @@ Transform:
   m_Children:
   - {fileID: 1802012721}
   m_Father: {fileID: 1601602490}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &480338541
 BoxCollider2D:
@@ -676,7 +676,7 @@ Transform:
   m_Children:
   - {fileID: 774892364}
   m_Father: {fileID: 1601602490}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &626900233
 BoxCollider2D:
@@ -965,7 +965,7 @@ Transform:
   m_Children:
   - {fileID: 488846649}
   m_Father: {fileID: 1601602490}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1039006423
 BoxCollider2D:
@@ -1548,10 +1548,10 @@ Transform:
   - {fileID: 1171010722}
   - {fileID: 1254466777}
   - {fileID: 94645981}
+  - {fileID: 409668834}
   - {fileID: 480338540}
   - {fileID: 1039006422}
   - {fileID: 626900232}
-  - {fileID: 409668834}
   - {fileID: 2075138660}
   - {fileID: 197828647}
   m_Father: {fileID: 0}
@@ -1884,7 +1884,7 @@ GameObject:
   - component: {fileID: 2075138660}
   m_Layer: 0
   m_Name: SideWall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

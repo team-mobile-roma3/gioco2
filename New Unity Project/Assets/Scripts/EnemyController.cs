@@ -62,9 +62,11 @@ public class EnemyController : MonoBehaviour
     {
         if (health <= 0)
         {   if (this.enemyType == EnemyType.Boss1 
-                && enemyType == EnemyType.Boss2)
+                || this.enemyType == EnemyType.Boss2)
             {
+                Debug.Log(this.transform.GetChild(0));
                 this.transform.GetChild(0).gameObject.SetActive(true);
+
                 transform.GetChild(0).parent = null;
             }
             this.Death();
