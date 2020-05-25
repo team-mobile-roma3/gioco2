@@ -25,7 +25,7 @@ public class RoomController : MonoBehaviour
     public List<int> nBoss;
     RoomInfo currentLoadRoomData;
 
-    Room currRoom;
+      public Room currRoom;
 
     Queue<RoomInfo> loadRoomQueue = new Queue<RoomInfo>();
 
@@ -215,7 +215,7 @@ public class RoomController : MonoBehaviour
 
     public IEnumerator RoomCoroutine()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         UpdateRooms();
     }
 
