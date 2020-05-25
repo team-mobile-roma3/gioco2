@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     private static float attackDamage = 1;
     private static float mAttackDamage = 2;
     private static bool stance = false;
+    private static bool invulerability = false;
 
     private bool bootCollected = false;
     private bool screwCollected = false;
@@ -33,6 +34,7 @@ public class GameController : MonoBehaviour
     public static float BulletSize { get => bulletSize; set => bulletSize = value; }
     public static bool IPB { get => isProjectileBouncy; set => isProjectileBouncy = value; }
     public static bool Stance { get => stance; set => stance = value; }
+    public static bool Invulerability { get => invulerability; set => invulerability = value; }
 
 
 
@@ -63,6 +65,7 @@ public class GameController : MonoBehaviour
 
     public static void DamagePlayer(int damage)
     {
+        if (!invulerability)
         health -= damage;
 
         if(Health <= 0)

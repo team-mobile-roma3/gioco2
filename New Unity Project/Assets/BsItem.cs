@@ -20,7 +20,10 @@ public class BsItem : MonoBehaviour
         {
 
             Inventory.CoinsCollected -= price;
-            item = Instantiate(item.gameObject, transform.position, Quaternion.identity) as GameObject;
+            if (item == null)
+                GameObject.Find("Pets").transform.GetChild(0).gameObject.SetActive(true);
+            else
+                item = Instantiate(item.gameObject, transform.position, Quaternion.identity) as GameObject;
             Destroy(gameObject);
         }
 

@@ -6,6 +6,8 @@ using UnityEngine;
 public class BSItemSpawner : MonoBehaviour
 {
     public GameObject item;
+    private GameObject toSpawn;
+    public string name;
 
     private Boolean cooldown = false;
     void Start()
@@ -15,10 +17,10 @@ public class BSItemSpawner : MonoBehaviour
 
     private void Update()
     {
-        if (!cooldown && GameObject.Find("BSPotion(Clone)") == null)
+        if (!cooldown && GameObject.Find(name+"(Clone)") == null)
         {
 
-            item = Instantiate(item.gameObject, new Vector2(0, 220), Quaternion.identity) as GameObject;
+            toSpawn = Instantiate(item.gameObject, transform.position, Quaternion.identity) as GameObject;
             StartCoroutine(Spawn());
         }
 
@@ -28,7 +30,7 @@ public class BSItemSpawner : MonoBehaviour
     private  IEnumerator Spawn()
     {
          cooldown = true;
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(20f);
         cooldown = false;
       
     }

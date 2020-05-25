@@ -48,6 +48,7 @@ public class EnemyController : MonoBehaviour
     {
         Debug.Log("preso! vita: " + health);
         health -= value;
+        StartCoroutine(Flash());
     }
     // Start is called before the first frame update
     void Start()
@@ -236,6 +237,18 @@ public class EnemyController : MonoBehaviour
             dropList.Drop(transform.position);
         }
         Destroy(gameObject);
+    }
+
+    IEnumerator Flash()
+    {
+        for (int n = 0; n < 2; n++)
+        {
+            Color spriteColor = GetComponent<SpriteRenderer>().color;
+            GetComponent<SpriteRenderer>().color = Color.red;
+            yield return new WaitForSeconds(0.1f);
+            GetComponent<SpriteRenderer>().color = spriteColor;
+          yield return new WaitForSeconds(0.1f);
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

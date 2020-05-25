@@ -209,7 +209,7 @@ public class RoomController : MonoBehaviour
     {
         CameraController.instance.currRoom = room;
         currRoom = room;
-
+        StartCoroutine(Wait1());
         StartCoroutine(RoomCoroutine());
     }
 
@@ -278,16 +278,20 @@ public class RoomController : MonoBehaviour
 
     IEnumerator Wait()
     {
-
         yield return new WaitForSeconds(7f);
-
         GameObject.Find("Canvas").transform.GetChild(0).gameObject.SetActive(false);
         GameObject.Find("Canvas").transform.GetChild(1).gameObject.SetActive(true);
         GameObject.Find("Canvas").transform.GetChild(2).gameObject.SetActive(true);
         GameObject.Find("Canvas").transform.GetChild(3).gameObject.SetActive(true);
         GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(true);
- 
-
+    }
+    IEnumerator Wait1()
+    {
+        Debug.Log("inv");
+        GameObject.Find("Player").GetComponent<PlayerController>().MakeFlash();
+        GameController.Invulerability = true;
+        yield return new WaitForSeconds(1f);
+        GameController.Invulerability = false;
 
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -40,6 +41,8 @@ public class PlayerController : MonoBehaviour
     }
     void Update()
     {
+        
+ 
         fireDelay = GameController.FireRate;
         speed = GameController.MoveSpeed;
         stance = GameController.Stance;
@@ -98,27 +101,44 @@ public class PlayerController : MonoBehaviour
             }
         } 
     }
-/*
-    public void PlayerAttack(float x, float y)
-    {
-        Debug.Log("sono qui");
-        if ((x != 0 || y != 0) && (((Time.time > lastFire + fireDelay) && !stance) || ((Time.time > lastSwing + swingDelay && stance) )))
+    /*
+        public void PlayerAttack(float x, float y)
         {
-            if (!stance)        //ranged
+            Debug.Log("sono qui");
+            if ((x != 0 || y != 0) && (((Time.time > lastFire + fireDelay) && !stance) || ((Time.time > lastSwing + swingDelay && stance) )))
             {
-                Shoot(x, y);
-                lastFire = Time.time;
-                lastFlipShoot = Time.time;
-            }
+                if (!stance)        //ranged
+                {
+                    Shoot(x, y);
+                    lastFire = Time.time;
+                    lastFlipShoot = Time.time;
+                }
 
-            else if (stance)        //melee
-            {
-                Melee(x, y);
-                lastSwing = Time.time;
-                lastFlipShoot = Time.time;
+                else if (stance)        //melee
+                {
+                    Melee(x, y);
+                    lastSwing = Time.time;
+                    lastFlipShoot = Time.time;
+                }
             }
+        }*/
+
+    public void MakeFlash()
+    {
+            StartCoroutine(Flash());
+    }
+
+    IEnumerator Flash()
+    {
+        for (int n = 0; n < 2; n++)
+        {
+            Color spriteColor = GetComponent<SpriteRenderer>().color;
+            GetComponent<SpriteRenderer>().color = Color.white;
+            yield return new WaitForSeconds(0.1f);
+            GetComponent<SpriteRenderer>().color = spriteColor;
+            yield return new WaitForSeconds(0.1f);
         }
-    }*/
+    }
     public void Move(float x, float y)
     {
         if (x==0 && y==0) {
@@ -172,4 +192,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+
 }
