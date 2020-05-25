@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Flash()
     {
-        for (int n = 0; n < 2; n++)
+        for (int n = 0; n < 3; n++)
         {
             Color spriteColor = GetComponent<SpriteRenderer>().color;
             GetComponent<SpriteRenderer>().color = Color.white;
