@@ -14,6 +14,7 @@ public class Item
 public class CollectionController : MonoBehaviour
 {
 
+    public GameObject floatingTextPrefab;
     public Item item;
     public float healthChange;
     public float moveSpeedChange;
@@ -34,6 +35,8 @@ public class CollectionController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.tag == "Player" && floatingTextPrefab != null)
+            showFloatingText();
         if (collision.tag == "Player" && gameObject.tag == "Potion")
         {
             Inventory.PotionsChange();
@@ -78,9 +81,12 @@ public class CollectionController : MonoBehaviour
             GameController.MoveSpeedChange(moveSpeedChange);
             Destroy(gameObject);
         }
-
-
     }
+    public void showFloatingText()
+    {
+       var go = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity) as GameObject;
 
+        go.GetComponent<TextMesh>().text = item.description;
+    }
 
 }

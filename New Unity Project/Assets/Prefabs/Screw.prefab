@@ -94,9 +94,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2fc9e4851ded7e4095ae00338a80f0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  floatingTextPrefab: {fileID: 7252035701486837302, guid: 009d64c0ae6d2f14ab15d9e9acdc3711,
+    type: 3}
   item:
     name: Screw
-    description: Increase bullet size and shot speed.
+    description: ++ Bullet size && speed
     itemImage: {fileID: 21300000, guid: c56feec71635e9a479e5a8ec8bc14b51, type: 3}
   healthChange: 0
   moveSpeedChange: 0
