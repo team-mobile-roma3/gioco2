@@ -588,10 +588,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1926516481
+  m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1419bd93db19c0045b82af85d3dcd8d9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 048f2f92bfdae084ca429ed440792341, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -614,9 +614,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b61cf7d5db2f554782ff7a1bb2cb1bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastOffsetX: 0.35
-  lastOffsetY: 0.85
-  legSpec: 0.35
+  lastOffsetX: 0.203
+  lastOffsetY: 0.605
+  legSpec: 0.203
   joyMove: 0
   move: {fileID: 1763561872}
 --- !u!4 &287285948
@@ -627,8 +627,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 287285945}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.35, y: -0.85, z: 0}
-  m_LocalScale: {x: 0.125, y: 0.125, z: 1}
+  m_LocalPosition: {x: -0.203, y: -0.605, z: 0}
+  m_LocalScale: {x: 0.1136235, y: 0.09468625, z: 0.75749}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 11
@@ -2528,10 +2528,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1926516481
+  m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 21833aed63801e440ba4ad1b6023c6c1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 19a967eee02c431478521d984ef033ca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2554,9 +2554,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b61cf7d5db2f554782ff7a1bb2cb1bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastOffsetX: -0.35
-  lastOffsetY: 0.85
-  legSpec: -0.35
+  lastOffsetX: -0.203
+  lastOffsetY: 0.605
+  legSpec: -0.203
   joyMove: 0
   move: {fileID: 1763561872}
 --- !u!4 &1097295143
@@ -2567,8 +2567,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1097295140}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.35, y: -0.85, z: 0}
-  m_LocalScale: {x: 0.125, y: 0.125, z: 1}
+  m_LocalPosition: {x: 0.203, y: -0.605, z: 0}
+  m_LocalScale: {x: 0.1136235, y: 0.09468625, z: 0.75749}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
@@ -4174,32 +4174,32 @@ PrefabInstance:
     - target: {fileID: 2396054019355527245, guid: 49e1d0afd3ba9bf4daa5d7b583690fab,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.25006577
+      value: 0.22730678
       objectReference: {fileID: 0}
     - target: {fileID: 2396054019355527245, guid: 49e1d0afd3ba9bf4daa5d7b583690fab,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.30826658
+      value: 0.23350884
       objectReference: {fileID: 0}
     - target: {fileID: 2396054019355527245, guid: 49e1d0afd3ba9bf4daa5d7b583690fab,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.74143
+      value: 0.5616258
       objectReference: {fileID: 0}
     - target: {fileID: 2396054019355527246, guid: 49e1d0afd3ba9bf4daa5d7b583690fab,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.8584906
+      value: 0.9433962
       objectReference: {fileID: 0}
     - target: {fileID: 2396054019355527246, guid: 49e1d0afd3ba9bf4daa5d7b583690fab,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.56762445
+      value: 0.60608405
       objectReference: {fileID: 0}
     - target: {fileID: 2396054019355527246, guid: 49e1d0afd3ba9bf4daa5d7b583690fab,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.1822268
+      value: 0.18244925
       objectReference: {fileID: 0}
     - target: {fileID: 2396054019355527246, guid: 49e1d0afd3ba9bf4daa5d7b583690fab,
         type: 3}
@@ -4220,6 +4220,11 @@ PrefabInstance:
     - target: {fileID: 2396054019355527246, guid: 49e1d0afd3ba9bf4daa5d7b583690fab,
         type: 3}
       propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2396054019355527246, guid: 49e1d0afd3ba9bf4daa5d7b583690fab,
+        type: 3}
+      propertyPath: m_Color.a
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2396054019355527344, guid: 49e1d0afd3ba9bf4daa5d7b583690fab,
