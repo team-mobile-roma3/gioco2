@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour
     private static float ableTeleportDoor;
     private float horizontal,vertical,shootHor,shootVert;
     private float lastFlipShoot;
+    public Animator animator;
+
+    private Vector2 movement;
 
     /******implementa i joypad*********/
     public FloatingJoystick move;
@@ -47,10 +50,14 @@ public class PlayerController : MonoBehaviour
         speed = GameController.MoveSpeed;
         stance = GameController.Stance;
 
-        horizontal = Input.GetAxis("Horizontal") + move.Horizontal;
-        vertical =Input.GetAxis("Vertical") + move.Vertical;
+        movement.x = (Input.GetAxis("Horizontal") + move.Horizontal) * speed;
+        movement.y =(Input.GetAxis("Vertical") + move.Vertical) * speed;
         shootHor = Input.GetAxis("ShootHorizontal") + act.Horizontal;
         shootVert =Input.GetAxis("ShootVertical") + act.Vertical;
+
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
         
    /*     if (Input.GetKeyDown(KeyCode.Z))
         {
@@ -71,7 +78,7 @@ public class PlayerController : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }*/
         //if (horizontal != 0 && vertical != 0)
-        Move(horizontal, vertical);
+        Move(movement.x, movement.y);
        
         if ((shootHor != 0 || shootVert != 0) && (((Time.time > lastFire + fireDelay) && !stance) || ((Time.time > lastSwing + swingDelay) && stance)))
         {
@@ -141,16 +148,18 @@ public class PlayerController : MonoBehaviour
     }
     public void Move(float x, float y)
     {
-        if (x==0 && y==0) {
+        movement.x = x;
+        movement.y = y;
+        /*if (x==0 && y==0) {
             rigidbody.velocity = new Vector2(0,0);}
         else
         {
             rigidbody.velocity = new Vector2(x * speed, y * speed);
-        }
-        
+        }*/
+        rigidbody.velocity = movement;
     }
 
-   public  void Shoot(float x, float y)
+   public void Shoot(float x, float y)
     {
         if (x == 0 && y == 0) {return;}
         else
@@ -192,6 +201,4 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
-
 }
