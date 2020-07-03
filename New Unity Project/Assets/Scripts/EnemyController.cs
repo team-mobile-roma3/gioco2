@@ -35,6 +35,8 @@ public class EnemyController : MonoBehaviour
     public float bulletSpeed;
     public float coolDown;
     public   float health;
+    public Animator animator;
+    public Vector2 movement;
     private bool chooseDir = false;
     private bool dead = false;
     private bool coolDownAttack = false;
@@ -160,6 +162,13 @@ public class EnemyController : MonoBehaviour
     void Follow()
     {
            rigidbody.MovePosition(Vector2.MoveTowards(rigidbody.position, player.transform.position, speed * Time.deltaTime));
+           movement.x = player.transform.position.x;
+           movement.y = player.transform.position.y;
+           
+           animator.SetFloat("Horizontal", movement.x);
+           animator.SetFloat("Vertical", movement.y);
+           animator.SetFloat("Speed", movement.sqrMagnitude);
+
 
  //       transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
