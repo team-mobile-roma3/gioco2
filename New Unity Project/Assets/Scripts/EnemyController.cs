@@ -22,7 +22,6 @@ public enum EnemyType
 };
 
 
-
 public class EnemyController : MonoBehaviour
 {   public EnemyOnDeathSpawner dropList = null;
     Rigidbody2D rigidbody;
@@ -77,12 +76,12 @@ public class EnemyController : MonoBehaviour
         }
         switch (currState)
         {
-            //case(EnemyState.Idle):
-            //    Idle();
+            /*case(EnemyState.Idle):
+                Idle();*/
             //break;
-            case(EnemyState.Wander):
+            /*case(EnemyState.Wander):
                 Wander();
-            break;
+            break;*/
             case(EnemyState.Follow):
                 Follow();
             break;
@@ -96,7 +95,7 @@ public class EnemyController : MonoBehaviour
         if (!notInRoom)
         { if (rigidbody.simulated == false)
             {
-                if(enemyType == EnemyType.Boss1)
+                if(enemyType == EnemyType.Boss1)            //spawna la scala dopo il primo Boss
                     this.transform.GetChild(1).gameObject.SetActive(true);
                 StartCoroutine(CoolDown());
                 rigidbody.simulated = true;
@@ -106,20 +105,24 @@ public class EnemyController : MonoBehaviour
             {
                 currState = EnemyState.Follow;
             }
-            else if(!IsPlayerInRange(range) && currState != EnemyState.Die && enemyType != EnemyType.Bouncy)
+            /*else if(!IsPlayerInRange(range) && currState != EnemyState.Die && enemyType != EnemyType.Bouncy)
             {
                 currState = EnemyState.Wander;
      //         Debug.Log("mi sto muovendo e sono " + name + notInRoom);
+            }*/
+            else if (!IsPlayerInRange(range)) 
+            {
+                currState = EnemyState.Idle;
             }
-        
-                    if (( enemyType == EnemyType.Ranged 
+            if (( enemyType == EnemyType.Ranged 
                 || enemyType == EnemyType.Boss2  
                 || enemyType == EnemyType.Bouncy
                 || enemyType == EnemyType.Bomber ) 
                 && Vector3.Distance(transform.position, player.transform.position) <= attackRange)
-                    {
-                        currState = EnemyState.Attack;
-                    }
+            {
+                
+                currState = EnemyState.Attack;
+            }
         }
         else
         {
@@ -145,7 +148,7 @@ public class EnemyController : MonoBehaviour
         chooseDir = false;
     }
 
-    void Wander()
+    /*void Wander()
     {
         if(!chooseDir)
         {
@@ -157,20 +160,17 @@ public class EnemyController : MonoBehaviour
         {
             currState = EnemyState.Follow;
         }
-    }
+    }*/
 
     void Follow()
     {
-           rigidbody.MovePosition(Vector2.MoveTowards(rigidbody.position, player.transform.position, speed * Time.deltaTime));
-           movement.x = player.transform.position.x;
-           movement.y = player.transform.position.y;
-           
-           animator.SetFloat("Horizontal", movement.x);
-           animator.SetFloat("Vertical", movement.y);
-           animator.SetFloat("Speed", movement.sqrMagnitude);
-
-
- //       transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        rigidbody.MovePosition(Vector2.MoveTowards(rigidbody.position, player.transform.position, speed * Time.deltaTime));
+        Vector2 direction = (player.transform.position - transform.position).normalized;
+  
+        animator.SetFloat("Horizontal", direction.x);
+        animator.SetFloat("Vertical", direction.y);
+        animator.SetFloat("Speed", direction.sqrMagnitude);
+        //transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
 
     void Attack()

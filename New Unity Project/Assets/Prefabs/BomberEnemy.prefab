@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6879314993130097388}
   - component: {fileID: 6879314993130097391}
   - component: {fileID: 6879314993130097387}
+  - component: {fileID: 8633650450877407150}
   m_Layer: 0
   m_Name: BomberEnemy
   m_TagString: Enemy
@@ -131,6 +132,8 @@ MonoBehaviour:
   bulletSpeed: 5
   coolDown: 3
   health: 2
+  animator: {fileID: 8633650450877407150}
+  movement: {x: 0, y: 0}
   notInRoom: 1
   bulletPrefab: {fileID: 8252121481617943725, guid: 38403bd6133d3734a94b425906124d46,
     type: 3}
@@ -155,3 +158,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!95 &8633650450877407150
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6879314993130097390}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e3c0a7aa7b50b8e449676d8b0154411c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
