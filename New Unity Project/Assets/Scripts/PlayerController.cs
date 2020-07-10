@@ -55,9 +55,7 @@ public class PlayerController : MonoBehaviour
         shootHor = Input.GetAxis("ShootHorizontal") + act.Horizontal;
         shootVert =Input.GetAxis("ShootVertical") + act.Vertical;
 
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+        
         
    /*     if (Input.GetKeyDown(KeyCode.Z))
         {
@@ -156,6 +154,9 @@ public class PlayerController : MonoBehaviour
         {
             rigidbody.velocity = new Vector2(x * speed, y * speed);
         }*/
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
         rigidbody.velocity = movement;
     }
 

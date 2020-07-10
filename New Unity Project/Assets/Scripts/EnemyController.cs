@@ -231,10 +231,11 @@ public class EnemyController : MonoBehaviour
     public void Charge()
     {
         Vector2 direction = player.transform.position - transform.position;
-       
-
         direction.Normalize();
-       rigidbody.velocity = Vector2.MoveTowards(transform.position, (direction * speed ), 10000f);
+        animator.SetFloat("Horizontal", direction.x);
+        animator.SetFloat("Vertical", direction.y);
+        animator.SetFloat("Speed", direction.sqrMagnitude);
+        rigidbody.velocity = Vector2.MoveTowards(transform.position, (direction * speed ), 10000f);
     }
     public void Death()
     {
