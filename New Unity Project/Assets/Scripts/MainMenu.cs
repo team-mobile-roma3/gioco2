@@ -28,5 +28,12 @@ public class MainMenu : MonoBehaviour
         GameController.Stance = !temp;
     }
 
-  
+    public void Credits()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+    }
+    public void  BackToMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -2);
+    }
 }

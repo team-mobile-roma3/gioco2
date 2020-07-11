@@ -14,7 +14,7 @@ public class Door : MonoBehaviour
     public GameObject doorCollider;
 
     private GameObject player;
-    private float widthOffset = 1.0f;
+    private float widthOffset = 2.0f;
     private bool notConnected = false;
 
     public bool getNotConnected()
