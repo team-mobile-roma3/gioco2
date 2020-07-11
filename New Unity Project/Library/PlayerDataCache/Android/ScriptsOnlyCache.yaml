@@ -34,6 +34,7 @@ ScriptsOnlyBuild:
     - PlayerController
     - Room
     - RoomController
+    - ScoreControllerUI
     - SpawnerData
     - SteamController
     - TeleportTrigger
@@ -76,7 +77,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Image
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/Prefabs/Shared/BasementBlacksmith.unity:
+    Assets/Scenes/DungeonRooms/Shared/BasementBlacksmith.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -102,25 +103,25 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11446}
+      Script: {instanceID: 11552}
     - Class: 114
-      Script: {instanceID: 11896}
+      Script: {instanceID: 12014}
     - Class: 114
-      Script: {instanceID: 11990}
+      Script: {instanceID: 12112}
     - Class: 114
-      Script: {instanceID: 13012}
+      Script: {instanceID: 13174}
     - Class: 114
-      Script: {instanceID: 13032}
+      Script: {instanceID: 13194}
     - Class: 114
-      Script: {instanceID: 13162}
+      Script: {instanceID: 13330}
     - Class: 114
-      Script: {instanceID: 13184}
+      Script: {instanceID: 13354}
     - Class: 114
-      Script: {instanceID: 13432}
+      Script: {instanceID: 13604}
     - Class: 114
-      Script: {instanceID: 13438}
+      Script: {instanceID: 13610}
     - Class: 114
-      Script: {instanceID: 13898}
+      Script: {instanceID: 14074}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -135,7 +136,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 258
       Script: {instanceID: 0}
-    Assets/Prefabs/Shared/BasementEmpty.unity:
+    Assets/Scenes/DungeonRooms/Shared/BasementEmpty.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -153,15 +154,15 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11990}
+      Script: {instanceID: 12112}
     - Class: 114
-      Script: {instanceID: 13032}
+      Script: {instanceID: 13194}
     - Class: 114
-      Script: {instanceID: 13184}
+      Script: {instanceID: 13354}
     - Class: 114
-      Script: {instanceID: 13438}
+      Script: {instanceID: 13610}
     - Class: 114
-      Script: {instanceID: 13898}
+      Script: {instanceID: 14074}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -174,7 +175,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 258
       Script: {instanceID: 0}
-    Assets/Prefabs/Shared/BasementMain.unity:
+    Assets/Scenes/DungeonRooms/Shared/BasementMain.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -216,61 +217,61 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11214}
+      Script: {instanceID: 11310}
     - Class: 114
-      Script: {instanceID: 11238}
+      Script: {instanceID: 11336}
     - Class: 114
-      Script: {instanceID: 11416}
+      Script: {instanceID: 11518}
     - Class: 114
-      Script: {instanceID: 11478}
+      Script: {instanceID: 11584}
     - Class: 114
-      Script: {instanceID: 11542}
+      Script: {instanceID: 11650}
     - Class: 114
-      Script: {instanceID: 11658}
+      Script: {instanceID: 11772}
     - Class: 114
-      Script: {instanceID: 11666}
+      Script: {instanceID: 11780}
     - Class: 114
-      Script: {instanceID: 11990}
-    - Class: 114
-      Script: {instanceID: 12216}
-    - Class: 114
-      Script: {instanceID: 12276}
+      Script: {instanceID: 12112}
     - Class: 114
       Script: {instanceID: 12348}
     - Class: 114
-      Script: {instanceID: 12642}
+      Script: {instanceID: 12408}
     - Class: 114
-      Script: {instanceID: 12746}
+      Script: {instanceID: 12482}
     - Class: 114
-      Script: {instanceID: 12764}
+      Script: {instanceID: 12782}
     - Class: 114
-      Script: {instanceID: 12828}
+      Script: {instanceID: 12894}
     - Class: 114
-      Script: {instanceID: 13012}
+      Script: {instanceID: 12914}
     - Class: 114
-      Script: {instanceID: 13096}
+      Script: {instanceID: 12980}
     - Class: 114
-      Script: {instanceID: 13288}
+      Script: {instanceID: 13174}
     - Class: 114
-      Script: {instanceID: 13340}
+      Script: {instanceID: 13258}
     - Class: 114
-      Script: {instanceID: 13382}
+      Script: {instanceID: 13458}
     - Class: 114
-      Script: {instanceID: 13400}
+      Script: {instanceID: 13510}
     - Class: 114
-      Script: {instanceID: 13432}
+      Script: {instanceID: 13554}
     - Class: 114
-      Script: {instanceID: 13666}
+      Script: {instanceID: 13572}
     - Class: 114
-      Script: {instanceID: 13730}
+      Script: {instanceID: 13604}
     - Class: 114
-      Script: {instanceID: 13938}
+      Script: {instanceID: 13840}
     - Class: 114
-      Script: {instanceID: 13964}
+      Script: {instanceID: 13904}
     - Class: 114
-      Script: {instanceID: 14194}
+      Script: {instanceID: 14116}
     - Class: 114
-      Script: {instanceID: 14602}
+      Script: {instanceID: 14142}
+    - Class: 114
+      Script: {instanceID: 14378}
+    - Class: 114
+      Script: {instanceID: 14794}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -291,7 +292,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 258
       Script: {instanceID: 0}
-    Assets/Prefabs/Shared/BasementWin.unity:
+    Assets/Scenes/DungeonRooms/Shared/BasementWin.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -315,19 +316,19 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11990}
+      Script: {instanceID: 12112}
     - Class: 114
-      Script: {instanceID: 13012}
+      Script: {instanceID: 13174}
     - Class: 114
-      Script: {instanceID: 13032}
+      Script: {instanceID: 13194}
     - Class: 114
-      Script: {instanceID: 13184}
+      Script: {instanceID: 13354}
     - Class: 114
-      Script: {instanceID: 13432}
+      Script: {instanceID: 13604}
     - Class: 114
-      Script: {instanceID: 13438}
+      Script: {instanceID: 13610}
     - Class: 114
-      Script: {instanceID: 13898}
+      Script: {instanceID: 14074}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -341,6 +342,104 @@ ScriptsOnlyBuild:
     - Class: 213
       Script: {instanceID: 0}
     - Class: 258
+      Script: {instanceID: 0}
+    Assets/Scenes/DungeonRooms/Shared/Credits.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11310}
+    - Class: 114
+      Script: {instanceID: 11336}
+    - Class: 114
+      Script: {instanceID: 11584}
+    - Class: 114
+      Script: {instanceID: 12482}
+    - Class: 114
+      Script: {instanceID: 13258}
+    - Class: 114
+      Script: {instanceID: 14116}
+    - Class: 114
+      Script: {instanceID: 14794}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/DungeonRooms/Shared/Score.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11310}
+    - Class: 114
+      Script: {instanceID: 11322}
+    - Class: 114
+      Script: {instanceID: 11336}
+    - Class: 114
+      Script: {instanceID: 11584}
+    - Class: 114
+      Script: {instanceID: 11650}
+    - Class: 114
+      Script: {instanceID: 12482}
+    - Class: 114
+      Script: {instanceID: 12894}
+    - Class: 114
+      Script: {instanceID: 13258}
+    - Class: 114
+      Script: {instanceID: 14116}
+    - Class: 114
+      Script: {instanceID: 14794}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     Assets/Scenes/DungeonRooms/level1/BasementBasic1.unity:
     - Class: 1
@@ -378,31 +477,31 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11446}
+      Script: {instanceID: 11552}
     - Class: 114
-      Script: {instanceID: 11804}
+      Script: {instanceID: 11922}
     - Class: 114
-      Script: {instanceID: 11990}
+      Script: {instanceID: 12112}
     - Class: 114
-      Script: {instanceID: 12652}
+      Script: {instanceID: 12794}
     - Class: 114
-      Script: {instanceID: 13012}
+      Script: {instanceID: 13174}
     - Class: 114
-      Script: {instanceID: 13032}
+      Script: {instanceID: 13194}
     - Class: 114
-      Script: {instanceID: 13184}
+      Script: {instanceID: 13354}
     - Class: 114
-      Script: {instanceID: 13382}
+      Script: {instanceID: 13554}
     - Class: 114
-      Script: {instanceID: 13432}
+      Script: {instanceID: 13604}
     - Class: 114
-      Script: {instanceID: 13438}
+      Script: {instanceID: 13610}
     - Class: 114
-      Script: {instanceID: 13898}
+      Script: {instanceID: 14074}
     - Class: 114
-      Script: {instanceID: 13922}
+      Script: {instanceID: 14100}
     - Class: 114
-      Script: {instanceID: 14000}
+      Script: {instanceID: 14180}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -453,23 +552,23 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11446}
+      Script: {instanceID: 11552}
     - Class: 114
-      Script: {instanceID: 11990}
+      Script: {instanceID: 12112}
     - Class: 114
-      Script: {instanceID: 12266}
+      Script: {instanceID: 12398}
     - Class: 114
-      Script: {instanceID: 13012}
+      Script: {instanceID: 13174}
     - Class: 114
-      Script: {instanceID: 13032}
+      Script: {instanceID: 13194}
     - Class: 114
-      Script: {instanceID: 13432}
+      Script: {instanceID: 13604}
     - Class: 114
-      Script: {instanceID: 13438}
+      Script: {instanceID: 13610}
     - Class: 114
-      Script: {instanceID: 13922}
+      Script: {instanceID: 14100}
     - Class: 114
-      Script: {instanceID: 14000}
+      Script: {instanceID: 14180}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -502,9 +601,9 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 13032}
+      Script: {instanceID: 13194}
     - Class: 114
-      Script: {instanceID: 13438}
+      Script: {instanceID: 13610}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -553,33 +652,33 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11446}
+      Script: {instanceID: 11552}
     - Class: 114
-      Script: {instanceID: 11590}
+      Script: {instanceID: 11700}
     - Class: 114
-      Script: {instanceID: 11804}
+      Script: {instanceID: 11922}
     - Class: 114
-      Script: {instanceID: 11990}
+      Script: {instanceID: 12112}
     - Class: 114
-      Script: {instanceID: 12652}
+      Script: {instanceID: 12794}
     - Class: 114
-      Script: {instanceID: 12968}
+      Script: {instanceID: 13128}
     - Class: 114
-      Script: {instanceID: 13012}
+      Script: {instanceID: 13174}
     - Class: 114
-      Script: {instanceID: 13032}
+      Script: {instanceID: 13194}
     - Class: 114
-      Script: {instanceID: 13184}
+      Script: {instanceID: 13354}
     - Class: 114
-      Script: {instanceID: 13432}
+      Script: {instanceID: 13604}
     - Class: 114
-      Script: {instanceID: 13438}
+      Script: {instanceID: 13610}
     - Class: 114
-      Script: {instanceID: 13898}
+      Script: {instanceID: 14074}
     - Class: 114
-      Script: {instanceID: 13922}
+      Script: {instanceID: 14100}
     - Class: 114
-      Script: {instanceID: 14000}
+      Script: {instanceID: 14180}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -622,17 +721,17 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11446}
+      Script: {instanceID: 11552}
     - Class: 114
-      Script: {instanceID: 11946}
+      Script: {instanceID: 12066}
     - Class: 114
-      Script: {instanceID: 13032}
+      Script: {instanceID: 13194}
     - Class: 114
-      Script: {instanceID: 13382}
+      Script: {instanceID: 13554}
     - Class: 114
-      Script: {instanceID: 13438}
+      Script: {instanceID: 13610}
     - Class: 114
-      Script: {instanceID: 13922}
+      Script: {instanceID: 14100}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -663,9 +762,9 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 13032}
+      Script: {instanceID: 13194}
     - Class: 114
-      Script: {instanceID: 13438}
+      Script: {instanceID: 13610}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -706,17 +805,17 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11446}
+      Script: {instanceID: 11552}
     - Class: 114
-      Script: {instanceID: 13032}
+      Script: {instanceID: 13194}
     - Class: 114
-      Script: {instanceID: 13382}
+      Script: {instanceID: 13554}
     - Class: 114
-      Script: {instanceID: 13438}
+      Script: {instanceID: 13610}
     - Class: 114
-      Script: {instanceID: 13470}
+      Script: {instanceID: 13644}
     - Class: 114
-      Script: {instanceID: 13922}
+      Script: {instanceID: 14100}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -749,9 +848,9 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 13032}
+      Script: {instanceID: 13194}
     - Class: 114
-      Script: {instanceID: 13438}
+      Script: {instanceID: 13610}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -792,13 +891,13 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11446}
+      Script: {instanceID: 11552}
     - Class: 114
-      Script: {instanceID: 13032}
+      Script: {instanceID: 13194}
     - Class: 114
-      Script: {instanceID: 13438}
+      Script: {instanceID: 13610}
     - Class: 114
-      Script: {instanceID: 13922}
+      Script: {instanceID: 14100}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -831,9 +930,9 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 13032}
+      Script: {instanceID: 13194}
     - Class: 114
-      Script: {instanceID: 13438}
+      Script: {instanceID: 13610}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -874,13 +973,13 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11446}
+      Script: {instanceID: 11552}
     - Class: 114
-      Script: {instanceID: 13032}
+      Script: {instanceID: 13194}
     - Class: 114
-      Script: {instanceID: 13438}
+      Script: {instanceID: 13610}
     - Class: 114
-      Script: {instanceID: 13922}
+      Script: {instanceID: 14100}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -913,9 +1012,9 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 13032}
+      Script: {instanceID: 13194}
     - Class: 114
-      Script: {instanceID: 13438}
+      Script: {instanceID: 13610}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -947,40 +1046,38 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
-    - Class: 108
-      Script: {instanceID: 0}
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11214}
+      Script: {instanceID: 11310}
     - Class: 114
-      Script: {instanceID: 11238}
+      Script: {instanceID: 11336}
     - Class: 114
-      Script: {instanceID: 11478}
+      Script: {instanceID: 11584}
     - Class: 114
-      Script: {instanceID: 12348}
+      Script: {instanceID: 12482}
     - Class: 114
-      Script: {instanceID: 12404}
+      Script: {instanceID: 12538}
     - Class: 114
-      Script: {instanceID: 12746}
+      Script: {instanceID: 12894}
     - Class: 114
-      Script: {instanceID: 13096}
+      Script: {instanceID: 13258}
     - Class: 114
-      Script: {instanceID: 13480}
+      Script: {instanceID: 13654}
     - Class: 114
-      Script: {instanceID: 13498}
+      Script: {instanceID: 13672}
     - Class: 114
-      Script: {instanceID: 13822}
+      Script: {instanceID: 13996}
     - Class: 114
-      Script: {instanceID: 13920}
+      Script: {instanceID: 14098}
     - Class: 114
-      Script: {instanceID: 13938}
+      Script: {instanceID: 14116}
     - Class: 114
-      Script: {instanceID: 14244}
+      Script: {instanceID: 14428}
     - Class: 114
-      Script: {instanceID: 14420}
+      Script: {instanceID: 14608}
     - Class: 114
-      Script: {instanceID: 14602}
+      Script: {instanceID: 14794}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1004,6 +1101,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Image
+  - hash:
+      serializedVersion: 2
+      Hash: fd603770689195d8c21e05ad28422d62
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ScoreControllerUI
   - hash:
       serializedVersion: 2
       Hash: ce669872a2be11bc686ea22961d8a3bb
@@ -1858,7 +1961,7 @@ ScriptsOnlyBuild:
     className: TMP_TextInfoDebugTool
   - hash:
       serializedVersion: 2
-      Hash: 24b36c24540a109883cc711a5b092114
+      Hash: 05944fa3bb87eb39de3b8c2026d6bd58
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -1906,7 +2009,7 @@ ScriptsOnlyBuild:
     className: FacebookSettings
   - hash:
       serializedVersion: 2
-      Hash: 44a153e5dc3cd1dd8b9abe4f0ec883dd
+      Hash: 32175ecb9c383ff423d861b1480f2d99
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyController
@@ -2153,9 +2256,10 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/MainMenu.unity
-  - Assets/Prefabs/Shared/BasementMain.unity
+  - Assets/Scenes/DungeonRooms/Shared/BasementMain.unity
+  - Assets/Scenes/DungeonRooms/Shared/Credits.unity
   - Assets/Scenes/DungeonRooms/level1/BasementStart1.unity
-  - Assets/Prefabs/Shared/BasementEmpty.unity
+  - Assets/Scenes/DungeonRooms/Shared/BasementEmpty.unity
   - Assets/Scenes/DungeonRooms/level1/BasementEnd1.unity
   - Assets/Scenes/DungeonRooms/level1/BasementBasic1.unity
   - Assets/Scenes/DungeonRooms/level2/BasementStart2.unity
@@ -2166,7 +2270,8 @@ ScriptsOnlyBuild:
   - Assets/Scenes/DungeonRooms/level2/BasementEnd2.unity
   - Assets/Scenes/DungeonRooms/level3/BasementEnd3.unity
   - Assets/Scenes/DungeonRooms/level5/BasementEnd5.unity
-  - Assets/Prefabs/Shared/BasementWin.unity
-  - Assets/Prefabs/Shared/BasementBlacksmith.unity
+  - Assets/Scenes/DungeonRooms/Shared/BasementWin.unity
+  - Assets/Scenes/DungeonRooms/Shared/BasementBlacksmith.unity
   - Assets/Scenes/DungeonRooms/level2/BasementBasic2.unity
-  playerPath: C:/Users/pollooo/Documents/GitHub/gioco2/New Unity Project/fbtest.apk
+  - Assets/Scenes/DungeonRooms/Shared/Score.unity
+  playerPath: C:/Users/pollooo/Documents/GitHub/gioco2/New Unity Project/sharetest.apk

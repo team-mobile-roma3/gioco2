@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
 
     public static GameController instance;
 
+    private static int score = 0;
     private static float health = 6;
     private static int maxHealth = 6;
     private static float moveSpeed = 5f;
@@ -25,7 +26,7 @@ public class GameController : MonoBehaviour
     public List<string> collectedNames = new List<string>();
 
     public static float Health { get => health; set => health = value; }
-
+    public static int Score { get => score; set => score = value; }
     public static float AttackDamage { get => attackDamage; set => attackDamage = value; }
     public static float MAttackDamage { get => mAttackDamage; set => mAttackDamage = value; }
     public static int MaxHealth { get => maxHealth; set => maxHealth = value; }
@@ -48,6 +49,7 @@ public class GameController : MonoBehaviour
     }
     private void Start()
     {
+        score = 0;
         health = 6;
         maxHealth = 6;
         moveSpeed = 5f;
@@ -105,6 +107,11 @@ public class GameController : MonoBehaviour
     {
         isProjectileBouncy = cond;
     }
+    public static void ScoreChange(int points)
+
+    {
+        score += points;
+    }
 
     public void UpdateCollectedItems(CollectionController item)
     {
@@ -131,6 +138,6 @@ public class GameController : MonoBehaviour
 
     private static void KillPlayer()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(18);
     }
 }
