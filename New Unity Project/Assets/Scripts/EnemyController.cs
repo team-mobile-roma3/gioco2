@@ -34,7 +34,7 @@ public class EnemyController : MonoBehaviour
     public float bulletSpeed;
     public float coolDown;
     public   float health;
-    public Animator animator;
+    private Animator animator;
     public Vector2 movement;
     private bool chooseDir = false;
     private bool dead = false;
@@ -54,7 +54,7 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-   //     Debug.Log("sono spwnato e sono " + notInRoom);
+        animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -167,14 +167,15 @@ public class EnemyController : MonoBehaviour
         rigidbody.MovePosition(Vector2.MoveTowards(rigidbody.position, player.transform.position, speed * Time.deltaTime));
         Vector2 direction = (player.transform.position - transform.position).normalized;
   
-        animator.SetFloat("Horizontal", direction.x);
-        animator.SetFloat("Vertical", direction.y);
-        animator.SetFloat("Speed", direction.sqrMagnitude);
+        animator.SetFloat("moveX", direction.x);
+        animator.SetFloat("moveY", direction.y);
+        animator.SetBool("moving", true);
         //transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
     }
 
     void Attack()
     {
+        animator.SetBool("moving", false);
         if (!coolDownAttack)
         {
             switch (enemyType)
