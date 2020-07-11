@@ -4,10 +4,14 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
-
+public enum PlayerState
+{
+    walk,
+    attack
+}
 public class PlayerController : MonoBehaviour
 {
-
+    public PlayerState currentState;
     public float speed;
     public float rotateSpeed = 0;
     Rigidbody2D rigidbody;
@@ -37,11 +41,15 @@ public class PlayerController : MonoBehaviour
     
     void Start()
     {
+       
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody2D>();
+        currentState = PlayerState.walk;
 
         rigidbody.freezeRotation = true;
         ableTeleportDoor = Time.time-2f;
+        animator.SetFloat("moveX", 0);
+        animator.SetFloat("moveY", 0);
     }
     void FixedUpdate()
     {
@@ -116,6 +124,8 @@ public class PlayerController : MonoBehaviour
         if (movement != Vector3.zero)
         {
             Move();
+            movement.x = Mathf.Round(movement.x);
+            movement.y = Mathf.Round(movement.y);
             animator.SetFloat("moveX", movement.x);
             animator.SetFloat("moveY", movement.y);
             animator.SetBool("moving", true);
@@ -165,7 +175,7 @@ public class PlayerController : MonoBehaviour
     }
     public void Move()
     {
-
+        movement.Normalize();
         /*if (x==0 && y==0) {
             rigidbody.velocity = new Vector2(0,0);}
         else
@@ -175,7 +185,7 @@ public class PlayerController : MonoBehaviour
         /*  animator.SetFloat("Horizontal", movement.x);    LUCA
           animator.SetFloat("Vertical", movement.y);           LUCA
           animator.SetFloat("Speed", movement.sqrMagnitude);  LUCA*/
-        rigidbody.MovePosition(transform.position + movement.normalized * speed * Time.deltaTime);
+        rigidbody.MovePosition(transform.position + movement * speed * Time.deltaTime);
     }
 
    public void Shoot(float x, float y)

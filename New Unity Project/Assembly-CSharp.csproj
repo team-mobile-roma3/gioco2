@@ -94,6 +94,7 @@
     <Compile Include="Assets\ObjectRoomSpawner.cs" />
     <Compile Include="Assets\Orbit.cs" />
     <Compile Include="Assets\ScaleCanvas.cs" />
+    <Compile Include="Assets\ScoreControllerUI.cs" />
     <Compile Include="Assets\Scripts\BulletController.cs" />
     <Compile Include="Assets\Scripts\CameraController.cs" />
     <Compile Include="Assets\Scripts\CollectionController.cs" />

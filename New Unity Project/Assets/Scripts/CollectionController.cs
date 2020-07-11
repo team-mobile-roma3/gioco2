@@ -74,7 +74,8 @@ public class CollectionController : MonoBehaviour
         {
             Inventory.CoinsChange();
             Destroy(gameObject);
-           
+            GameController.ScoreChange(10);
+
         }
         if (collision.tag == "Player" && gameObject.CompareTag("Boots"))
         {

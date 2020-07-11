@@ -43,6 +43,7 @@ public class EnemyController : MonoBehaviour
     private Vector3 randomDir;
     public GameObject bulletPrefab;
     private GameObject bullet;
+    private Vector2 direction;
 
 
     public void DamageEnemy(float value)
@@ -63,6 +64,7 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (health <= 0)
         {   if (this.enemyType == EnemyType.Boss1 
                 || this.enemyType == EnemyType.Boss2)
@@ -130,6 +132,7 @@ public class EnemyController : MonoBehaviour
                 this.transform.GetChild(1).gameObject.SetActive(false);
             rigidbody.simulated = false;
             currState = EnemyState.Idle;
+            animator.SetBool("moving", false);
         }      
     }
 
@@ -164,9 +167,10 @@ public class EnemyController : MonoBehaviour
 
     void Follow()
     {
-        rigidbody.MovePosition(Vector2.MoveTowards(rigidbody.position, player.transform.position, speed * Time.deltaTime));
-        Vector2 direction = (player.transform.position - transform.position).normalized;
-  
+        Vector3 temp = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        changeAnim(temp - transform.position);
+        rigidbody.MovePosition(temp);
+        direction = (player.transform.position - transform.position).normalized;
         animator.SetFloat("moveX", direction.x);
         animator.SetFloat("moveY", direction.y);
         animator.SetBool("moving", true);
@@ -175,9 +179,12 @@ public class EnemyController : MonoBehaviour
 
     void Attack()
     {
+        
         animator.SetBool("moving", false);
+ 
         if (!coolDownAttack)
         {
+
             switch (enemyType)
             {
                 case (EnemyType.Melee):
@@ -205,6 +212,7 @@ public class EnemyController : MonoBehaviour
                     bullet.GetComponent<BombController>().GetPlayer(player.transform);
                     bullet.GetComponent<BombController>().speed = bulletSpeed;
                     bullet.GetComponent<BombController>().isEnemyBomb = true;
+                    StartCoroutine(AttackCo());
                     StartCoroutine(CoolDown());
                     break;
                 case (EnemyType.Boss2):
@@ -222,7 +230,44 @@ public class EnemyController : MonoBehaviour
             }
         }
     }
+    public void SetAnimFloat(Vector2 setVector)
+    {
+        animator.SetFloat("moveX", setVector.x);
+        animator.SetFloat("moveY", setVector.y);
+    }
 
+    public void changeAnim(Vector2 direction)
+    {
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+        {
+            if (direction.x > 0)
+            {
+                SetAnimFloat(Vector2.right);
+            }
+            else if (direction.x < 0)
+            {
+                SetAnimFloat(Vector2.left);
+            }
+        }
+        else if (Mathf.Abs(direction.x) < Mathf.Abs(direction.y))
+        {
+            if (direction.y > 0)
+            {
+                SetAnimFloat(Vector2.up);
+            }
+            else if (direction.y < 0)
+            {
+                SetAnimFloat(Vector2.down);
+            }
+        }
+    }
+    private IEnumerator AttackCo()
+    {
+
+        animator.SetBool("attacking", true);
+        yield return new WaitForSeconds(0.5f);
+        animator.SetBool("attacking", false);
+    }
     private IEnumerator CoolDown()
     {
         coolDownAttack = true;
@@ -243,10 +288,9 @@ public class EnemyController : MonoBehaviour
         RoomController.instance.StartCoroutine(RoomController.instance.RoomCoroutine());
         if (dropList != null)
         {
-
-            Debug.Log("ho drop");
             dropList.Drop(transform.position);
         }
+        GameController.ScoreChange(100);
         Destroy(gameObject);
     }
 

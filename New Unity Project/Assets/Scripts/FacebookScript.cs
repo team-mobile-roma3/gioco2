@@ -46,15 +46,26 @@ public class FacebookScript : MonoBehaviour
 
     public void FacebookShare()
     {
-        FB.ShareLink(new System.Uri("https://resocoder.com"), "Check it out!",
-            "Good programming tutorials lol!",
-            new System.Uri("https://resocoder.com/wp-content/uploads/2017/01/logoRound512.png"));
+        FB.ShareLink(
+             contentTitle: "I scored " + GameController.Score + " on Project C. Can you beat my score?",
+         //    contentURL: new System.Uri("https://play.google.com/store/apps/details?id=com.flash.football"),
+       //      photoURL: new System.Uri(" link di imgur"),
+      //       contentDescription: "Try to click the ball to score a point. It is harder than it looks. Click to learn more.",
+             callback: OnShare);
     }
-
+    private void OnShare(IShareResult result)
+    {
+        if (result.Cancelled || !string.IsNullOrEmpty(result.Error))
+            Debug.Log("Share error: " + result.Error);
+        else if (!string.IsNullOrEmpty(result.Error))
+            Debug.Log(result.PostId);
+        else
+            Debug.Log("Success");
+    }
     #region Inviting
     public void FacebookGameRequest()
     {
-        FB.AppRequest("Hey! Come and play this awesome game!", title: "Reso Coder Tutorial");
+       FB.AppRequest("Hey! Come and play this awesome game!", title: "Project C");
     }
 
     

@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7882bab6596bf92449d924fa855d5943, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c6cdf7c092fef6a4691367894488f4a1, type: 3}
   m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,11 +102,10 @@ MonoBehaviour:
   enemyType: 5
   range: 15
   speed: 1
-  attackRange: 10
+  attackRange: 5
   bulletSpeed: 5
   coolDown: 3
   health: 2
-  animator: {fileID: 8633650450877407150}
   movement: {x: 0, y: 0}
   notInRoom: 1
   bulletPrefab: {fileID: 8252121481617943725, guid: 38403bd6133d3734a94b425906124d46,
