@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
     private float lastFlipShoot;
     // public Animator animator;  LUCA
     private Animator animator;
-
+    public bool godmode = false;
     private Vector3 movement;
 
     /******implementa i joypad*********/
@@ -53,7 +53,10 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        movement = Vector3.zero;
+        if (godmode)
+            GameController.Invulerability = true;
+
+            movement = Vector3.zero;
  
         fireDelay = GameController.FireRate;
         speed = GameController.MoveSpeed;

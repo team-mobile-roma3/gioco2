@@ -117,7 +117,8 @@ public class EnemyController : MonoBehaviour
                 currState = EnemyState.Idle;
             }
             if (( enemyType == EnemyType.Ranged 
-                || enemyType == EnemyType.Boss2  
+                || enemyType == EnemyType.Boss2
+                || enemyType == EnemyType.Boss1
                 || enemyType == EnemyType.Bouncy
                 || enemyType == EnemyType.Bomber ) 
                 && Vector3.Distance(transform.position, player.transform.position) <= attackRange)
@@ -198,6 +199,7 @@ public class EnemyController : MonoBehaviour
                     break;
                 case (EnemyType.Boss1):
                     GameController.DamagePlayer(2);
+                    StartCoroutine(AttackCo());
                     StartCoroutine(CoolDown());
                     break;
                 case (EnemyType.Ranged):
@@ -263,14 +265,17 @@ public class EnemyController : MonoBehaviour
     }
     private IEnumerator AttackCo()
     {
-
-        animator.SetBool("attacking", true);
-        yield return new WaitForSeconds(0.5f);
-        animator.SetBool("attacking", false);
+        if (!coolDownAttack)
+        {
+            animator.SetBool("attacking", true);
+            yield return new WaitForSeconds(1f);
+            animator.SetBool("attacking", false);
+        }
     }
     private IEnumerator CoolDown()
     {
         coolDownAttack = true;
+        
         yield return new WaitForSeconds(coolDown);
         coolDownAttack = false;
     }
