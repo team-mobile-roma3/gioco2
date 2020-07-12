@@ -8,6 +8,7 @@ public class TeleportTrigger : MonoBehaviour
     public Vector2 pos;
     public Boolean toBS;
     private Boolean activated;
+    public Animator animator;
     private void Awake()
     {
         activated = false;
