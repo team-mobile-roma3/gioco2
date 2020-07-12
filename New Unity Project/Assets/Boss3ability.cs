@@ -46,7 +46,7 @@ public class Boss3ability : MonoBehaviour
     private IEnumerator CoolDown()
     {
         coolDownAttack = true;
-        yield return new WaitForSeconds(15f);
+        yield return new WaitForSeconds(20f);
         coolDownAttack = false;
     }
 }
