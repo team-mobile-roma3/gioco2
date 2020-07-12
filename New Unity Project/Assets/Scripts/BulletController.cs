@@ -19,7 +19,7 @@ public class BulletController : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if(isEnemyBullet)
         {
