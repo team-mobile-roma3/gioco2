@@ -546,6 +546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pos: {x: 200, y: 0}
   toBS: 0
+  tutorial: 0
   animator: {fileID: 368655769}
 --- !u!212 &368655768
 SpriteRenderer:
@@ -1026,6 +1027,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 5cba6a19bbea215488d423391cf84c1c,
         type: 3}
+    - target: {fileID: 5051726810918457015, guid: 05235872f7cdabd428251a6387b50d25,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7c2abd4a56b7fa945b0b1ba660255f0d, type: 2}
     - target: {fileID: 5051726810918457016, guid: 05235872f7cdabd428251a6387b50d25,
         type: 3}
       propertyPath: m_IsTrigger

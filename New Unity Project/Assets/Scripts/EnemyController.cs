@@ -306,11 +306,10 @@ public class EnemyController : MonoBehaviour
     {
         for (int n = 0; n < 2; n++)
         {
-            Color spriteColor = GetComponent<SpriteRenderer>().color;
-            GetComponent<SpriteRenderer>().color = Color.red;
+            GetComponent<SpriteRenderer>().material.SetFloat("_FlashAmount", 0.5f);
             yield return new WaitForSeconds(0.1f);
-            GetComponent<SpriteRenderer>().color = spriteColor;
-          yield return new WaitForSeconds(0.1f);
+            GetComponent<SpriteRenderer>().material.SetFloat("_FlashAmount", 0f);
+            yield return new WaitForSeconds(0.1f);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
