@@ -129,10 +129,9 @@ MonoBehaviour:
   range: 15
   speed: 1
   attackRange: 10
-  bulletSpeed: 5
+  bulletSpeed: 6
   coolDown: 1
-  health: 2
-  animator: {fileID: 2309663787076492524}
+  health: 4
   movement: {x: 0, y: 0}
   notInRoom: 1
   bulletPrefab: {fileID: 8912613753944397765, guid: b02d5786e5afaac479b933a6426437e5,
@@ -157,7 +156,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!95 &2309663787076492524
 Animator:
   serializedVersion: 3

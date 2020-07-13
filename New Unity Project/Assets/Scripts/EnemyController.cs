@@ -324,7 +324,7 @@ public class EnemyController : MonoBehaviour
     {
        
        
-        if (collision.gameObject.tag == "Player" && enemyType != EnemyType.Bouncy)
+        if (collision.gameObject.tag == "Player" && enemyType != EnemyType.Bouncy && enemyType != EnemyType.Ranged)
             rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
 
         if (collision.gameObject.tag == "Player" && enemyType != EnemyType.Ranged)
