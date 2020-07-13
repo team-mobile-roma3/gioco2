@@ -9,6 +9,7 @@ public class BulletController : MonoBehaviour
     public int damage;
     public float speed;
     private Vector2 playerPos;
+    public Animator animator;
     // Start is called before the first frame update
     void Start() 
     {
@@ -37,6 +38,7 @@ public class BulletController : MonoBehaviour
     IEnumerator DeathDelay()
     {
         yield return new WaitForSeconds(lifeTime);
+        animator.SetBool("explode", true);
         Destroy(gameObject);
     }
 
@@ -47,6 +49,7 @@ public class BulletController : MonoBehaviour
         if (col.CompareTag("Wall")  && !GameController.IPB)
         {
             Destroy(gameObject);
+
         }
         if (col.CompareTag("Wall") && !isEnemyBullet && GameController.IPB){
             Debug.Log("hit wall");
@@ -66,5 +69,6 @@ public class BulletController : MonoBehaviour
             GameController.DamagePlayer(damage);
             Destroy(gameObject);
         }
+        animator.SetBool("explode", true);
     }
 }
