@@ -8,7 +8,7 @@ public class CameraController : MonoBehaviour
     public static CameraController instance;
     public Room currRoom;
     public float moveSpeedWhenRoomChange;
-
+    public bool tutorial;
 
 
 
@@ -20,7 +20,12 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdatePosition();
+        if (tutorial)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position + new Vector3(0,0,-10) ,Time.deltaTime * 300);
+         
+        }
+        else  UpdatePosition();
     }
 
     void UpdatePosition()
@@ -29,6 +34,7 @@ public class CameraController : MonoBehaviour
         {
             return;
         }
+       
 
         Vector3 targetPos = GetCameraTargetPosition();
 

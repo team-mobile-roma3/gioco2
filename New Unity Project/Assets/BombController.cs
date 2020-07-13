@@ -6,6 +6,7 @@ public class BombController : MonoBehaviour
 {
     public float lifeTime;
     public bool isEnemyBomb= false;
+    public bool isBoss4Bomb = false;
     public int damage;
     private Vector2 playerPos;
     public float speed;
@@ -22,6 +23,13 @@ public class BombController : MonoBehaviour
         if (isEnemyBomb)
         {
             Vector2 dir = Vector2.MoveTowards(transform.position, playerPos, 1000f);
+            dir.Normalize();
+            GetComponent<Rigidbody2D>().velocity = dir * speed;
+
+        }
+        if (isBoss4Bomb)
+        {
+            Vector2 dir = Vector2.MoveTowards(transform.position, Random.insideUnitCircle.normalized, 1000f);
             dir.Normalize();
             GetComponent<Rigidbody2D>().velocity = dir * speed;
 

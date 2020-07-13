@@ -68,4 +68,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartGameText.unity
     guid: 9c15d4c67a8054541817f52019639b92
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/Shared/Tutorial.unity
+    guid: 21c1fa195f5a5cd4aaf06033592f0d5f
   m_configObjects: {}

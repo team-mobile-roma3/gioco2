@@ -224,9 +224,12 @@ public class EnemyController : MonoBehaviour
                     bullet.GetComponent<BulletController>().isEnemyBullet = true;
                     bullet.transform.localScale = new Vector2(2f, 2f);
                     bullet.GetComponent<BulletController>().damage = 2;
-
-                    if (this.transform.GetComponent<Boss2Ability>().enabled == false)
-                        this.transform.GetComponent<Boss2Ability>().enabled = true;
+                    if (this.transform.GetComponent<Boss2Ability>() != null)
+                    {
+                        if (this.transform.GetComponent<Boss2Ability>().enabled == false)
+                            this.transform.GetComponent<Boss2Ability>().enabled = true;
+                    }
+              
                     StartCoroutine(CoolDown());
                     break;
             }

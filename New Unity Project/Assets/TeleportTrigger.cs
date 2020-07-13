@@ -2,11 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TeleportTrigger : MonoBehaviour
 {
     public Vector2 pos;
     public Boolean toBS;
+    public Boolean tutorial;
     private Boolean activated;
     public Animator animator;
     private void Awake()
@@ -28,21 +30,28 @@ public class TeleportTrigger : MonoBehaviour
     {
         if (activated)
         {
-            if (collision.CompareTag("Player"))
+            if (collision.CompareTag("Player") )
             {
-
-                collision.transform.position = pos;
-                GameObject.Find("leftLeg").transform.position = pos;
-                GameObject.Find("rightLeg").transform.position = pos;
-                GameObject.Find("Canvas").transform.GetChild(0).gameObject.SetActive(true);
-                GameObject.Find("Canvas").transform.GetChild(1).gameObject.SetActive(false);
-                GameObject.Find("Canvas").transform.GetChild(2).gameObject.SetActive(false);
-                GameObject.Find("Canvas").transform.GetChild(3).gameObject.SetActive(false);
-                GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(false);
-                collision.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
-                StartCoroutine(Wait( collision));
+                if (!tutorial)
+                {
+                    collision.transform.position = pos;
+                    GameObject.Find("leftLeg").transform.position = pos;
+                    GameObject.Find("rightLeg").transform.position = pos;
+                    GameObject.Find("Canvas").transform.GetChild(0).gameObject.SetActive(true);
+                    GameObject.Find("Canvas").transform.GetChild(1).gameObject.SetActive(false);
+                    GameObject.Find("Canvas").transform.GetChild(2).gameObject.SetActive(false);
+                    GameObject.Find("Canvas").transform.GetChild(3).gameObject.SetActive(false);
+                    GameObject.Find("Canvas").transform.GetChild(4).gameObject.SetActive(false);
+                    collision.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeAll;
+                    StartCoroutine(Wait(collision));
+                }
+                else
+                {
+                    SceneManager.LoadScene(19);
+                }
 
             }
+
         }
     }
     IEnumerator spawnDelay()
