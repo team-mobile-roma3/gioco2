@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour
     private static float ableTeleportDoor;
     private float horizontal,vertical,shootHor,shootVert;
     private float lastFlipShoot;
-    // public Animator animator;  LUCA
     private Animator animator;
     public bool godmode = false;
     private Vector3 movement;
@@ -54,11 +53,14 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         rigidbody.velocity = Vector2.zero;
+        
         if (godmode)
+        {
             GameController.Invulerability = true;
+        }
 
-            movement = Vector3.zero;
- 
+        movement = Vector3.zero;
+
         fireDelay = GameController.FireRate;
         speed = GameController.MoveSpeed;
         stance = GameController.Stance;
@@ -68,44 +70,10 @@ public class PlayerController : MonoBehaviour
         shootHor = Input.GetAxis("ShootHorizontal") + act.Horizontal;
         shootVert =Input.GetAxis("ShootVertical") + act.Vertical;
 
-
-
-        /*     if (Input.GetKeyDown(KeyCode.Z))
-             {
-                 Inventory.PotionUse();
-             }
-
-             if (Input.GetKeyDown(KeyCode.X))
-             {
-                 stance = !stance;
-             }
-
-             if (horizontal > 0 && (Time.time > lastFlipShoot + 1.0f || lastFlipShoot == 0))
-             {
-                 gameObject.GetComponent<SpriteRenderer>().flipX = false;
-             }
-             else if (horizontal < 0 && (Time.time > lastFlipShoot + 1.0f || lastFlipShoot == 0))
-             {
-                 gameObject.GetComponent<SpriteRenderer>().flipX = true;
-             }*/
-        //if (horizontal != 0 && vertical != 0)
-
         UpdateAnimationAndMove();
-
 
         if ((shootHor != 0 || shootVert != 0) && (((Time.time > lastFire + fireDelay) && !stance) || ((Time.time > lastSwing + swingDelay) && stance)))
         {
-            /*****GIRA IL PG*********
-            if (shootHor > 0)
-            {
-                gameObject.GetComponent<SpriteRenderer>().flipX = false;
-            }
-            else if (shootHor < 0)
-            {
-                gameObject.GetComponent<SpriteRenderer>().flipX = true;
-            }*/
-            
-
             if (!stance)        //ranged
             {
                 Shoot(shootHor, shootVert);
@@ -113,14 +81,13 @@ public class PlayerController : MonoBehaviour
                 lastFlipShoot = Time.time;
 
             }
-
             else if (stance)        //melee
             {
                 Melee(shootHor, shootVert);
                 lastSwing = Time.time;
                 lastFlipShoot = Time.time;
             }
-        } 
+        }
     }
 
     void UpdateAnimationAndMove()
@@ -139,27 +106,6 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("moving", false);
         }
     }
-    /*
-        public void PlayerAttack(float x, float y)
-        {
-            Debug.Log("sono qui");
-            if ((x != 0 || y != 0) && (((Time.time > lastFire + fireDelay) && !stance) || ((Time.time > lastSwing + swingDelay && stance) )))
-            {
-                if (!stance)        //ranged
-                {
-                    Shoot(x, y);
-                    lastFire = Time.time;
-                    lastFlipShoot = Time.time;
-                }
-
-                else if (stance)        //melee
-                {
-                    Melee(x, y);
-                    lastSwing = Time.time;
-                    lastFlipShoot = Time.time;
-                }
-            }
-        }*/
 
     public void MakeFlash()
     {
@@ -180,15 +126,6 @@ public class PlayerController : MonoBehaviour
     public void Move()
     {
         movement.Normalize();
-        /*if (x==0 && y==0) {
-            rigidbody.velocity = new Vector2(0,0);}
-        else
-        {
-            rigidbody.velocity = new Vector2(x * speed, y * speed);
-        }*/
-        /*  animator.SetFloat("Horizontal", movement.x);    LUCA
-          animator.SetFloat("Vertical", movement.y);           LUCA
-          animator.SetFloat("Speed", movement.sqrMagnitude);  LUCA*/
         rigidbody.MovePosition(transform.position + movement * speed * Time.deltaTime);
     }
 

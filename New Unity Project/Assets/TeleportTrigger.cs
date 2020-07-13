@@ -37,6 +37,7 @@ public class TeleportTrigger : MonoBehaviour
                     collision.transform.position = pos;
                     GameObject.Find("leftLeg").transform.position = pos;
                     GameObject.Find("rightLeg").transform.position = pos;
+                    GameObject.Find("ErPet").transform.position = pos;
                     GameObject.Find("Canvas").transform.GetChild(0).gameObject.SetActive(true);
                     GameObject.Find("Canvas").transform.GetChild(1).gameObject.SetActive(false);
                     GameObject.Find("Canvas").transform.GetChild(2).gameObject.SetActive(false);

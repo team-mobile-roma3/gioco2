@@ -8,9 +8,7 @@ public class Leg : MonoBehaviour
     private GameObject player;    
     public float lastOffsetX;
     public float lastOffsetY;
-    public float legSpec;
-    public bool joyMove;
-    public FloatingJoystick move;
+    //public float legSpec;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -18,32 +16,7 @@ public class Leg : MonoBehaviour
 
     void Update()
     {
-        float horizontal, vertical;
-        if (joyMove)
-        {
-            horizontal = move.Horizontal;
-            vertical = move.Vertical;    
-        }
-        else
-        {
-            horizontal = Input.GetAxis("Horizontal");
-            vertical =Input.GetAxis("Vertical");
-        }
-        
-
-
-        /*if(horizontal != 0 || vertical != 0)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.transform.position.x - legSpec,
-                                                                                     player.transform.position.y - 0.4f) ,
-                                                                                     player.GetComponent<PlayerController>().speed * Time.deltaTime*1.3f);
-        }
-        else*/
-        {
-            transform.position = Vector2.MoveTowards(transform.position, new Vector2(player.transform.position.x - lastOffsetX,
-                                                                                     player.transform.position.y - lastOffsetY),
-                                                                                     player.GetComponent<PlayerController>().speed * Time.deltaTime*0.975f);
-            
-        }
+        transform.position = Vector2.MoveTowards(transform.position, 
+        new Vector2(player.transform.position.x - lastOffsetX, player.transform.position.y - lastOffsetY), player.GetComponent<PlayerController>().speed * Time.deltaTime*0.975f);
     }
 }
