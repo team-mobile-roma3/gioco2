@@ -7,9 +7,9 @@ public class MainMenu : MonoBehaviour
 {
   public void PlayGame()
     {
- 
-        SceneManager.LoadScene(1);
-   
+
+        SceneManager.LoadScene(19);
+
     }
 
     public void QuitGame()
@@ -35,5 +35,12 @@ public class MainMenu : MonoBehaviour
     public void  BackToMenu()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex -2);
+    }
+
+    private IEnumerator StartGame()
+    {
+        SceneManager.LoadScene(19);
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene(1);
     }
 }

@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
+        rigidbody.velocity = Vector2.zero;
         if (godmode)
             GameController.Invulerability = true;
 

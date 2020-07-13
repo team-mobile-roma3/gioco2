@@ -206,7 +206,6 @@ public class EnemyController : MonoBehaviour
                     bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
                     bullet.GetComponent<BulletController>().GetPlayer(player.transform);
                     bullet.GetComponent<BulletController>().speed = bulletSpeed;
-                    //bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
                     bullet.GetComponent<BulletController>().isEnemyBullet = true;
                     StartCoroutine(CoolDown());
                     break;
@@ -222,7 +221,6 @@ public class EnemyController : MonoBehaviour
                     bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
                     bullet.GetComponent<BulletController>().GetPlayer(player.transform);
                     bullet.GetComponent<BulletController>().speed = bulletSpeed;
-                    bullet.AddComponent<Rigidbody2D>().gravityScale = 0;
                     bullet.GetComponent<BulletController>().isEnemyBullet = true;
                     bullet.transform.localScale = new Vector2(2f, 2f);
                     bullet.GetComponent<BulletController>().damage = 2;

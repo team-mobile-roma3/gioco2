@@ -36,6 +36,7 @@ ScriptsOnlyBuild:
     - RoomController
     - ScoreControllerUI
     - SpawnerData
+    - StartGameTransition
     - SteamController
     - TeleportTrigger
     - VisibleScript
@@ -269,9 +270,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14142}
     - Class: 114
-      Script: {instanceID: 14378}
+      Script: {instanceID: 14380}
     - Class: 114
-      Script: {instanceID: 14794}
+      Script: {instanceID: 14796}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -373,7 +374,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14116}
     - Class: 114
-      Script: {instanceID: 14794}
+      Script: {instanceID: 14796}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -424,7 +425,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14116}
     - Class: 114
-      Script: {instanceID: 14794}
+      Script: {instanceID: 14796}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -975,9 +976,17 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11552}
     - Class: 114
+      Script: {instanceID: 12066}
+    - Class: 114
+      Script: {instanceID: 12398}
+    - Class: 114
       Script: {instanceID: 13194}
     - Class: 114
+      Script: {instanceID: 13554}
+    - Class: 114
       Script: {instanceID: 13610}
+    - Class: 114
+      Script: {instanceID: 13644}
     - Class: 114
       Script: {instanceID: 14100}
     - Class: 115
@@ -1073,14 +1082,57 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 14116}
     - Class: 114
-      Script: {instanceID: 14428}
+      Script: {instanceID: 14430}
     - Class: 114
-      Script: {instanceID: 14608}
+      Script: {instanceID: 14610}
     - Class: 114
-      Script: {instanceID: 14794}
+      Script: {instanceID: 14796}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
+    Assets/Scenes/StartGameText.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11310}
+    - Class: 114
+      Script: {instanceID: 11336}
+    - Class: 114
+      Script: {instanceID: 12482}
+    - Class: 114
+      Script: {instanceID: 14116}
+    - Class: 114
+      Script: {instanceID: 14320}
+    - Class: 114
+      Script: {instanceID: 14796}
+    - Class: 115
       Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
@@ -1163,7 +1215,7 @@ ScriptsOnlyBuild:
     className: PlayerQuitHandler
   - hash:
       serializedVersion: 2
-      Hash: e991415f5ce9f583071701dc20b90ed2
+      Hash: e90b844463a7be2d4dc447f2bdff7cce
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TeleportTrigger
@@ -1961,7 +2013,7 @@ ScriptsOnlyBuild:
     className: TMP_TextInfoDebugTool
   - hash:
       serializedVersion: 2
-      Hash: 05944fa3bb87eb39de3b8c2026d6bd58
+      Hash: 02b9739630fe47e0eb6882c8e27be630
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -2085,6 +2137,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
     className: TMP_UiFrameRateCounter
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StartGameTransition
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -2274,4 +2332,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/DungeonRooms/Shared/BasementBlacksmith.unity
   - Assets/Scenes/DungeonRooms/level2/BasementBasic2.unity
   - Assets/Scenes/DungeonRooms/Shared/Score.unity
-  playerPath: C:/Users/pollooo/Documents/GitHub/gioco2/New Unity Project/sharetest.apk
+  - Assets/Scenes/StartGameText.unity
+  playerPath: C:/Users/pollooo/Documents/GitHub/gioco2/New Unity Project/test.apk
