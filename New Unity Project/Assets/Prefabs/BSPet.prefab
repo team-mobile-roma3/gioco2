@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 6450012038288280457}
   m_Layer: 0
   m_Name: BSPet
-  m_TagString: Potion
+  m_TagString: Pet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   price: 5
-  item: {fileID: 0}
+  item: {fileID: 2492339989172828589, guid: 0e7c07472a530424aaab1a91cce59141, type: 3}
   textPrice: {fileID: 8639497681619831790}
 --- !u!61 &6450012038288280457
 BoxCollider2D:

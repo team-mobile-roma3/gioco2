@@ -318,9 +318,7 @@ public class EnemyController : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" && enemyType == EnemyType.Bouncy)
-            GameController.DamagePlayer(2);
-
+      
 
     }
     private void OnCollisionStay2D(Collision2D collision)
@@ -340,7 +338,10 @@ public class EnemyController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
-   
+
+        if (collision.gameObject.tag == "Player" && enemyType == EnemyType.Bouncy)
+            GameController.DamagePlayer(2);
+
     }
 
 }

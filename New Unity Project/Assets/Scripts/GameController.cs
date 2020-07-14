@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
     private bool screwCollected = false;
 
     public List<string> collectedNames = new List<string>();
+    private  bool damageble;
 
     public static float Health { get => health; set => health = value; }
     public static int Score { get => score; set => score = value; }
@@ -61,15 +62,18 @@ public class GameController : MonoBehaviour
         stance = false;
         bootCollected = false;
         screwCollected = false;
+        instance.damageble = true;
 }
     // Update is called once per frame
 
 
     public static void DamagePlayer(int damage)
     {
-        if (!invulerability)
-        health -= damage;
-
+        if (!invulerability && instance.damageble)
+        {
+           health -= damage;
+            instance.StartCoroutine(instance.DamageCD());
+        }
         if(Health <= 0)
         {
             KillPlayer();
@@ -139,5 +143,12 @@ public class GameController : MonoBehaviour
     private static void KillPlayer()
     {
         SceneManager.LoadScene(18);
+    }
+
+     IEnumerator DamageCD()
+    {
+        damageble = false; ;
+        yield return new WaitForSeconds(0.5f);
+        damageble = true; 
     }
 }

@@ -1735,7 +1735,7 @@ PrefabInstance:
     - target: {fileID: 4782007233362905210, guid: 4ccc6a65994cc90499de36c0eadef2d3,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4782007233362905210, guid: 4ccc6a65994cc90499de36c0eadef2d3,
         type: 3}
@@ -1996,7 +1996,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &986117552
 MonoBehaviour:
@@ -2035,7 +2035,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1051634139}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.3, y: 204, z: 0}
+  m_LocalPosition: {x: 3.6, y: 216, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1802513108}
@@ -3381,6 +3381,7 @@ GameObject:
   - component: {fileID: 1802513107}
   - component: {fileID: 1802513106}
   - component: {fileID: 1802513109}
+  - component: {fileID: 1802513110}
   m_Layer: 0
   m_Name: ErPet
   m_TagString: Untagged
@@ -3401,11 +3402,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   familiar: {fileID: 11400000, guid: 20ee24a9abb165142a7cf465198427a0, type: 2}
-  speed: 8
+  joyMove: 0
   move: {fileID: 1763561872}
   act: {fileID: 1726212767}
-  fireDelay: 0.5
-  bulletSpeed: 7.5
 --- !u!212 &1802513107
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3464,7 +3463,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802513105}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.97, y: 11.41, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0}
   m_Children: []
   m_Father: {fileID: 1051634140}
@@ -3491,6 +3490,32 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!61 &1802513110
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802513105}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.2, y: 4.79}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.2, y: 4.79}
+  m_EdgeRadius: 0
 --- !u!1001 &1889717575
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4050,7 +4075,7 @@ PrefabInstance:
     - target: {fileID: 2396054019355527345, guid: 49e1d0afd3ba9bf4daa5d7b583690fab,
         type: 3}
       propertyPath: godmode
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2396054019355527346, guid: 49e1d0afd3ba9bf4daa5d7b583690fab,
         type: 3}

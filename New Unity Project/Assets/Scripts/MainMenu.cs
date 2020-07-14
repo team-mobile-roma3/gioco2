@@ -8,9 +8,23 @@ public class MainMenu : MonoBehaviour
   public void PlayGame()
     {
 
+        SceneManager.LoadScene(21);
+
+    }
+    public void PlayGameTutorial()
+    {
+
         SceneManager.LoadScene(20);
 
     }
+
+    public void SkipTutorial()
+    {
+
+        StartCoroutine(StartGame());
+
+    }
+
 
     public void QuitGame()
     {

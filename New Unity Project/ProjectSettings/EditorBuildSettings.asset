@@ -71,4 +71,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DungeonRooms/Shared/Tutorial.unity
     guid: 21c1fa195f5a5cd4aaf06033592f0d5f
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/Shared/TutorialMSG.unity
+    guid: 90e6feed60e643046ad1f7f769134fc1
   m_configObjects: {}

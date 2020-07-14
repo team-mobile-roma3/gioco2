@@ -67,7 +67,7 @@ public class BombController : MonoBehaviour
         {
             Debug.Log("hit wall");
             Rigidbody2D ri = gameObject.GetComponent<Rigidbody2D>();
-            ri.velocity = -ri.velocity;
+            ri.velocity = - ri.velocity;
         }
         
         /*

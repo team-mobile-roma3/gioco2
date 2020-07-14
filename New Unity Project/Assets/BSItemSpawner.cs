@@ -30,7 +30,12 @@ public class BSItemSpawner : MonoBehaviour
     private  IEnumerator Spawn()
     {
          cooldown = true;
-        yield return new WaitForSeconds(20f);
+        while (GameObject.Find(name + "(Clone)") != null)
+        {
+            Debug.Log(this + " aspetto");
+            yield return new WaitForSeconds(20f);
+        }
+ 
         cooldown = false;
       
     }

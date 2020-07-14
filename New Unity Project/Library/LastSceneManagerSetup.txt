@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/DungeonRooms/Shared/Tutorial.unity
+- path: Assets/Scenes/DungeonRooms/Shared/TutorialMSG.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

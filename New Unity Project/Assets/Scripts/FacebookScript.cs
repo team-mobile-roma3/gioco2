@@ -46,11 +46,10 @@ public class FacebookScript : MonoBehaviour
 
     public void FacebookShare()
     {
-        FB.ShareLink(
+        FB.ShareLink(contentURL: new System.Uri(null),
              contentTitle: "I scored " + GameController.Score + " on Project C. Can you beat my score?",
-          contentURL: new System.Uri("https://play.google.com/store/apps/details?id=com.flash.football"),
-           photoURL: new System.Uri(" link di imgur"),
              contentDescription: "Try to click the ball to score a point. It is harder than it looks. Click to learn more.",
+                  photoURL: new System.Uri(null),
              callback: OnShare);
     }
     private void OnShare(IShareResult result)
