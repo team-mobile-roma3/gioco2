@@ -203,6 +203,9 @@ public class EnemyController : MonoBehaviour
                     StartCoroutine(CoolDown());
                     break;
                 case (EnemyType.Ranged):
+                    Vector2 shootingPosition = player.transform.position - transform.position;
+                    animator.SetFloat("shootX", shootingPosition.x);
+                    animator.SetFloat("shootY", shootingPosition.y);
                     bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
                     bullet.GetComponent<BulletController>().GetPlayer(player.transform);
                     bullet.GetComponent<BulletController>().speed = bulletSpeed;
@@ -234,6 +237,7 @@ public class EnemyController : MonoBehaviour
                     break;
             }
         }
+        else animator.SetBool("attacking", false);
     }
     public void SetAnimFloat(Vector2 setVector)
     {

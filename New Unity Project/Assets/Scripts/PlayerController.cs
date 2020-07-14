@@ -49,6 +49,8 @@ public class PlayerController : MonoBehaviour
         ableTeleportDoor = Time.time-2f;
         animator.SetFloat("moveX", 0);
         animator.SetFloat("moveY", 0);
+        animator.SetFloat("shootX", 0);
+        animator.SetFloat("shootY", 0);
     }
     void FixedUpdate()
     {
@@ -76,10 +78,12 @@ public class PlayerController : MonoBehaviour
         {
             if (!stance)        //ranged
             {
+                animator.SetBool("attacking", true);
+                animator.SetFloat("shootX", shootHor);
+                animator.SetFloat("shootY", shootVert);
                 Shoot(shootHor, shootVert);
                 lastFire = Time.time;
                 lastFlipShoot = Time.time;
-
             }
             else if (stance)        //melee
             {
@@ -88,6 +92,7 @@ public class PlayerController : MonoBehaviour
                 lastFlipShoot = Time.time;
             }
         }
+        else  animator.SetBool("attacking", false);
     }
 
     void UpdateAnimationAndMove()
