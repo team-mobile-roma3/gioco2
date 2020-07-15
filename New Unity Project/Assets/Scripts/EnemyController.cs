@@ -103,7 +103,7 @@ public class EnemyController : MonoBehaviour
                 rigidbody.simulated = true;
 
             }
-            if (IsPlayerInRange(range) && currState != EnemyState.Die  )
+            if (IsPlayerInRange(range) && currState != EnemyState.Die  && enemyType != EnemyType.Ranged )
             {
                 currState = EnemyState.Follow;
             }

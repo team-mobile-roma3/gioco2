@@ -585,7 +585,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1579520992}
-        m_MethodName: FacebookShare
+        m_MethodName: ClickShare
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -825,10 +825,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1579520989}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c713aad671c90734cb846f2e82f4195f, type: 3}
+  m_Script: {fileID: 11500000, guid: f28312f358e9ffb4698cf5bfc1d7c899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FriendsText: {fileID: 0}
 --- !u!1 &1798802200
 GameObject:
   m_ObjectHideFlags: 0
