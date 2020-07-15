@@ -198,25 +198,32 @@ public class RoomController : MonoBehaviour
     {
         string[] possibleRooms1 = new string[] {
             "Empty",
-            "Basic1"
+            "Basic1",
+            "Basic1-2"
         };
 
         string[] possibleRooms2 = new string[] {
             "Empty",
             "Basic1",
-             "Basic2"
+            "Basic1-2",
+             "Basic2",
+             "Basic2-2"
         };
         string[] possibleRooms3 = new string[] {
-             "Empty",
+              "Empty",
             "Basic1",
+            "Basic1-2",
              "Basic2",
+             "Basic2-2",
              "Basic3"
            
         };
         string[] possibleRooms4 = new string[] {
-              "Empty",
+               "Empty",
             "Basic1",
+            "Basic1-2",
              "Basic2",
+             "Basic2-2",
              "Basic3",
              "Basic4"
              
@@ -224,7 +231,9 @@ public class RoomController : MonoBehaviour
         string[] possibleRooms5 = new string[] {
             "Empty",
             "Basic1",
+            "Basic1-2",
              "Basic2",
+             "Basic2-2",
              "Basic3",
              "Basic4",
              "Basic5"

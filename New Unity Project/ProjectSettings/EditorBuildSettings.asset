@@ -83,4 +83,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DungeonRooms/level5/BasementBasic5.unity
     guid: bb0700a0bf8108647ba96734374dcc32
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/level2/BasementBasic2-2.unity
+    guid: 7df506c2b43431d4d80c8d8d38b7468f
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/level1/BasementBasic1-2.unity
+    guid: 9f04440032d98ff44925c4f7f6db45d1
   m_configObjects: {}

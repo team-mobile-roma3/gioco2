@@ -1563,10 +1563,8 @@ MonoBehaviour:
     spawnerData: {fileID: 11400000, guid: 6d68211b924cd9d489a000be30466ef4, type: 2}
   - name: RandomItemSpawner
     spawnerData: {fileID: 11400000, guid: bbd2c5c02d1ad0e49a159231deed1bd8, type: 2}
-  - name: ChaseEnemyRanged
-    spawnerData: {fileID: 11400000, guid: 36ab667f8641b1d4badb8bc9ae9eac2a, type: 2}
-  - name: BouncyEnemyRanged
-    spawnerData: {fileID: 11400000, guid: 8fd4a3db23c2d564ba32199c290ce749, type: 2}
+  - name: ChaseEnemy
+    spawnerData: {fileID: 11400000, guid: 6d68211b924cd9d489a000be30466ef4, type: 2}
 --- !u!114 &1601602493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1829,7 +1827,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1949028840
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1887,7 +1885,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949028839}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
