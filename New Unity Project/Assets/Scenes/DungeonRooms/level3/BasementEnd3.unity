@@ -2365,7 +2365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4766653a9ac986a4497a284bd6752570, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turretPrefab: {fileID: 6879314993130097390, guid: 795219fdaa36df1418940e84be421247,
+  turretPrefab: {fileID: 6879314993130097390, guid: 2c38e53e6150d6e45b750de04f3e84f5,
     type: 3}
 --- !u!1 &748599449
 GameObject:
