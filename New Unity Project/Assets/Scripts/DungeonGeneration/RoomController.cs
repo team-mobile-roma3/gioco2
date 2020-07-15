@@ -194,15 +194,55 @@ public class RoomController : MonoBehaviour
         return loadedRooms.Find( item => item.X == x && item.Y == y);
     }
 
-    public string GetRandomRoomName()
+    public string GetRandomRoomName(int level )
     {
-        string[] possibleRooms = new string[] {
+        string[] possibleRooms1 = new string[] {
+            "Empty",
+            "Basic1"
+        };
+
+        string[] possibleRooms2 = new string[] {
             "Empty",
             "Basic1",
              "Basic2"
         };
+        string[] possibleRooms3 = new string[] {
+             "Empty",
+            "Basic1",
+             "Basic2",
+             "Basic3"
+           
+        };
+        string[] possibleRooms4 = new string[] {
+              "Empty",
+            "Basic1",
+             "Basic2",
+             "Basic3",
+             "Basic4"
+             
+        };
+        string[] possibleRooms5 = new string[] {
+            "Empty",
+            "Basic1",
+             "Basic2",
+             "Basic3",
+             "Basic4",
+             "Basic5"
+        };
+        if(level == 1)
+        return possibleRooms1[UnityEngine.Random.Range(0, possibleRooms1.Length)];
 
-        return possibleRooms[UnityEngine.Random.Range(0, possibleRooms.Length)];
+        if (level == 2)
+            return possibleRooms2[UnityEngine.Random.Range(0, possibleRooms2.Length)];
+        if (level == 3)
+            return possibleRooms3[UnityEngine.Random.Range(0, possibleRooms3.Length)];
+        if (level == 4)
+            return possibleRooms4[UnityEngine.Random.Range(0, possibleRooms4.Length)];
+        if (level == 5)
+            return possibleRooms5[UnityEngine.Random.Range(0, possibleRooms5.Length)];
+
+        return "";
+        
     }
 
     public void OnPlayerEnterRoom(Room room)
