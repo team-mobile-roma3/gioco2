@@ -40,7 +40,7 @@ public class DungeonCrawlerController : MonoBehaviour
             foreach(DungeonCrawler dungeonCrawler in dungeonCrawlers)
             {
                 Vector2Int newPos = dungeonCrawler.Move(directionMovementMap);
-                Debug.Log(" ho visitato " + newPos);
+                  Debug.Log(" ho visitato " + newPos);
                 if(newPos ==  startpos)
                     Debug.Log(" ho visitato " + newPos+ "ma non la aggiungo");
                 else 

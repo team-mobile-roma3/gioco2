@@ -18,10 +18,12 @@ public class Boss3ability : MonoBehaviour
         if (!this.GetComponent<EnemyController>().notInRoom )
         {
             if (!checkTurret(turret))
-                this.GetComponent<SpriteRenderer>().enabled = true;
+                //this.GetComponent<SpriteRenderer>().enabled = true;
+                this.GetComponent<EnemyController>().SetAttacking(false);
             if (!coolDownAttack && !checkTurret(turret))
             {
-                this.GetComponent<SpriteRenderer>().enabled = false;
+                //this.GetComponent<SpriteRenderer>().enabled = false;
+                this.GetComponent<EnemyController>().SetAttacking(true);
                 StartCoroutine(CoolDown());
                 for (int i = 0; i < 4; i++)
                 {

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -2536960279739669875}
   - component: {fileID: -6991405798224518686}
   - component: {fileID: -8109894990209939547}
+  - component: {fileID: 286045701044995730}
   m_Layer: 0
   m_Name: Coin
   m_TagString: Coin
@@ -28,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7416558464892257257}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0196, y: -0.030759417, z: -11.939453}
-  m_LocalScale: {x: 0.4156, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -49,7 +50,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.065455675
 --- !u!114 &-2536960279739669875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +68,7 @@ MonoBehaviour:
   item:
     name: Coin
     description: +1
-    itemImage: {fileID: 21300000, guid: 0ed9c155590a1d947bc631b5253a3d42, type: 3}
+    itemImage: {fileID: 21300000, guid: 17edc5cd947c9ae4091bbd6bb779c350, type: 3}
   healthChange: 0
   moveSpeedChange: 0
   attackSpeedChange: 0
@@ -136,3 +137,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e708c633fcaf374ba6cc68aef4fb9e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &286045701044995730
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7416558464892257257}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e073a7495cb65794f97e81e84d4fc88a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

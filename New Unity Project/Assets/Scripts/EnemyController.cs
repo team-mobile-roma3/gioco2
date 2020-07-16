@@ -344,4 +344,8 @@ public class EnemyController : MonoBehaviour
 
     }
 
+    public void SetAttacking(bool condition) 
+    {
+        this.animator.SetBool("ability", condition);
+    }
 }
