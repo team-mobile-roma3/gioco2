@@ -24,7 +24,7 @@ public class ShareButton : MonoBehaviour
 		Destroy(ss);
 
 		new NativeShare().AddFile(filePath)
-			.SetSubject("Subject goes here").SetText("Hello world!")
+			.SetSubject("Subject goes here").SetText("I just scored: " + GameController.Score + " on Project_C. Cano you do better?")
 			.SetCallback((result, shareTarget) => Debug.Log("Share result: " + result + ", selected app: " + shareTarget))
 			.Share();
 

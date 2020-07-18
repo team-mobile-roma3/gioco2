@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum EnemyState
 {
@@ -18,7 +19,8 @@ public enum EnemyType
     Ranged,
     Boss1,
     Boss2,
-    Bomber
+    Bomber,
+    Boss5
 };
 
 
@@ -74,8 +76,13 @@ public class EnemyController : MonoBehaviour
 
                 transform.GetChild(0).parent = null;
             }
+            if (this.enemyType == EnemyType.Boss5)
+            {
+                SceneManager.LoadScene(24);
+            }
             this.Death();
         }
+
         switch (currState)
         {
             /*case(EnemyState.Idle):
@@ -204,6 +211,8 @@ public class EnemyController : MonoBehaviour
                     break;
                 case (EnemyType.Ranged):
                     Vector2 shootingPosition = player.transform.position - transform.position;
+                    shootingPosition.Normalize();
+                    animator.SetBool("attacking", true);
                     animator.SetFloat("shootX", shootingPosition.x);
                     animator.SetFloat("shootY", shootingPosition.y);
                     bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
@@ -232,7 +241,22 @@ public class EnemyController : MonoBehaviour
                         if (this.transform.GetComponent<Boss2Ability>().enabled == false)
                             this.transform.GetComponent<Boss2Ability>().enabled = true;
                     }
-              
+                    StartCoroutine(AttackCo());
+                    StartCoroutine(CoolDown());
+                    break;
+                case (EnemyType.Boss5):
+                                    bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity) as GameObject;
+                    bullet.GetComponent<BulletController>().GetPlayer(player.transform);
+                    bullet.GetComponent<BulletController>().speed = bulletSpeed;
+                    bullet.GetComponent<BulletController>().isEnemyBullet = true;
+                    bullet.transform.localScale = new Vector2(2f, 2f);
+                    bullet.GetComponent<BulletController>().damage = 2;
+                    if (this.transform.GetComponent<Boss2Ability>() != null)
+                    {
+                        if (this.transform.GetComponent<Boss2Ability>().enabled == false)
+                            this.transform.GetComponent<Boss2Ability>().enabled = true;
+                    }
+                    StartCoroutine(AttackCo());
                     StartCoroutine(CoolDown());
                     break;
             }

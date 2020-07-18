@@ -15,8 +15,8 @@ public class GameController : MonoBehaviour
     private static float fireRate = 0.5f;
     private static float bulletSize = 0.5f;
     private static bool isProjectileBouncy = false;
-    private static float attackDamage = 1;
-    private static float mAttackDamage = 2;
+    private static float attackDamage = 2;
+    private static float mAttackDamage = 4;
     private static bool stance = false;
     private static bool invulerability = false;
 

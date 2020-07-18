@@ -104,7 +104,7 @@ MonoBehaviour:
   speed: 1
   attackRange: 10
   bulletSpeed: 6
-  coolDown: 1
+  coolDown: 3
   health: 4
   movement: {x: 0, y: 0}
   notInRoom: 1

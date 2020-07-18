@@ -327,7 +327,7 @@ public class RoomController : MonoBehaviour
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(7f);
+        yield return new WaitForSeconds(12f);
         GameObject.Find("Canvas").transform.GetChild(0).gameObject.SetActive(false);
         GameObject.Find("Canvas").transform.GetChild(1).gameObject.SetActive(true);
         GameObject.Find("Canvas").transform.GetChild(2).gameObject.SetActive(true);

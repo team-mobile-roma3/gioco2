@@ -74,19 +74,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DungeonRooms/Shared/TutorialMSG.unity
     guid: 90e6feed60e643046ad1f7f769134fc1
-  - enabled: 1
-    path: Assets/Scenes/DungeonRooms/level3/BasementBasic3.unity
-    guid: 1a97b68e6dbbbbd428ac811408987841
-  - enabled: 1
-    path: Assets/Scenes/DungeonRooms/level4/BasementBasic4.unity
-    guid: bb5837ede395eda4ca8545cb2e163561
-  - enabled: 1
-    path: Assets/Scenes/DungeonRooms/level5/BasementBasic5.unity
-    guid: bb0700a0bf8108647ba96734374dcc32
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/DungeonRooms/level2/BasementBasic2-2.unity
     guid: 7df506c2b43431d4d80c8d8d38b7468f
   - enabled: 1
     path: Assets/Scenes/DungeonRooms/level1/BasementBasic1-2.unity
     guid: 9f04440032d98ff44925c4f7f6db45d1
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/Shared/Win.unity
+    guid: eab4a28f362734341b44a775231507ff
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/level3/BasementBasic3.unity
+    guid: eb47e0678629eda478f8023af4731af0
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/level4/BasementBasic4.unity
+    guid: e8b028216ccc834448010eb24f4618b9
+  - enabled: 1
+    path: Assets/Scenes/DungeonRooms/level5/BasementBasic5.unity
+    guid: 8f2b06964da0f1f4db667d34ccf8037a
   m_configObjects: {}
